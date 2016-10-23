@@ -22,12 +22,27 @@ html(lang="en")
 
 
         script(type="text/javascript")
-            | var element = document.querySelector('.navbar')
-            | document.querySelector('.player').addEventListener('click', function() {
-            |    if (element && element.classList.contains('is-active'))
-            |        element.classList.remove('is-active')
+            | var $navbar = document.querySelector('.navbar')
+            | var $header = document.querySelector('.header')
+            | 
+            | function toggleSidenav() {
+            |    if ($navbar.classList.contains('is-active'))
+            |        $navbar.classList.remove('is-active')
             |    else
-            |        element.classList.add('is-active')
-            | })
+            |        $navbar.classList.add('is-active')
+            | }
+            | 
+            | function toggleSearch() {
+            |    if ($header.classList.contains('has-search'))
+            |        $header.classList.remove('has-search')
+            |    else
+            |        $header.classList.add('has-search')
+            | }
+            | 
+            | document.querySelectorAll('.js-toggle-sidenav')
+            |     .forEach(node => node.addEventListener('click', toggleSidenav))            
+            | document.querySelectorAll('.js-toggle-search')
+            |     .forEach(node => node.addEventListener('click', toggleSearch))
+
 
         block scripts
