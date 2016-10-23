@@ -10,15 +10,24 @@
     <div class="application">
       <div class="navbar">
         <nav class="navbar-nav"><a href="#" class="navbar-logo">
-            <h1 class="navbar-logo-text">raji</h1><img src="dist/images/logo.sv" class="navbar-logo-image"></a>
+            <h1 class="navbar-logo-text">raji</h1><img src="/dist/images/logo.svg" class="navbar-logo-image"></a>
           <ul class="navbar-list">
-            <li class="navbar-list-item is-active"><a href="#" class="navbar-list-link"><i class="navbar-list-icon"></i><span class="navbar-list-text">player</span></a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-list-link"><i class="navbar-list-icon"></i><span class="navbar-list-text">series</span></a></li>
-            <li class="navbar-list-item"><a href="#" class="navbar-list-link"><i class="navbar-list-icon"></i><span class="navbar-list-text">playlists</span></a></li>
+            <li class="navbar-list-item is-active"><a href="#" class="navbar-list-link"><span class="navbar-list-text">now playing</span></a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-list-link"><span class="navbar-list-text">series</span></a></li>
+            <li class="navbar-list-item"><a href="#" class="navbar-list-link"><span class="navbar-list-text">playlists</span></a></li>
           </ul>
         </nav>
       </div>
       <h1>Hello World</h1>
     </div>
+    <script type="text/javascript">
+      var element = document.querySelector('.navbar')
+      document.body.addEventListener('click', function() {
+         if (element && element.classList.contains('is-active'))
+             element.classList.remove('is-active')
+         else
+             element.classList.add('is-active')
+      })
+    </script>
   </body>
 </html>

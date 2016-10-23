@@ -14,4 +14,13 @@ html(lang="en")
 
             block content
 
+        script(type="text/javascript")
+            | var element = document.querySelector('.navbar')
+            | document.body.addEventListener('click', function() {
+            |    if (element && element.classList.contains('is-active'))
+            |        element.classList.remove('is-active')
+            |    else
+            |        element.classList.add('is-active')
+            | })
+
         block scripts

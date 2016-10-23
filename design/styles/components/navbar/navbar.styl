@@ -5,3 +5,17 @@
     position: fixed
     top: 0
     left: 0
+    transform: translateX(-80vw)
+    transition: transform .3s ease-in-out
+    will-change: transform
+
+    &.is-active
+        transform: translateX(0vw)
+
+    +at-tablet()
+        width: 50vw
+
+    +at-desktop()
+        transform: translateX(0vw)
+        will-change: auto
+        width: 200px

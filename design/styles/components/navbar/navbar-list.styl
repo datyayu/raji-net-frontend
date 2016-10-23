@@ -2,19 +2,43 @@
     display: flex
     flex-direction: column
 
+    +at-desktop()
+        height: calc(100vh - 300px - 4em)
+        justify-content: center
+
 .navbar-list-item
     text-align: center
     border-bottom: 1px solid white
 
+    +at-desktop()
+        border-bottom: none
+        text-align: right
+
+
 .navbar-list-link
     display: block
-    padding: 1em
+    padding: 1em 0
     color: white
-    
+
     &:hover,
     &:active,
     &.is-active
         background: color--navbar-bg-highlighted
 
-// .navbar-list-icon
-// .navbar-list-text
+    +at-desktop()
+        font-size: 1.5em
+        padding: .5em 0
+        transition: font-size .1s ease-in-out
+
+        &:hover,
+        &:active,
+        &.is-active
+            background: none
+            font-size: 1.8em
+
+
+.navbar-list-text
+    &:after
+        +at-desktop()
+            content: " ―"
+
