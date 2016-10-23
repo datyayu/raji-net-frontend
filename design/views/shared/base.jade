@@ -1,10 +1,14 @@
+block vars
+
+- var pageTitle = title ? title + ' | raji' : 'raji'
+
 doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
 
-        title #{title || 'RajiNet'}
+        title #{pageTitle}
 
         link(rel="stylesheet", href="/dist/css/main.css")
         block styles
@@ -12,11 +16,14 @@ html(lang="en")
         div.application
             include navbar 
 
-            block content
+            div.application-content
+                include header
+                block content
+
 
         script(type="text/javascript")
             | var element = document.querySelector('.navbar')
-            | document.body.addEventListener('click', function() {
+            | document.querySelector('.player').addEventListener('click', function() {
             |    if (element && element.classList.contains('is-active'))
             |        element.classList.remove('is-active')
             |    else
