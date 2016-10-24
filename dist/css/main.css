@@ -277,6 +277,8 @@ ul {
   display: none;
 }
 .player {
+  width: 90%;
+  margin: 0 auto;
   margin-top: 1em;
 }
 @media screen and (min-width: 780px) {
@@ -361,8 +363,8 @@ ul {
 .player-cover-image {
   display: block;
   margin: 0 auto;
-  height: 250px;
-  width: 250px;
+  height: 225px;
+  width: 225px;
   box-shadow: 0 0 4px 2px rgba(0,0,0,0.5);
 }
 @media screen and (min-width: 480px) {
@@ -398,6 +400,7 @@ ul {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 0.8em;
 }
 @media screen and (min-width: 480px) {
   .player-info {
@@ -437,4 +440,47 @@ ul {
 }
 .player-info-text:hover {
   color: #323232;
+}
+.player-seek-bar {
+  width: 100%;
+}
+@media screen and (min-width: 780px) {
+  .player-seek-bar {
+    padding-top: 0.5em;
+  }
+}
+.player-seek-bar-total-bar {
+  background: #96c2ee;
+  height: 1.5em;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 1px;
+  overflow: hidden;
+  border-radius: 1px;
+}
+@media screen and (min-width: 780px) {
+  .player-seek-bar-total-bar {
+    margin-top: 1em;
+  }
+}
+.player-seek-bar-current-bar {
+  background: #3498db;
+  height: 1.5em;
+  position: relative;
+}
+.player-seek-bar-time {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #4f4e4e;
+}
+@media screen and (min-width: 780px) {
+  .player-seek-bar-time {
+    padding-top: 0.5em;
+  }
 }

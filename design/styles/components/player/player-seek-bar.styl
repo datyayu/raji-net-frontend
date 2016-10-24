@@ -1,0 +1,33 @@
+.player-seek-bar
+    width: 100%
+    
+    +at-desktop()
+        padding-top: .5em
+
+
+.player-seek-bar-total-bar
+    background: color--seek-bar-total
+    height: 1.5em
+    width: 100%
+    margin: 0 auto
+    border-radius: 1px
+    overflow: hidden
+    border-radius: 1px
+
+    +at-desktop()
+        margin-top: 1em
+
+
+.player-seek-bar-current-bar
+    background: color--seek-bar-progress
+    height: 1.5em
+    position: relative
+
+
+.player-seek-bar-time
+    display: flex
+    justify-content: space-between
+    color: color--normal-text
+
+    +at-desktop()
+        padding-top: .5em

@@ -727,6 +727,22 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
+	"\/design\/styles\/components\/player\/player-seek-bar.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/player\/player-seek-bar.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/player-seek-bar.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
 	"\/design\/styles\/components\/player\/player.styl": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -888,6 +904,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/design\/views\/components\/player\/player-seek-bar.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/player\/player-seek-bar.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/player-seek-bar.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/design\/views\/player.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -955,6 +982,15 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/dist\/html\/player-navigation.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dist\/html\/player.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dist\/html\/player.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
