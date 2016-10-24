@@ -18,7 +18,7 @@
           </ul>
         </nav>
       </div>
-      <div class="application-content">
+      <div class="application-wrapper">
         <div class="header">
           <div class="header-content"><i class="header-icon fa fa-bars js-toggle-sidenav"></i>
             <h1 class="header-title">now playing</h1><i class="header-icon fa fa-search js-toggle-search"></i>
@@ -27,8 +27,26 @@
             <input type="text" class="header-search-input">
           </div>
         </div>
-        <div class="player js-toggle-sidenav">
-          <h1>hello world and stuff</h1>
+        <div class="application-content">
+          <div class="player js-toggle-sidenav">
+            <div class="player-navigation">
+              <div class="player-navigation-item"><i class="player-navigation-icon fa fa-angle-left"></i>
+                <div class="player-navigation-info">
+                  <p class="player-navigation-text">Puenge</p>
+                  <p class="player-navigation-text">Iguchi Yuka</p>
+                </div>
+              </div>
+              <div class="player-navigation-item">
+                <div class="player-navigation-info">
+                  <p class="player-navigation-text">Manana</p>
+                  <p class="player-navigation-text">Iguchi Yuka</p>
+                </div><i class="player-navigation-icon fa fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="player-cover"></div>
+            <div class="player-info"></div>
+            <div class="player-controls"></div>
+          </div>
         </div>
       </div>
       <div class="application-overlay js-toggle-sidenav"></div>

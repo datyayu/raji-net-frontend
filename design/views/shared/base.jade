@@ -16,9 +16,11 @@ html(lang="en")
         div.application
             include navbar 
 
-            div.application-content
+            div.application-wrapper
                 include header
-                block content
+                
+                div.application-content
+                    block content
 
             div.application-overlay.js-toggle-sidenav
 

@@ -16,16 +16,20 @@ ul
 
 .application
     display: flex
-    background: #efefef
+    background: color--application-bg
     width: 100vw
     height: 100%
     min-height: 100vh
     max-width: 100vw
 
 
-.application-content
+.application-wrapper
     +at-desktop()
         margin-left: 200px
+
+.application-content 
+    width: 85%
+    margin: 0 auto
 
 
 .application-overlay
@@ -38,7 +42,7 @@ ul
     right: 0
     transition: opacity 300ms ease-in-out
     transform: translateX(-100vw)
-    will-change: transform
+    will-change: transform, opacity
 
     &.is-active
         opacity: 1;

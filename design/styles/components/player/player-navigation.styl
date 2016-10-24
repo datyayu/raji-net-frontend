@@ -1,0 +1,34 @@
+.player-navigation
+    color: color--normal-text   
+    display: none
+    justify-content: space-between
+
+    +at-desktop()
+        display: flex
+
+.player-navigation-icon
+    padding: 0 .5em
+    font-size: 4em
+
+
+.player-navigation-item
+    display: flex
+    align-items: center
+    cursor: pointer
+    transition: transform 100ms ease-in-out,
+                padding 100ms ease-in-out
+    will-change: transform
+
+    &:hover
+        transform: scale(1.2)
+
+    &:nth-child(2)
+        text-align: right
+
+
+.player-navigation-text
+    ellipsis-overflow(100px)
+    margin: .3em 0
+
+    &:first-child
+        font-weight: 600
