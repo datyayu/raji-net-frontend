@@ -20,16 +20,22 @@ html(lang="en")
                 include header
                 block content
 
+            div.application-overlay.js-toggle-sidenav
+
 
         script(type="text/javascript")
             | var $navbar = document.querySelector('.navbar')
             | var $header = document.querySelector('.header')
+            | var $overlay = document.querySelector('.application-overlay')
             | 
             | function toggleSidenav() {
-            |    if ($navbar.classList.contains('is-active'))
+            |    if ($navbar.classList.contains('is-active')) {
             |        $navbar.classList.remove('is-active')
-            |    else
+            |        $overlay.classList.remove('is-active')
+            |    } else {
             |        $navbar.classList.add('is-active')
+            |        $overlay.classList.add('is-active')
+            |    }
             | }
             | 
             | function toggleSearch() {

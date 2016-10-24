@@ -27,6 +27,30 @@ ul {
     margin-left: 200px;
   }
 }
+.application-overlay {
+  opacity: 0;
+  background: rgba(0,0,0,0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+  will-change: transform;
+}
+.application-overlay.is-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+@media screen and (min-width: 780px) {
+  .application-overlay {
+    display: none;
+  }
+}
 .navbar {
   background: #212121;
   height: 100vh;
@@ -42,6 +66,7 @@ ul {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   will-change: transform;
   box-shadow: 0px 0px 2px 4px #272727;
+  z-index: 9;
 }
 .navbar.is-active {
   -webkit-transform: translateX(0vw);

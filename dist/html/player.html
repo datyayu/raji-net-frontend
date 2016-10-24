@@ -31,16 +31,21 @@
           <h1>hello world and stuff</h1>
         </div>
       </div>
+      <div class="application-overlay js-toggle-sidenav"></div>
     </div>
     <script type="text/javascript">
       var $navbar = document.querySelector('.navbar')
       var $header = document.querySelector('.header')
+      var $overlay = document.querySelector('.application-overlay')
        
       function toggleSidenav() {
-         if ($navbar.classList.contains('is-active'))
+         if ($navbar.classList.contains('is-active')) {
              $navbar.classList.remove('is-active')
-         else
+             $overlay.classList.remove('is-active')
+         } else {
              $navbar.classList.add('is-active')
+             $overlay.classList.add('is-active')
+         }
       }
        
       function toggleSearch() {
