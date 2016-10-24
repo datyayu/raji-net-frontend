@@ -430,7 +430,11 @@ ul {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #767474;
   font-size: 1.25em;
   text-align: center;
-  color: #4f4e4e;
+  margin-top: 0.5em;
+}
+.player-info-text:hover {
+  color: #323232;
 }
