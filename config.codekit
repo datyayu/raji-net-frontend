@@ -679,6 +679,38 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
+	"\/design\/styles\/components\/player\/player-cover.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/player\/player-cover.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/player-cover.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
+	"\/design\/styles\/components\/player\/player-info.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/player\/player-info.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/player-info.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
 	"\/design\/styles\/components\/player\/player-navigation.styl": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -823,6 +855,28 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
+	"\/design\/views\/components\/player\/player-cover.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/player\/player-cover.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/player-cover.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/design\/views\/components\/player\/player-info.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/player\/player-info.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/player-info.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/design\/views\/components\/player\/player-navigation.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -913,6 +967,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/dist\/images\/sample-album.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 88458,
+		"inputAbbreviatedPath": "\/dist\/images\/sample-album.jpg",
+		"outputAbbreviatedPath": "\/dist\/images\/sample-album.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		}
 	},
 "hooks": [
