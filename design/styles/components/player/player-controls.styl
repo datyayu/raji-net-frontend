@@ -1,0 +1,19 @@
+.player-controls
+    margin-top: 1em
+    display: flex
+    justify-content: space-around
+
+
+.player-controls-icon
+    cursor: pointer
+    color: color--normal-text
+    font-size: 2.5em
+
+    &:hover
+        color: color--dark-text
+
+    +at-tablet()
+        font-size: 3em
+
+    &.is-active
+        color: color--active-icon

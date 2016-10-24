@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "19127",
+"creatorBuild": "19142",
 "files": {
 	"\/bower_components\/font-awesome\/bower.json": {
 		"fileType": 524288,
@@ -679,6 +679,22 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
+	"\/design\/styles\/components\/player\/player-controls.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/player\/player-controls.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/player-controls.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
 	"\/design\/styles\/components\/player\/player-cover.styl": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -870,6 +886,17 @@
 		"resolveRelativeURLS": 0,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
+		},
+	"\/design\/views\/components\/player\/player-controls.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/player\/player-controls.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/player-controls.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
 		},
 	"\/design\/views\/components\/player\/player-cover.jade": {
 		"compileDebug": 1,
