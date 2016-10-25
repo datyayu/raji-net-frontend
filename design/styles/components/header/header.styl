@@ -3,14 +3,14 @@
     color: white
     height: 4em
     width: 100%
-    min-width: 100vw
+    min-width: 100%
     box-sizing: border-box
     padding: 1em
     box-shadow: 0px 0px 4px 2px color--box-shadow
     z-index: 2
 
     +at-desktop()
-        min-width: calc(100vw - 200px)
+        min-width: calc(100% - 200px)
         height: 6em
         background: none
         box-shadow: none
@@ -34,6 +34,15 @@
 
     +at-desktop()
         display: none
+
+        &.fa-angle-left
+            display: block
+            color: color--dark-text
+            font-size: 3em
+
+    +at-hd-desktop()
+        &.fa-angle-left
+            display: none
 
 
 .header-title

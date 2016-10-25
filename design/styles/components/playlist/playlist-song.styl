@@ -1,0 +1,47 @@
+.playlist-song
+    display: flex
+    color: color--clear-text
+    padding: .25em .5em
+    border-bottom: 1px solid white
+    font-size: 1.1em
+    cursor: pointer
+    width: 100%
+    max-width: 100%
+    box-sizing: border-box
+    overflow: hidden
+
+    &:hover, &:focus, &.is-active
+        background: color--navbar-bg-highlighted
+        color: white
+
+    +at-tablet()
+        font-size: 1.5em 
+
+    +at-desktop()
+        font-size: 1em
+
+.playlist-song-cover
+    width: 50px
+    height: 50px
+
+
+.playlist-song-info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 1em
+    box-sizing: border-box
+    flex: 1
+
+
+.playlist-song-info-text
+    ellipsis-overflow(38vw)
+
+    +at-desktop()
+        ellipsis-overflow(200px)
+        
+
+.playlist-song-icons
+    display: flex
+    align-items: center
+    font-size: .8em

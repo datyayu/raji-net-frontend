@@ -17,41 +17,16 @@ html(lang="en")
         div.application
             include navbar 
 
-            div.application-wrapper
+            div.application-wrapper.has-player
                 include header
                 
                 div.application-content
                     block content
 
-            div.application-overlay.js-toggle-sidenav
+            div.application-overlay.js-application-overlay
 
 
-        script(type="text/javascript")
-            | var $navbar = document.querySelector('.navbar')
-            | var $header = document.querySelector('.header')
-            | var $overlay = document.querySelector('.application-overlay')
-            | 
-            | function toggleSidenav() {
-            |    if ($navbar.classList.contains('is-active')) {
-            |        $navbar.classList.remove('is-active')
-            |        $overlay.classList.remove('is-active')
-            |    } else {
-            |        $navbar.classList.add('is-active')
-            |        $overlay.classList.add('is-active')
-            |    }
-            | }
-            | 
-            | function toggleSearch() {
-            |    if ($header.classList.contains('has-search'))
-            |        $header.classList.remove('has-search')
-            |    else
-            |        $header.classList.add('has-search')
-            | }
-            | 
-            | document.querySelectorAll('.js-toggle-sidenav')
-            |     .forEach(node => node.addEventListener('click', toggleSidenav))            
-            | document.querySelectorAll('.js-toggle-search')
-            |     .forEach(node => node.addEventListener('click', toggleSearch))
+        script(type="text/javascript", src="/dist/js/header-events.js")
 
 
         block scripts
