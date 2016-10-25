@@ -12,8 +12,13 @@
     &:hover
         color: color--dark-text
 
+    &.is-active
+        color: color--active-icon
+
     +at-tablet()
         font-size: 3em
 
-    &.is-active
-        color: color--active-icon
+    +at-phone-landscape()
+        font-size: 2em
+
+

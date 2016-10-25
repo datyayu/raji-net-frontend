@@ -295,6 +295,30 @@ ul {
             align-items: center;
   }
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .player-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 780px) {
+  .player-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .player-navigation {
   color: #4f4e4e;
   display: none;
@@ -374,6 +398,18 @@ ul {
     height: 250px;
   }
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .player-cover-image {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 780px) {
+  .player-cover-image {
+    height: 125px;
+    width: 125px;
+  }
+}
 .player-info {
   margin: 1em 0;
   display: -webkit-box;
@@ -401,6 +437,16 @@ ul {
 @media screen and (min-width: 1024px) {
   .player-info {
     font-size: 1.4em;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .player-info {
+    font-size: 1em;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 780px) {
+  .player-info {
+    font-size: 1.25em;
   }
 }
 .player-info-title {
@@ -450,9 +496,19 @@ ul {
     margin-top: 1em;
   }
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .player-seek-bar-total-bar {
+    height: 1em;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 780px) {
+  .player-seek-bar-total-bar {
+    height: 1em;
+  }
+}
 .player-seek-bar-current-bar {
   background: #3498db;
-  height: 1.5em;
+  height: 100%;
   position: relative;
 }
 .player-seek-bar-time {
@@ -485,13 +541,18 @@ ul {
 .player-controls-icon:hover {
   color: #323232;
 }
+.player-controls-icon.is-active {
+  color: #3498db;
+}
 @media screen and (min-width: 480px) {
   .player-controls-icon {
     font-size: 3em;
   }
 }
-.player-controls-icon.is-active {
-  color: #3498db;
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .player-controls-icon {
+    font-size: 2em;
+  }
 }
 .player-volume-control {
   position: fixed;
