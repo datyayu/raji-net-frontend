@@ -1,0 +1,31 @@
+div.player-volume-control
+    span.player-volume-control-icon.fa.fa-volume-up
+
+    div.player-volume-control-seek
+        div.player-volume-control-seek-total
+            div.player-volume-control-seek-current
+
+    span.player-volume-control-icon.fa.fa-volume-down
+
+
+block scripts
+    script
+        | var $volume = document.querySelector('.player-volume-control')
+        | var $volumeIcon = document.querySelector('.player-controls-icon.fa-volume-up')
+        | 
+        | var onVolumeOpen = function(event) {
+        |    event.stopPropagation()
+        |    $volume.classList.add('is-active')   
+        | 
+        |    document.body.addEventListener('click', onVolumeClose)     
+        |    $volumeIcon.removeEventListener('click', onVolumeOpen)        
+        | }
+        | 
+        | var onVolumeClose = function(event) {
+        |    $volume.classList.remove('is-active')
+        | 
+        |    $volumeIcon.addEventListener('click', onVolumeOpen)
+        |    document.body.removeEventListener('click', onVolumeClose)
+        | }
+        | 
+        | $volumeIcon.addEventListener('click', onVolumeOpen)

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>now playing | raji</title>
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="/dist/css/main.css">
   </head>
   <body>
@@ -57,6 +58,34 @@
               </div>
             </div>
             <div class="player-controls"><span class="player-controls-icon fa fa-random is-active"></span><span class="player-controls-icon fa fa-backward"></span><span class="player-controls-icon fa fa-play"></span><span class="player-controls-icon fa fa-forward"></span><span class="player-controls-icon fa fa-volume-up"></span></div>
+            <div class="player-volume-control"><span class="player-volume-control-icon fa fa-volume-up"></span>
+              <div class="player-volume-control-seek">
+                <div class="player-volume-control-seek-total">
+                  <div class="player-volume-control-seek-current"></div>
+                </div>
+              </div><span class="player-volume-control-icon fa fa-volume-down"></span>
+            </div>
+            <script>
+              var $volume = document.querySelector('.player-volume-control')
+              var $volumeIcon = document.querySelector('.player-controls-icon.fa-volume-up')
+               
+              var onVolumeOpen = function(event) {
+                 event.stopPropagation()
+                 $volume.classList.add('is-active')   
+               
+                 document.body.addEventListener('click', onVolumeClose)     
+                 $volumeIcon.removeEventListener('click', onVolumeOpen)        
+              }
+               
+              var onVolumeClose = function(event) {
+                 $volume.classList.remove('is-active')
+               
+                 $volumeIcon.addEventListener('click', onVolumeOpen)
+                 document.body.removeEventListener('click', onVolumeClose)
+              }
+               
+              $volumeIcon.addEventListener('click', onVolumeOpen)
+            </script>
           </div>
         </div>
       </div>
