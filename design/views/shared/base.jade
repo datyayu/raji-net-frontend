@@ -16,12 +16,18 @@ html(lang="en")
     body
         div.application
             include navbar 
-
-            div.application-wrapper.has-player
-                include header
-                
-                div.application-content
-                    block content
+            - if (hasPlaylist)
+                div.application-wrapper.has-playlist
+                    include header
+                    
+                    div.application-content
+                        block content   
+            - else
+                div.application-wrapper
+                    include header
+                    
+                    div.application-content
+                        block content
 
             div.application-overlay.js-application-overlay
 

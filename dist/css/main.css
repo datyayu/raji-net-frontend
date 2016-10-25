@@ -33,7 +33,7 @@ ul {
   }
 }
 @media screen and (min-width: 1024px) {
-  .application-wrapper.has-player {
+  .application-wrapper.has-playlist {
     width: calc(100% - 200px - 350px);
     margin: 0 350px 0 200px;
   }
@@ -607,6 +607,8 @@ ul {
 @media screen and (min-width: 1024px) {
   .player-volume-control {
     top: 72vh;
+    left: calc(38vw + 200px);
+    width: calc(30vw - 200px);
   }
 }
 .player-volume-control-seek {
