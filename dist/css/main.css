@@ -32,7 +32,7 @@ ul {
     margin-left: 200px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .application-wrapper.has-playlist {
     width: calc(100% - 200px - 350px);
     margin: 0 350px 0 200px;
@@ -284,7 +284,7 @@ ul {
     font-size: 3em;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .header-icon.fa-angle-left {
     display: none;
   }
@@ -462,7 +462,7 @@ ul {
     height: 200px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .player-cover-image {
     width: 250px;
     height: 250px;
@@ -504,7 +504,7 @@ ul {
     font-size: 1.3em;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .player-info {
     font-size: 1.4em;
   }
@@ -655,7 +655,7 @@ ul {
     font-size: 1em;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .player-volume-control {
     top: 72vh;
     left: calc(38vw + 200px);
@@ -706,7 +706,7 @@ ul {
     width: 350px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .playlist {
     -webkit-transform: translateX(0vw);
             transform: translateX(0vw);
@@ -801,4 +801,61 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   font-size: 0.8em;
+}
+.series-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.series-list-item {
+  width: 50%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-list-item {
+    width: 33.333333333333336%;
+  }
+}
+@media screen and (min-width: 480px) {
+  .series-list-item {
+    width: 33.333333333333336%;
+  }
+}
+.series-list-image {
+  width: 100%;
+  margin-bottom: -0.2em;
+}
+.series-list-info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(52,152,219,0.7);
+  padding: 0.5em;
+  max-height: 1em;
+}
+.series-list-info-title {
+  width: calc(100% - 1em);
+  max-width: calc(100% - 1em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  color: #fff;
+  font-weight: 200;
+  font-size: 0.9em;
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-list-info-title {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 480px) {
+  .series-list-info-title {
+    font-size: 1.1em;
+  }
 }
