@@ -859,6 +859,54 @@
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
+	"\/design\/styles\/components\/series-individual\/index.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/series-individual\/index.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/index.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
+	"\/design\/styles\/components\/series-individual\/series-individual.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/series-individual\/series-individual.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/series-individual.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
+	"\/design\/styles\/components\/series-individual\/series-release-item.styl": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"fileType": 8,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"importCSS": 0,
+		"inputAbbreviatedPath": "\/design\/styles\/components\/series-individual\/series-release-item.styl",
+		"outputAbbreviatedPath": "\/dist\/css\/series-release-item.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
 	"\/design\/styles\/components\/series-list\/index.styl": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -1139,6 +1187,28 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/design\/views\/components\/series-individual\/series-individual.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/series-individual\/series-individual.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/series-individual.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/design\/views\/components\/series-individual\/series-release-item.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/components\/series-individual\/series-release-item.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/series-release-item.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/design\/views\/components\/series-list\/series-list-item.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -1168,6 +1238,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/design\/views\/player.jade",
 		"outputAbbreviatedPath": "\/dist\/html\/player.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/design\/views\/series-individual.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/design\/views\/series-individual.jade",
+		"outputAbbreviatedPath": "\/dist\/html\/series-individual.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0

@@ -312,7 +312,6 @@ ul {
   .header-title {
     padding: 0.25em 0;
     color: #323232;
-    text-transform: lowercase;
   }
 }
 .header-search {
@@ -887,6 +886,112 @@ ul {
   .series-list-info-title {
     font-size: 0.9em;
   }
+}
+.series-individual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: calc(100vh - 8em);
+  width: 100%;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1025px) {
+  .series-individual {
+    padding: 2em;
+  }
+}
+.series-individual-image {
+  display: none;
+  min-width: 30%;
+  width: 30%;
+  max-width: 30%;
+  min-height: 30%;
+  height: 30%;
+  max-height: 30%;
+}
+@media screen and (min-width: 1025px) {
+  .series-individual-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.series-individual-releases {
+  max-height: calc(100vh - 10em);
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .series-individual-releases {
+    padding: 0;
+    padding-left: 4em;
+  }
+}
+.series-individual-releases-title {
+  color: #4f4e4e;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #373737;
+  margin-bottom: 1em;
+}
+.series-individual-releases-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.series-release-item {
+  width: 50%;
+  max-width: 50%;
+}
+@media screen and (min-width: 480px) {
+  .series-release-item {
+    width: 33.333333333333336%;
+    max-width: 33.333333333333336%;
+  }
+}
+@media screen and (min-width: 780px) {
+  .series-release-item:hover {
+    box-shadow: 0 0 3px 2px rgba(52,152,219,0.8);
+    z-index: 1;
+  }
+}
+.series-release-item-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.series-release-cover {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.series-release-type {
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(52,152,219,0.8);
+  color: #fff;
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .search {
   display: none;

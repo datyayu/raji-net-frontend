@@ -1,0 +1,49 @@
+.series-individual
+    display: flex
+    align-items: center
+    max-height: calc(100vh - 8em)
+    width: 100%
+    box-sizing: border-box
+
+    +at-hd-desktop()
+        padding: 2em
+
+
+.series-individual-image
+    display: none
+    min-width: 30%
+    width: 30%
+    max-width: 30%
+    min-height: 30%
+    height: 30%
+    max-height: 30%
+
+    +at-hd-desktop()
+        display: flex
+
+
+.series-individual-releases
+    max-height: calc(100vh - 10em)
+    box-sizing: border-box
+    width: 90%
+    margin: 0 auto
+    
+    +at-hd-desktop()
+        padding: 0
+        padding-left: 4em
+
+
+.series-individual-releases-title
+    color: color--normal-text
+    font-size: 2em
+    font-weight: 400
+    text-align: center 
+    margin: 0
+    padding: .5em 0
+    border-bottom: 1px solid color--divider
+    margin-bottom: 1em
+
+
+.series-individual-releases-list
+    display: flex
+    flex-wrap: wrap

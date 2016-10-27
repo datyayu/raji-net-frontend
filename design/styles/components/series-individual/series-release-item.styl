@@ -1,0 +1,39 @@
+.series-release-item
+    width: 50%
+    max-width: 50%
+
+    +at-tablet()
+        width: (100/3)%
+        max-width: (100/3)%
+
+    +at-desktop()
+        &:hover
+            box-shadow: 0 0 3px 2px rgba(color--brand-primary, .8)
+            z-index: 1
+
+.series-release-item-link
+    display: block
+    width: 100%
+    height: 100%
+    position: relative
+
+
+.series-release-cover
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+
+
+.series-release-type
+    ellipsis-overflow(100%)
+    background: rgba(color--brand-primary, .8)
+    color: white
+    font-weight: 200
+    text-align: center
+    margin: 0
+    padding: .5em 1em
+    box-sizing: border-box
+    position: absolute
+    bottom: 0
+    left: 0
