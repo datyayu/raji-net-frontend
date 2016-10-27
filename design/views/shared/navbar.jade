@@ -1,3 +1,9 @@
+- var links = []
+- links.push({ text: 'now playing', href: '/dist/html/player.html' })
+- links.push({ text: 'series', href: '/dist/html/series-list.html' })
+- links.push({ text: 'playlists', href: '/dist/html/playlist-list.html' })
+- links.push({ text: 'seasons', href: '/dist/html/season-list.html' })
+
 div.navbar
     nav.navbar-nav
         a(href="#").navbar-logo
@@ -5,12 +11,7 @@ div.navbar
             img.navbar-logo-image(src="/dist/images/logo.svg")
 
         ul.navbar-list
-            li.navbar-list-item.is-active
-                a(href="/dist/html/player.html").navbar-list-link
-                    span.navbar-list-text now playing
-            li.navbar-list-item
-                a(href="/dist/html/series-list.html").navbar-list-link
-                    span.navbar-list-text series
-            li.navbar-list-item
-                a(href="#").navbar-list-link
-                    span.navbar-list-text playlists
+            - for link in links
+                li.navbar-list-item.is-active
+                    a(href="#{link.href}").navbar-list-link
+                        span.navbar-list-text #{link.text}

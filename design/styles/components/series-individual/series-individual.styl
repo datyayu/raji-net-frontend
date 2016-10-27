@@ -6,7 +6,7 @@
     box-sizing: border-box
 
     +at-hd-desktop()
-        padding: 2em
+        padding: 0em 2em
 
 
 .series-individual-image
@@ -23,7 +23,7 @@
 
 
 .series-individual-releases
-    max-height: calc(100vh - 10em)
+    max-height: calc(100vh - 12.5em)
     box-sizing: border-box
     width: 90%
     margin: 0 auto
@@ -41,9 +41,13 @@
     margin: 0
     padding: .5em 0
     border-bottom: 1px solid color--divider
-    margin-bottom: 1em
+    margin-bottom: .5em
+    box-sizing: border-box
 
 
 .series-individual-releases-list
     display: flex
     flex-wrap: wrap
+    overflow-y: auto
+    max-height: calc(100vh - 12.5em - 1em - .5em) // container size - title - title padding - title margin
+    height: 100%

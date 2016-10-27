@@ -1,0 +1,31 @@
+.playlist-list-item-data
+    display: flex
+    color: white
+    align-items: center
+    width: 100%
+
+    +at-hd-desktop()
+        width: 50%
+
+
+.playlist-list-item-info
+    width: calc(100% - 100px - 1em) // 75px image + .5em margin * 2 sides
+    font-size: 1em
+
+
+.playlist-list-item-title
+    ellipsis-overflow(calc(100% - .5em))
+    margin: 0 .25em
+    box-sizing: border-box
+
+
+.playlist-list-item-text
+    ellipsis-overflow(calc(100%- 1em))
+    box-sizing: border-box
+    margin: .25em .5em
+    color: color--clear-text
+
+
+.playlist-list-item-image
+    width: 100px
+    height: 100px
