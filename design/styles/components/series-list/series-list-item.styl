@@ -1,5 +1,6 @@
 .series-list-item
     width: 50%
+    display: block
     position: relative
     cursor: pointer
     overflow: hidden
@@ -9,6 +10,14 @@
 
     +at-tablet()
         width: (100/3)%
+
+    +at-desktop()
+        margin: .25%
+        width: 24.5%    
+        
+    +at-hd-desktop()
+        margin: .20%
+        width: 19.60%
 
 .series-list-image
     width: 100%
@@ -35,3 +44,6 @@
 
     +at-tablet()
         font-size: 1.1em
+
+    +at-desktop()
+        font-size: .9em
