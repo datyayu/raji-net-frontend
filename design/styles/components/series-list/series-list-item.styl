@@ -13,11 +13,16 @@
 
     +at-desktop()
         margin: .25%
-        width: 24.5%    
-        
+        width: 24.5%
+
+        &:hover
+            box-shadow: 0 0 3px 2px rgba(color--brand-primary, .8)
+
     +at-hd-desktop()
         margin: .20%
         width: 19.60%
+    
+    
 
 .series-list-image
     width: 100%
@@ -30,7 +35,7 @@
     left: 0
     background: rgba(color--brand-primary, .7)
     padding: .5em
-    max-height: 1em
+    height: 1em
 
 .series-list-info-title
     ellipsis-overflow(calc(100% - 1em))
