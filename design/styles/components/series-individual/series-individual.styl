@@ -48,6 +48,8 @@
 .series-individual-releases-list
     display: flex
     flex-wrap: wrap
-    overflow-y: auto
-    max-height: calc(100vh - 12.5em - 1em - .5em) // container size - title - title padding - title margin
     height: 100%
+
+    +at-desktop()
+        overflow-y: auto
+        max-height: calc(100vh - 12.5em - 1em - .5em) // container size - title - title padding - title margin

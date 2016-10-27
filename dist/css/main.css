@@ -597,7 +597,7 @@ ul {
   }
 }
 .player-controls {
-  margin-top: 1em;
+  margin: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -889,6 +889,18 @@ ul {
   padding: 1em;
   box-sizing: border-box;
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .series-album-cover {
   width: 100%;
   margin: 0 auto;
@@ -897,6 +909,13 @@ ul {
 @media screen and (min-width: 480px) {
   .series-album-cover {
     width: 60%;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album-cover {
+    width: 200px;
+    height: 200px;
+    margin: 0;
   }
 }
 .series-album-cover-image {
@@ -918,6 +937,11 @@ ul {
   bottom: 0.2em;
   left: 0;
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album-cover-icons {
+    bottom: 0em;
+  }
+}
 .series-album-cover-icon {
   font-size: 2em;
 }
@@ -929,6 +953,11 @@ ul {
 @media screen and (min-width: 780px) {
   .series-album-cover-icon {
     font-size: 2.5em;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album-cover-icon {
+    font-size: 2em;
   }
 }
 .series-album-info {
@@ -955,6 +984,11 @@ ul {
     font-size: 2em;
   }
 }
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album-info-text {
+    font-size: 1.5em;
+  }
+}
 .series-album-info-title {
   width: 100%;
   max-width: 100%;
@@ -974,6 +1008,11 @@ ul {
 @media screen and (min-width: 480px) {
   .series-album-info-title {
     font-size: 2.5em;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 640px) {
+  .series-album-info-title {
+    font-size: 1.8em;
   }
 }
 .series-individual {
@@ -1037,9 +1076,13 @@ ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  overflow-y: auto;
-  max-height: calc(100vh - 12.5em - 1em - 0.5em);
   height: 100%;
+}
+@media screen and (min-width: 780px) {
+  .series-individual-releases-list {
+    overflow-y: auto;
+    max-height: calc(100vh - 12.5em - 1em - 0.5em);
+  }
 }
 .series-release-item {
   width: 50%;
@@ -1105,14 +1148,9 @@ ul {
   cursor: pointer;
   overflow: hidden;
 }
-@media screen and (orientation: landscape) and (max-width: 640px) {
-  .series-list-item {
-    width: 33.333333333333336%;
-  }
-}
 @media screen and (min-width: 480px) {
   .series-list-item {
-    width: 33.333333333333336%;
+    width: 25%;
   }
 }
 @media screen and (min-width: 780px) {
@@ -1143,6 +1181,16 @@ ul {
   padding: 0.5em;
   height: 1em;
 }
+@media screen and (min-width: 480px) {
+  .series-list-info {
+    height: 1.4em;
+  }
+}
+@media screen and (min-width: 780px) {
+  .series-list-info {
+    height: 1em;
+  }
+}
 .series-list-info-title {
   width: calc(100% - 1em);
   max-width: calc(100% - 1em);
@@ -1161,7 +1209,7 @@ ul {
 }
 @media screen and (min-width: 480px) {
   .series-list-info-title {
-    font-size: 1.1em;
+    font-size: 1.4em;
   }
 }
 @media screen and (min-width: 780px) {

@@ -5,11 +5,8 @@
     cursor: pointer
     overflow: hidden
 
-    +at-phone-landscape()
-        width: (100/3)%
-
     +at-tablet()
-        width: (100/3)%
+        width: 25%
 
     +at-desktop()
         margin: .25%
@@ -37,6 +34,12 @@
     padding: .5em
     height: 1em
 
+    +at-tablet()
+        height: 1.4em
+
+    +at-desktop()
+        height: 1em
+
 .series-list-info-title
     ellipsis-overflow(calc(100% - 1em))
     margin: 0
@@ -48,7 +51,7 @@
         font-size: 1em
 
     +at-tablet()
-        font-size: 1.1em
+        font-size: 1.4em
 
     +at-desktop()
         font-size: .9em

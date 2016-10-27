@@ -6,6 +6,11 @@
     +at-tablet()
         width: 60%
 
+    +at-phone-landscape()
+        width: 200px
+        height: 200px
+        margin: 0 
+
 
 .series-album-cover-image
     width: 100%
@@ -24,7 +29,8 @@
     bottom: .2em
     left: 0
 
-        
+    +at-phone-landscape()
+        bottom: 0em  
 
 .series-album-cover-icon
     font-size: 2em
@@ -34,3 +40,6 @@
 
     +at-desktop()
         font-size: 2.5em
+
+    +at-phone-landscape()
+        font-size: 2em    
