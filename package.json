@@ -1,0 +1,25 @@
+{
+  "name": "raji-net-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:datyayu/raji-net-frontend.git",
+    "type": "git"
+  },
+  "author": "Arturo Coronel <aoitsu3@gmail.com>",
+  "license": "MIT"
+}
