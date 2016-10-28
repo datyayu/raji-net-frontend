@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Seasons | raji</title>
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/dist/css/main.css">
+  </head>
+  <body>
+    <div class="application">
+      <div class="navbar">
+        <nav class="navbar-nav"><a href="#" class="navbar-logo">
+            <h1 class="navbar-logo-text">raji</h1><img src="/dist/images/logo.svg" class="navbar-logo-image"></a>
+          <ul class="navbar-list">
+            <li class="navbar-list-item is-active"><a href="/dist/html/player.html" class="navbar-list-link"><span class="navbar-list-text">now playing</span></a></li>
+            <li class="navbar-list-item is-active"><a href="/dist/html/series-list.html" class="navbar-list-link"><span class="navbar-list-text">series</span></a></li>
+            <li class="navbar-list-item is-active"><a href="/dist/html/playlist-list.html" class="navbar-list-link"><span class="navbar-list-text">playlists</span></a></li>
+            <li class="navbar-list-item is-active"><a href="/dist/html/season-list.html" class="navbar-list-link"><span class="navbar-list-text">seasons</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="application-wrapper">
+        <div class="header">
+          <div class="header-content"><i class="header-icon fa fa-bars js-toggle-sidenav"></i>
+            <h1 class="header-title">Seasons</h1>
+          </div>
+          <div class="header-search"><i class="header-icon fa fa-close js-toggle-search"></i>
+            <input type="text" class="header-search-input">
+          </div>
+        </div>
+        <div class="application-content">
+          <div class="season-list-container">
+            <ul class="season-list"><a href="/dist/html/series-list.html" class="season-list-item"><img src="/dist/images/sample-season.jpg" class="season-list-item-image"></a><a href="/dist/html/series-list.html" class="season-list-item"><img src="/dist/images/sample-season.jpg" class="season-list-item-image"></a><a href="/dist/html/series-list.html" class="season-list-item"><img src="/dist/images/sample-season.jpg" class="season-list-item-image"></a><a href="/dist/html/series-list.html" class="season-list-item"><img src="/dist/images/sample-season.jpg" class="season-list-item-image"></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="application-overlay js-application-overlay"></div>
+    </div>
+    <script type="text/javascript" src="/dist/js/header-events.js"></script>
+  </body>
+</html>

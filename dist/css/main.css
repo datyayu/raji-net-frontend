@@ -884,6 +884,24 @@ ul {
 .playlist-list-item-top-list {
   text-align: center;
 }
+.season-list {
+  width: 100%;
+}
+.season-list-item {
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 1em auto;
+  padding: -1em;
+}
+.season-list-item:hover {
+  box-shadow: 0px 0px 6px 2px rgba(52,152,219,0.7);
+}
+.season-list-item-image {
+  width: 100%;
+  vertical-align: middle;
+}
 .series-album {
   width: 100%;
   padding: 1em;
