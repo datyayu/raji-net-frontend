@@ -1,15 +1,7 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
+**/.DS_Store
+bower_components
 node_modules
-
-# testing
-coverage
-
-# production
+.codekit-cache
+.vscode
+config.codekit
 build
-
-# misc
-.DS_Store
-.env
-npm-debug.log
