@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Sidenav } from './components';
-
+import { Sidenav, Header } from './components';
 
 const links = [
     { text: 'now playing', href: '/dist/html/player.html' },
@@ -11,8 +10,12 @@ const links = [
 ];
 
 
-export const App = () => (
-    <div>
+export const App = ({ hasPlaylist = false }) => (
+    <div className="application">
         <Sidenav links={links} />
+
+        <div className={`application-wrapper ${hasPlaylist ? 'has-playlist' : ''}`}>
+            <Header />
+        </div>
     </div>
 );
