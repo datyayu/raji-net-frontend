@@ -4,9 +4,21 @@ import { HeaderContent } from './header-content';
 import { HeaderSearch } from './header-search';
 
 
-export const Header = ({ title='raji', hasPlaylist=false, hasSearch=false }) => (
-    <div className="header">
-        <HeaderContent title={title} hasPlaylist={hasPlaylist} hasSearch={hasSearch} />
-        <HeaderSearch />
-    </div>
-);
+export function Header({ 
+    title='raji', 
+    hasPlaylist=false, 
+    hasSearch=false,
+    onNavIconClick=()=>{},
+}) {
+    return (
+        <div className="header">
+            <HeaderContent 
+                title={title} 
+                hasPlaylist={hasPlaylist} 
+                hasSearch={hasSearch} 
+                onNavIconClick={onNavIconClick} />
+
+            <HeaderSearch />
+        </div>
+    );
+};
