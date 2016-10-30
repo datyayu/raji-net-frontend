@@ -10,7 +10,10 @@ export function SidenavContainer(WrappedComponent) {
             const isActive = SidenavSelectors.isActive();
             
             return (
-                <WrappedComponent isActive={isActive} links={links} />
+                <WrappedComponent {...this.props}
+                    isActive={isActive} 
+                    links={links} 
+                />
             );
         }
     }

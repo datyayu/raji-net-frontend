@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Icon } from '../shared';
+
 
 export function HeaderContent({ 
     title='raji', 
@@ -9,16 +11,16 @@ export function HeaderContent({
 }) {
     return (
         <div className="header-content">
-            <i className="header-icon fa fa-bars" onClick={onNavIconClick} />
+            <Icon type="bars" className="header-icon" onClick={onNavIconClick} />
             
             <h1 className="header-title"> {title} </h1>
 
             { hasPlaylist &&
-                <i className="header-icon fa fa-angle-left" />
+                <Icon type="angle-left" className="header-icon" />
             }
 
             { hasSearch &&
-                <i className="header-icon fa fa-search" />
+                <Icon type="search" className="header-icon" />
             }
         </div>
     );

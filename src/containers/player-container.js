@@ -6,15 +6,24 @@ import { PlayerSelectors } from '../selectors';
 export function PlayerContainer(WrappedComponent) {
     class PlayerWrappedComponent extends Component {
         render() {
-            const prevTrack    = PlayerSelectors.getPrevTrack();
-            const currentTrack = PlayerSelectors.getCurrentTrack();
-            const nextTrack    = PlayerSelectors.getNextTrack();
+            const volumeLevel = PlayerSelectors.getVolumeLevel();
+            const isPlaying   = PlayerSelectors.isPlaying();
+            const isMuted     = PlayerSelectors.isMuted();
+            const isRandom    = PlayerSelectors.isRandom();
+
+            const currentPlayingTime = PlayerSelectors.getCurrentPlayingTime();
+            const currentPlayingProgress = PlayerSelectors.getCurrentPlayingProgress();
+            const totalPlayingTime = PlayerSelectors.getTotalPlayingTime();
             
             return (
-                <WrappedComponent 
-                    prevTrack={prevTrack} 
-                    currentTrack={currentTrack}
-                    nextTrack={nextTrack} 
+                <WrappedComponent {...this.props}
+                    isPlaying={isPlaying}
+                    isRandom={isRandom}
+                    isMuted={isMuted}
+                    volume={volumeLevel}
+                    currentPlayingTime={currentPlayingTime}
+                    currentPlayingProgress={currentPlayingProgress}
+                    totalPlayingTime={totalPlayingTime}
                 />
             );
         }

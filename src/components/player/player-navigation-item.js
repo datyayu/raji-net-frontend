@@ -1,14 +1,20 @@
 import React from 'react';
 
+import { Icon } from '../shared';
 
-export function PlayerNavigationItem({ track, isPrev=false, isNext=false }) {
+
+export function PlayerNavigationItem({ 
+    track,
+    isPrev=false,
+    isNext=false
+}) {
     const title = track.name;
     const artists = track.artists.join(', ');
 
     return (
         <div className="player-navigation-item">
             { isPrev &&
-                <i className="player-navigation-icon fa fa-angle-left" />
+                <Icon type="angle-left" className="player-navigation-icon" />
             }
 
             <div className="player-navigation-info">
@@ -17,7 +23,7 @@ export function PlayerNavigationItem({ track, isPrev=false, isNext=false }) {
             </div>
 
             { isNext &&
-                <i className="player-navigation-icon fa fa-angle-right" />
+                <Icon type="angle-right" className="player-navigation-icon" />
             }
         </div>
     );

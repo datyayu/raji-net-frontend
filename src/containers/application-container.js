@@ -10,7 +10,10 @@ export function ApplicationContainer(WrappedComponent) {
             const pageTitle = ApplicactionSelectors.getPageTitle();
             
             return (
-                <WrappedComponent hasPlaylist={pageHasPlaylist} title={pageTitle} />
+                <WrappedComponent {...this.props}
+                    hasPlaylist={pageHasPlaylist} 
+                    title={pageTitle}
+                />
             );
         }
     }

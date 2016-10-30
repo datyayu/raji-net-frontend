@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { PlayerCover } from './player-cover';
+import { PlayerInfo } from './player-info';
 
 export function PlayerData({ track }) {
-    console.log(track)
-    return (
+    return (track &&
         <div className="player-data">
-            <PlayerCover album={track && track.album } />
+            <PlayerCover album={track.album } />
+            <PlayerInfo track={track} />
         </div>
     );
 };

@@ -1,10 +1,16 @@
 import React from 'react';
+import { compose } from 'redux';
 
 import { Player as PlayerComponent } from '../components';
-import { PlayerContainer } from '../containers';
+import { PlayerContainer, PlaylistContainer } from '../containers';
 
 
-const Player = PlayerContainer(PlayerComponent);
+const combinedContainer = compose(
+    PlayerContainer, 
+    PlaylistContainer,
+);
+
+const Player = combinedContainer(PlayerComponent);
 
 
 export function PlayerPage() {
