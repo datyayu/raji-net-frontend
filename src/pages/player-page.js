@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { PlayerNavigation as PlayerNavigationComponent } from '../components';
-import { PlayerNavigationContainer } from '../containers';
+import { Player as PlayerComponent } from '../components';
+import { PlayerContainer } from '../containers';
 
 
-const PlayerNavigation = PlayerNavigationContainer(PlayerNavigationComponent);
+const Player = PlayerContainer(PlayerComponent);
 
 
 export function PlayerPage() {
     return (
         <div className="player">
-            <PlayerNavigation />
+            <Player />
         </div>
     );
 }

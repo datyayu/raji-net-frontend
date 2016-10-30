@@ -1,6 +1,6 @@
 export class SidenavSelectors {
     static isActive(state) {
-        return true;
+        return false;
     }
 
     static getLinks(state) {
