@@ -4,5 +4,6 @@ export * from './player';
 export * from './playlist';
 export * from './playlist-list';
 export * from './shared';
+export * from './series';
 export * from './series-list';
 export * from './sidenav';
