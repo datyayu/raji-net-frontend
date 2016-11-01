@@ -1,14 +1,23 @@
+// @flow
 import React from 'react';
 
 import { Icon } from '../shared';
 
 
-export function HeaderContent({ 
+type HeaderContentProps = {
+    title: string;
+    hasPlaylist: boolean;
+    hasSearch: boolean;
+    onNavIconClick: (ev: Event) => any;
+}
+
+
+export function HeaderContent({
     title='raji', 
     hasPlaylist=false, 
     hasSearch=false,
     onNavIconClick=()=>{},
-}) {
+}: HeaderContentProps) {
     return (
         <div className="header-content">
             <Icon type="bars" className="header-icon" onClick={onNavIconClick} />

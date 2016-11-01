@@ -1,12 +1,19 @@
+// @flow
 import React from 'react';
 
 import { Icon } from './icon';
 
 
+type SearchProps = {
+    value: string;
+    onChange: (ev: Event) => any;
+}
+
+
 export function Search({
     value='',
     onChange=()=>{} 
-}) {
+}: SearchProps) {
     return (
         <div className="search">
             <div className="search-input-wrapper">

@@ -1,24 +1,19 @@
+// @flow
 import React from 'react';
 import { BrowserRouter as Router, Match, Miss } from 'react-router';
 
 import * as Pages from './pages';
 import { ApplicationContainer, SidenavContainer } from './containers';
-import { 
-    Sidenav as SidenavComponent, 
-    Header as HeaderComponent, 
-    MobileOverlay as MobileOverlayComponent 
-} from './components';
+import { Sidenav as SidenavComp, Header as HeaderComp, MobileOverlay as MobileOverlayComp} from './components';
 
 
-const Sidenav = SidenavContainer(SidenavComponent);
-const MobileOverlay = SidenavContainer(MobileOverlayComponent);
-const Header = ApplicationContainer(HeaderComponent);
+const Sidenav = SidenavContainer(SidenavComp);
+const MobileOverlay = SidenavContainer(MobileOverlayComp);
+const Header = ApplicationContainer(HeaderComp);
 
 
-function AppComponent({
-    hasPlaylist = false,
-}) {
-    const wrapperStyleClasses = hasPlaylist
+function AppComponent({ hasPlaylist=false }: { hasPlaylist: boolean }) {
+    const wrapperStyleClasses: string = hasPlaylist
         ? 'application-wrapper has-playlist'
         : 'application-wrapper';
 
@@ -32,8 +27,6 @@ function AppComponent({
                     <MobileOverlay />
 
                     <div className="application-content">
-                        {/* TODO: REPLACE THIS WITH ROUTER */}
-
                         <Match exactly pattern="/" component={Pages.PlayerPage} />
                         <Match exactly pattern="/player" component={Pages.PlayerPage} />
                         <Match exactly pattern="/series" component={Pages.SeriesListPage} />

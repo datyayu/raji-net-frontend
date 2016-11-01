@@ -1,11 +1,19 @@
+// @flow
 import React from 'react';
+
+
+type PlayerSeekBarProps = {
+    currentTime: string;
+    totalTime: string;
+    progress: number;
+}
 
 
 export function PlayerSeekBar({ 
     currentTime='0:00', 
     totalTime='Loading...', 
     progress=0,
-}) {
+}: PlayerSeekBarProps) {
     return (
         <div className="player-seek-bar">
             <div className="player-seek-bar-total-bar">
