@@ -1,6 +1,6 @@
 export class ApplicactionSelectors {
     static pageHasPlaylist() {
-        return false;
+        return true;
     }
 
     static getPageTitle() {

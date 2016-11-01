@@ -3,6 +3,7 @@ export * from './overlay';
 export * from './player';
 export * from './playlist';
 export * from './playlist-list';
+export * from './release';
 export * from './shared';
 export * from './series';
 export * from './series-list';
