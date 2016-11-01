@@ -11,7 +11,7 @@ const Playlist = PlaylistContainer(PlaylistComponent);
 
 export function ReleasePage() {
     return (
-        <div className="playlist-list-container">
+        <div>
             <Release />
             <Playlist />
         </div>

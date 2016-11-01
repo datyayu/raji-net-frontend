@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReleasePage } from './pages';
+import { SeasonListPage } from './pages';
 import { ApplicationContainer, SidenavContainer } from './containers';
 import { 
     Sidenav as SidenavComponent, 
@@ -31,7 +31,7 @@ function AppComponent({
 
                 <div className="application-content">
                     {/* TODO: REPLACE THIS WITH ROUTER */}
-                    <ReleasePage />
+                    <SeasonListPage />
                 </div>
             </div>
         </div>

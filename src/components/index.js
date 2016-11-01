@@ -4,7 +4,8 @@ export * from './player';
 export * from './playlist';
 export * from './playlist-list';
 export * from './release';
-export * from './shared';
+export * from './season-list'
 export * from './series';
 export * from './series-list';
+export * from './shared';
 export * from './sidenav';
