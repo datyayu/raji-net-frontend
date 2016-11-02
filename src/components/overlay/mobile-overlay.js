@@ -3,19 +3,19 @@ import React from 'react';
 
 type MobileOverlayProps = {|
     isActive: boolean;
-    onClick?: (ev: Event) => any;
+    closeSidenav?: (ev: Event) => any;
 |} 
 
 
 export function MobileOverlay({ 
     isActive = false, 
-    onClick=()=>{},
+    closeSidenav=()=>{},
 }: MobileOverlayProps) {
     const styleClasses = isActive 
         ? "application-overlay is-active"
         : 'application-overlay';
 
     return (
-       <div className={styleClasses} onClick={onClick} />
+       <div className={styleClasses} onClick={closeSidenav} />
     );
 };

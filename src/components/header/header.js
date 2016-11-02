@@ -9,7 +9,7 @@ type HeaderProps = {|
     title: string;
     hasPlaylist: boolean;
     hasSearch: boolean;
-    onNavIconClick: (ev: Event) => any;
+    openSidenav: (ev: Event) => any;
 |}
 
 
@@ -17,7 +17,7 @@ export function Header({
     title='raji', 
     hasPlaylist=false, 
     hasSearch=false,
-    onNavIconClick=()=>{},
+    openSidenav=()=>{},
 }: HeaderProps) {
     return (
         <div className="header">
@@ -25,7 +25,7 @@ export function Header({
                 title={title} 
                 hasPlaylist={hasPlaylist} 
                 hasSearch={hasSearch} 
-                onNavIconClick={onNavIconClick} />
+                onNavIconClick={openSidenav} />
 
             <HeaderSearch />
         </div>

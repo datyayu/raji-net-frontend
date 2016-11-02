@@ -1,23 +1,29 @@
 // @flow
-import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { SidenavSelectors } from '../selectors';
+import { SidenavActions } from '../actions';
+
+import type { ApplicationState } from '../reducers';
 
 
 export function SidenavContainer(WrappedComponent: ReactClass<any>) {
-    class SidenavWrappedComponent extends Component {
-        render() {
-            const links = SidenavSelectors.getLinks();
-            const isActive = SidenavSelectors.isActive();
-            
-            return (
-                <WrappedComponent {...this.props}
-                    isActive={isActive} 
-                    links={links} 
-                />
-            );
-        }
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { links: SidenavSelectors.getLinks(state)
+            , isActive: SidenavSelectors.isActive(state)
+            }
+        );
     }
 
-    return SidenavWrappedComponent;
+    function mapActionsToProps(dispatch) {
+        return bindActionCreators(
+            { openSidenav: SidenavActions.openSidenav
+            , closeSidenav: SidenavActions.closeSidenav
+            }
+        , dispatch);
+    }
+
+    return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
 };

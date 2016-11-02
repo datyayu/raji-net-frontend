@@ -1,7 +1,9 @@
 // @flow
-import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { ApplicactionSelectors } from '../selectors';
+
+import type { ApplicationState } from '../reducers';
 
 
 type ApplicationContainerProps = {
@@ -11,19 +13,14 @@ type ApplicationContainerProps = {
 
 
 export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactClass<ApplicationContainerProps> {
-    class ApplicationWrappedComponent extends Component {
-        render() {
-            const pageHasPlaylist: boolean = ApplicactionSelectors.pageHasPlaylist();
-            const pageTitle: string = ApplicactionSelectors.getPageTitle();
-            
-            return (
-                <WrappedComponent {...this.props}
-                    hasPlaylist={pageHasPlaylist} 
-                    title={pageTitle}
-                />
-            );
-        }
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { hasPlaylist: ApplicactionSelectors.pageHasPlaylist(state)
+            , title: ApplicactionSelectors.getPageTitle(state)
+            }
+        );
     }
 
-    return ApplicationWrappedComponent;
+
+    return connect(mapStateToProps)(WrappedComponent);
 };

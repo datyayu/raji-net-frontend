@@ -9,7 +9,7 @@ import { Sidenav as SidenavComp, Header as HeaderComp, MobileOverlay as MobileOv
 
 const Sidenav = SidenavContainer(SidenavComp);
 const MobileOverlay = SidenavContainer(MobileOverlayComp);
-const Header = ApplicationContainer(HeaderComp);
+const Header = SidenavContainer(ApplicationContainer(HeaderComp));
 
 
 function AppComponent({ hasPlaylist=false }: { hasPlaylist: boolean }) {
