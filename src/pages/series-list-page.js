@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import { Search as SearchComponent, SeriesList as SeriesListComponent } from '../components';

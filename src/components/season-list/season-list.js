@@ -1,9 +1,16 @@
+// @flow
 import React from 'react';
 
 import { SeasonListItem } from './season-list-item';
+import type { SeasonModel } from '../../models';
 
 
-export function SeasonList({ seasonList=[] }) {
+type SeasonListProps = {
+    seasonList: SeasonModel[];
+}
+
+
+export function SeasonList({ seasonList=[] }: SeasonListProps) {
     return (
         <div className="season-list">
             { seasonList.map((season, idx) =>
@@ -11,4 +18,4 @@ export function SeasonList({ seasonList=[] }) {
             )}
         </div>
     );
-}
+};

@@ -1,19 +1,28 @@
+// @flow
 import seriesDefaultImage from '../assets/images/sample-series.jpg';
 import albumDefaultImage from '../assets/images/sample-album.jpg';
 
-const mockRelease =
-    { name: 'hello world'
+import type { AlbumModel, SeriesModel } from '../models';
+
+
+const mockRelease: AlbumModel =
+    { id: 1
+    , name: 'hello world'
     , image: albumDefaultImage
     , artists: ['Iguchi Yuka']
     , singleType: 'OP Single'
+    , length: 2
+    , plays: 33233
+    , year: 2015
     }
 ;
 
 
 export class SeriesIndividualSelectors {
-    static getSeries() {
+    static getSeries(): SeriesModel {
         return ( 
-            { name: 'Dungeon de deai ni motomeru machigaiteru darou ka?'
+            { id: 3
+            , name: 'Dungeon de deai ni motomeru machigaiteru darou ka?'
             , image: seriesDefaultImage
             , releases:  
                 [ mockRelease
@@ -24,7 +33,7 @@ export class SeriesIndividualSelectors {
         );
     }
 
-    static getSeriesReleases() {
+    static getSeriesReleases(): AlbumModel[] {
         return [
             mockRelease,
             mockRelease,

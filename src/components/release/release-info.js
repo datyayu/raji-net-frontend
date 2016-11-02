@@ -1,7 +1,15 @@
+// @flow
 import React from 'react';
 
+import type { AlbumModel } from '../../models';
 
-export function ReleaseInfo({ release }) {
+
+type ReleaseInfoProps = {
+    release: AlbumModel;
+}
+
+
+export function ReleaseInfo({ release }: ReleaseInfoProps) {
     return (
         <div className="series-album-info">
             <h2 className="series-album-info-title"> {release.name} </h2>
@@ -10,4 +18,4 @@ export function ReleaseInfo({ release }) {
             <h4 className="series-album-info-text"> {release.year} </h4>
         </div>
     );
-}
+};

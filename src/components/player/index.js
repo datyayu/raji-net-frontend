@@ -1,3 +1,4 @@
+// @flow
 export * from './player';
 export * from './player-cover';
 export * from './player-data';

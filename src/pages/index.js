@@ -1,3 +1,4 @@
+// @flow
 export * from './player-page';
 export * from './playlist-list-page';
 export * from './release-page';

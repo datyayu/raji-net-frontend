@@ -1,8 +1,15 @@
+// @flow
 import React from 'react';
 
+import type { AlbumModel } from '../../models';
 
 
-export function PlayerCover({ album }) {
+type PlayerCoverProps = {
+    album: AlbumModel;
+}
+
+
+export function PlayerCover({ album }: PlayerCoverProps) {
     return (
         <div className="player-cover">
             <a className="player-cover-link" href="#">

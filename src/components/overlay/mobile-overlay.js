@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
 
-type MobileOverlayProps = {
+type MobileOverlayProps = {|
     isActive: boolean;
-    onClick: (ev: Event) => any;
-} 
+    onClick?: (ev: Event) => any;
+|} 
 
 
 export function MobileOverlay({ 

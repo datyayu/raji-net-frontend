@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import { Release as ReleaseComponent, Playlist as PlaylistComponent } from '../components';

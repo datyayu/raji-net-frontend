@@ -1,5 +1,6 @@
+// @flow
 export class SearchSelectors {
-    static getSearchValue() {
+    static getSearchValue(): string {
         return '';
     }
 }

@@ -1,9 +1,10 @@
+// @flow
 export class ApplicactionSelectors {
-    static pageHasPlaylist() {
+    static pageHasPlaylist(): boolean {
         return false;
     }
 
-    static getPageTitle() {
+    static getPageTitle(): string {
         return 'series list';
     }
 }

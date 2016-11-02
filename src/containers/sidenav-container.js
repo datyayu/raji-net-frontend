@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 
 import { SidenavSelectors } from '../selectors';
 
 
-export function SidenavContainer(WrappedComponent) {
+export function SidenavContainer(WrappedComponent: ReactClass<any>) {
     class SidenavWrappedComponent extends Component {
         render() {
             const links = SidenavSelectors.getLinks();
@@ -19,4 +20,4 @@ export function SidenavContainer(WrappedComponent) {
     }
 
     return SidenavWrappedComponent;
-}
+};

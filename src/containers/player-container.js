@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 
 import { PlayerSelectors } from '../selectors';
 
 
-export function PlayerContainer(WrappedComponent) {
+export function PlayerContainer(WrappedComponent: ReactClass<any>) {
     class PlayerWrappedComponent extends Component {
         render() {
             const volumeLevel = PlayerSelectors.getVolumeLevel();

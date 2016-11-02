@@ -1,9 +1,16 @@
+// @flow
 import React from 'react';
 
 import { SeriesListItem } from './series-list-item'
+import type { SeriesModel } from '../../models';
 
 
-export function SeriesList({ seriesList=[] }) {
+type SeriesListProps = {
+    seriesList: SeriesModel[];
+}
+
+
+export function SeriesList({ seriesList=[] }: SeriesListProps) {
     return (
         <ul className="series-list">
             {seriesList.map((series, idx) =>
@@ -11,4 +18,4 @@ export function SeriesList({ seriesList=[] }) {
             )}
         </ul>
     );
-}
+};

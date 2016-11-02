@@ -1,11 +1,19 @@
+// @flow
 import React from 'react';
 
 import { Icon } from '../shared';
+import type { TrackModel } from '../../models';
 
 
-export function PlaylistTrackItem({ track, isPlaying=false }) {
-    const iconType = isPlaying ? 'pause' : 'play';
-    const activeClass = isPlaying ? 'is-active' : '';
+type PlaylistTrackItemProps = {
+    track: TrackModel;
+    isPlaying: boolean;
+}
+
+
+export function PlaylistTrackItem({ track, isPlaying=false }: PlaylistTrackItemProps) {
+    const iconType: string = isPlaying ? 'pause' : 'play';
+    const activeClass: string = isPlaying ? 'is-active' : '';
 
     return (
         <li className={`playlist-song ${activeClass}`}>
@@ -21,4 +29,4 @@ export function PlaylistTrackItem({ track, isPlaying=false }) {
             </div>
         </li>
     );
-}
+};

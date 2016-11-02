@@ -1,9 +1,15 @@
+// @flow
 import React from 'react';
 
 import { Icon } from '../shared';
 
+type ReleaseCoverProps = {
+    image: string;
+    alt: string;
+};
 
-export function ReleaseCover({ image, alt }) {
+
+export function ReleaseCover({ image, alt }: ReleaseCoverProps) {
     return (
         <div className="series-album-cover">
             <img className="series-album-cover-image" src={image} alt={alt} />
@@ -15,4 +21,4 @@ export function ReleaseCover({ image, alt }) {
             </div>
         </div>
     );
-}
+};

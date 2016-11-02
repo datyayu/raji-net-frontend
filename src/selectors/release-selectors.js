@@ -1,10 +1,14 @@
+// @flow
 import sampleAlbum from '../assets/images/sample-album.jpg';
+
+import type { AlbumModel } from '../models';
 
 
 export class ReleaseSelectors {
-    static getRelease() {
+    static getRelease(): AlbumModel {
         return (
-            { name: 'hello world'
+            { id: 1
+            , name: 'hello world'
             , image: sampleAlbum
             , artists: ['Iguchi Yuka']
             , singleType: 'OP Single'

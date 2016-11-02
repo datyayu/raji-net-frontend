@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 
 import { SeasonListSelectors } from '../selectors';
 
 
-export function SeasonListContainer(WrappedComponent) {
+export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
     class SeasonListWrappedComponent extends Component {
         render() {
             const seasonList = SeasonListSelectors.getSeasons();
@@ -17,4 +18,4 @@ export function SeasonListContainer(WrappedComponent) {
     }
 
     return SeasonListWrappedComponent;
-}
+};

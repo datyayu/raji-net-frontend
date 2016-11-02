@@ -1,13 +1,20 @@
+// @flow
 import React, { Component } from 'react';
 
 import { ApplicactionSelectors } from '../selectors';
 
 
-export function ApplicationContainer(WrappedComponent) {
+type ApplicationContainerProps = {
+    hasPlaylist: boolean;
+    title: string;
+}
+
+
+export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactClass<ApplicationContainerProps> {
     class ApplicationWrappedComponent extends Component {
         render() {
-            const pageHasPlaylist = ApplicactionSelectors.pageHasPlaylist();
-            const pageTitle = ApplicactionSelectors.getPageTitle();
+            const pageHasPlaylist: boolean = ApplicactionSelectors.pageHasPlaylist();
+            const pageTitle: string = ApplicactionSelectors.getPageTitle();
             
             return (
                 <WrappedComponent {...this.props}
@@ -19,4 +26,4 @@ export function ApplicationContainer(WrappedComponent) {
     }
 
     return ApplicationWrappedComponent;
-}
+};

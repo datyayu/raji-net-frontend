@@ -1,14 +1,22 @@
+// @flow
 import React from 'react';
 
 import { SidenavList } from './sidenav-list';
 import { SidenavLogo } from './sidenav-logo';
+import type { LinkModel } from '../../models';
 
 
-export function Sidenav({ 
+type SidenavProps = {
+    links: LinkModel[];
+    isActive: boolean;
+}
+
+
+export function Sidenav({
     links = [], 
     isActive = false,
-}) {
-    const styleClasses = `navbar ${isActive ? 'is-active' : ''}`
+}: SidenavProps) {
+    const styleClasses: string = `navbar ${isActive ? 'is-active' : ''}`
   
     return (
         <div className={styleClasses}>

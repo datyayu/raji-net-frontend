@@ -1,9 +1,16 @@
+// @flow
 import React from 'react';
 
 import { PlaylistListItem } from './playlist-list-item';
+import type { PlaylistModel } from '../../models';
 
 
-export function PlaylistList({ playlistList=[] }) {
+type PlaylistListProps = {
+    playlistList: PlaylistModel[];
+}
+
+
+export function PlaylistList({ playlistList=[] }: PlaylistListProps) {
     return (
         <ul className="playlist-list">
             {playlistList.map((playlist, idx) => 
@@ -11,4 +18,4 @@ export function PlaylistList({ playlistList=[] }) {
             )}
         </ul>
     );
-}
+};

@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 
 import { PlaylistSelectors } from '../selectors';
 
 
-export function PlaylistContainer(WrappedComponent) {
+export function PlaylistContainer(WrappedComponent: ReactClass<any>) {
     class PlaylistWrappedComponent extends Component {
         render() {
             const currentPlaylist = PlaylistSelectors.getCurrentPlaylist();
@@ -23,4 +24,4 @@ export function PlaylistContainer(WrappedComponent) {
     }
 
     return PlaylistWrappedComponent;
-}
+};

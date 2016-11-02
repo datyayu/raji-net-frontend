@@ -1,13 +1,22 @@
+// @flow
 import React from 'react';
 
 import { Icon } from '../shared';
+import type { TrackModel } from '../../models';
+
+
+type PlayerNavigationItemProps = {
+    track: TrackModel;
+    isPrev?: boolean;
+    isNext?: boolean;
+}
 
 
 export function PlayerNavigationItem({ 
     track,
     isPrev=false,
     isNext=false
-}) {
+}: PlayerNavigationItemProps) {
     const title = track.name;
     const artists = track.artists.join(', ');
 

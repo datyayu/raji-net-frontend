@@ -4,12 +4,12 @@ import React from 'react';
 import { Icon } from '../shared';
 
 
-type HeaderContentProps = {
+type HeaderContentProps = {|
     title: string;
-    hasPlaylist: boolean;
-    hasSearch: boolean;
-    onNavIconClick: (ev: Event) => any;
-}
+    hasPlaylist?: boolean;
+    hasSearch?: boolean;
+    onNavIconClick?: (ev: Event) => any;
+|}
 
 
 export function HeaderContent({

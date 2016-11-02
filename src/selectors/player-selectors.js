@@ -1,33 +1,34 @@
+// @flow
 export class PlayerSelectors {
-    static isPlaying() {
+    static isPlaying(): boolean {
         return true;
     }
 
-    static isMuted() {
+    static isMuted(): boolean {
         return true;
     }
 
-    static isRandom() {
+    static isRandom(): boolean {
         return true;
     }
 
-    static isVolumeControlOpen() {
+    static isVolumeControlOpen(): boolean {
         return true;
     }
 
-    static getVolumeLevel() {
+    static getVolumeLevel(): number {
         return 40;
     }
 
-    static getCurrentPlayingTime() {
+    static getCurrentPlayingTime(): string {
         return '1:02';
     }
 
-    static getTotalPlayingTime() {
+    static getTotalPlayingTime(): string {
         return '3:02';
     }
 
-    static getCurrentPlayingProgress() {
+    static getCurrentPlayingProgress(): number {
         return 60;
     }
 }

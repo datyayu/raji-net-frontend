@@ -1,9 +1,17 @@
+// @flow
 import React from 'react';
 
 import { PlayerNavigationItem } from './player-navigation-item';
+import type { TrackModel } from '../../models';
 
 
-export function PlayerNavigation({ prevTrack, nextTrack }) {
+type PlayerNavigationProps = {
+    prevTrack: TrackModel;
+    nextTrack: TrackModel;
+}
+
+
+export function PlayerNavigation({ prevTrack, nextTrack }: PlayerNavigationProps) {
     return (
         <div className="player-navigation">
             <PlayerNavigationItem track={prevTrack} isPrev />

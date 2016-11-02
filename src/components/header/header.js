@@ -5,12 +5,12 @@ import { HeaderContent } from './header-content';
 import { HeaderSearch } from './header-search';
 
 
-type HeaderProps = {
+type HeaderProps = {|
     title: string;
     hasPlaylist: boolean;
     hasSearch: boolean;
     onNavIconClick: (ev: Event) => any;
-}
+|}
 
 
 export function Header({ 

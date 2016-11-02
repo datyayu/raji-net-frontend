@@ -26,4 +26,4 @@ export function PlayerSeekBar({
             </div>
         </div>
     );
-}
+};

@@ -1,13 +1,19 @@
+// @flow
 import sampleAlbum from '../assets/images/sample-album.jpg';
 
-const mockPlaylist =
+import type { PlaylistModel } from '../models';
+
+
+const mockPlaylist: PlaylistModel =
     { id: 1
     , name: 'Gochiusa soundtrack'
     , image: sampleAlbum
     , author: '@datyayu'
     , length: 24
     , plays: 2456
-    , top: 
+    , top: [1,2,3]
+    , year: 2015
+    , tracks:
         [
             { id: 1
             , name: 'puengue'
@@ -17,6 +23,10 @@ const mockPlaylist =
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
                 , image: sampleAlbum
+                , year: 2015
+                , singleType: "OP single"
+                , plays: 32
+                , length: 2
                 }
             }
         ,   { id: 2
@@ -27,6 +37,10 @@ const mockPlaylist =
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
                 , image: sampleAlbum
+                , year: 2015
+                , singleType: "OP single"
+                , plays: 32
+                , length: 2
                 }
             }
         ,   { id: 3
@@ -37,6 +51,10 @@ const mockPlaylist =
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
                 , image: sampleAlbum
+                , year: 2015
+                , singleType: "OP single"
+                , plays: 32
+                , length: 2
                 }
             }
         ]
@@ -45,7 +63,7 @@ const mockPlaylist =
 
 
 export class PlaylistListSelectors {
-    static getPlaylistList() {
+    static getPlaylistList(): PlaylistModel[] {
         return [
             mockPlaylist,
             mockPlaylist,

@@ -1,9 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 
 import { SeriesListSelectors } from '../selectors';
 
 
-export function SeriesListContainer(WrappedComponent) {
+export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
     class SeriesListWrappedComponent extends Component {
         render() {
             const seriesList = SeriesListSelectors.getSeriesList();
@@ -17,4 +18,4 @@ export function SeriesListContainer(WrappedComponent) {
     }
 
     return SeriesListWrappedComponent;
-}
+};

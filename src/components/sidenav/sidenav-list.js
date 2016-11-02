@@ -1,12 +1,18 @@
+// @flow
 import React from 'react';
 
 import { SidenavListItem } from './sidenav-list-item';
+import type { LinkModel } from '../../models';
+
+
+type SidenavListProps = {
+    links: LinkModel[];
+}
 
 
 export function SidenavList({
     links = [],
-}) {
-    
+}: SidenavListProps) {
     return (
         <ul className="navbar-list">
         {

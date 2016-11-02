@@ -1,12 +1,21 @@
+// @flow
 import React from 'react';
+
 import { Icon } from '../shared';
 
 
-export function PlayerControls({ 
+type PlayerControlsProps = {
+    isPlaying: boolean;
+    isRandom: boolean;
+    isMuted: boolean;
+}
+
+
+export function PlayerControls({
     isPlaying=false,
     isRandom=false,
     isMuted=false,
-}) {
+}: PlayerControlsProps) {
     const randomClass = isRandom ? 'is-active' : '';
     const playingIcon = isPlaying ? 'pause' : 'play';
     const volumeIcon = isMuted ? 'volume-off' : 'volume-up'; 
@@ -20,4 +29,4 @@ export function PlayerControls({
             <Icon type={volumeIcon} className="player-controls-icon" />
         </div>
     );
-}
+};

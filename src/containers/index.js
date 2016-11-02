@@ -1,3 +1,4 @@
+// @flow
 export * from './application-container';
 export * from './player-container';
 export * from './playlist-container';

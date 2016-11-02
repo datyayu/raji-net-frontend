@@ -1,12 +1,21 @@
+// @flow
 import React from 'react';
 import { Link } from 'react-router';
 
+import type { LinkModel } from '../../models';
 
-export function SidenavListItem({ 
+
+type SidenavListItemProps = {
+    link: LinkModel;
+    isActive?: boolean;
+}
+
+
+export function SidenavListItem({
     link, 
     isActive = false,
-}) {
-    const styleClasses = `navbar-list-link ${isActive ? 'is-active' : ''}`;
+}: SidenavListItemProps) {
+    const styleClasses: string = `navbar-list-link ${isActive ? 'is-active' : ''}`;
  
     return (
         <li className="navbar-list-item">

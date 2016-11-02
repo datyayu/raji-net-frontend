@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import { PlayerNavigation } from './player-navigation';
@@ -5,10 +6,28 @@ import { PlayerData } from './player-data';
 import { PlayerSeekBar } from './player-seekbar';
 import { PlayerControls } from './player-controls';
 
+import type { TrackModel } from '../../models';
 
-export function Player({ 
-    prevTrack, 
-    currentTrack, 
+
+type PlayerProps = {
+    prevTrack: TrackModel;
+    currentTrack: TrackModel;
+    nextTrack: TrackModel;
+    
+    isPlaying: boolean;
+    isRandom: boolean;
+    isMuted: boolean;
+
+    volume: number;
+    currentPlayingProgress: number;
+    currentPlayingTime: string;
+    totalPlayingTime: string;
+}
+
+
+export function Player({
+    prevTrack,
+    currentTrack,
     nextTrack,
     isPlaying=false,
     isRandom=false,
@@ -17,7 +36,7 @@ export function Player({
     currentPlayingTime='0:00',
     currentPlayingProgress=0,
     totalPlayingTime='Loading...',
-}) {
+}: PlayerProps) {
     return (
         <div className="player">
             <PlayerNavigation 
