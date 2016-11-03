@@ -2,7 +2,7 @@
 import type { Action } from 'redux';
 import type { LocationModel } from '../models';
 
-import { RoutingActions } from '../actions';
+import * as Actions from '../actions';
 import { createBrowserHistory } from 'history';
 
 
@@ -43,9 +43,9 @@ const initialState: RoutingState =
  
 export function routingReducer(state: RoutingState = initialState, action: Action): RoutingState {
     switch (action.type) {
-        case RoutingActions.NAVIGATE:
+        case Actions.RoutingActions.NAVIGATE:
             const location: LocationModel = action.payload.location;
-            const pageTitle: string = pageTitles[location.pathname] || 'raji';
+            const pageTitle: string = pageTitles[location.pathname] || state.pageTitle;
 
             return (
                 { ...state
@@ -56,6 +56,12 @@ export function routingReducer(state: RoutingState = initialState, action: Actio
                 }
             );
 
+        case Actions.SeriesActions.SET_SERIES:
+            return (
+                { ...state
+                , pageTitle: action.payload.name
+                }
+            );
 
         default:
             return state;

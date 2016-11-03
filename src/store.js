@@ -7,6 +7,7 @@ import { applicationReducer } from './reducers';
 import createSagaMiddleware from 'redux-saga'
 import { sagas } from './sagas'
 
+
 const sagaMiddleware = 
     createSagaMiddleware();
 

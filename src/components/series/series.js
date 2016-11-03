@@ -7,15 +7,17 @@ import type { SeriesModel, AlbumModel } from '../../models';
 
 type SeriesProps = {
     series: SeriesModel;
-    releases: AlbumModel[];
 }
 
 
-export function Series({ series, releases }: SeriesProps) {
+export function Series({ series }: SeriesProps) {
+    if (!series)
+        return null;
+
     return (
         <div className="series-individual">
             <img className="series-individual-image" src={series.image} alt={series.name} />
-            <SeriesReleaseList releaseList={releases} />
+            <SeriesReleaseList releaseList={series && series.albums} />
         </div>
     );
 };
