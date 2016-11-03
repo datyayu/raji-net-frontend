@@ -1,21 +1,42 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { SeriesListSelectors } from '../selectors';
+import { SeriesListActions } from '../actions';
+
 
 
 export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
-    class SeriesListWrappedComponent extends Component {
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { seriesList: SeriesListSelectors.getSeriesList(state)
+            , isFeching: SeriesListSelectors.isFeching(state)
+            }
+        );
+    }
+
+    function mapActionsToProps(dispatch) {
+        return bindActionCreators(
+            { getSeriesList: SeriesListActions.getSeriesList
+            }
+        , dispatch);
+    }
+
+    class SeriesListContainerComponent extends Component {
+        componentWillMount() {
+            this.props.getSeriesList();
+        }
+
         render() {
-            const seriesList = SeriesListSelectors.getSeriesList();
-            
             return (
-                <WrappedComponent {...this.props}
-                    seriesList={seriesList}
-                />
+                <WrappedComponent {...this.props} />
             );
         }
     }
 
-    return SeriesListWrappedComponent;
+    return connect(mapStateToProps, mapActionsToProps)(SeriesListContainerComponent);
 };

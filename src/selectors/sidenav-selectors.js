@@ -1,6 +1,6 @@
 // @flow
 import type { LinkModel } from '../models';
-import { ApplicationState } from '../reducers';
+import type { ApplicationState } from '../reducers';
 
 
 export class SidenavSelectors {

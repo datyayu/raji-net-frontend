@@ -1,5 +1,5 @@
 // @flow
-import { ApplicationState } from '../reducers';
+import type { ApplicationState } from '../reducers';
 
 
 export class RoutingSelectors {
