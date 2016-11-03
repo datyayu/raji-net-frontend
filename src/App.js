@@ -1,15 +1,19 @@
 // @flow
 import React from 'react';
-import { BrowserRouter as Router, Match, Miss } from 'react-router';
+import { Match } from 'react-router';
+import { ControlledBrowserRouter} from 'react-router-addons-controlled';
+import { createBrowserHistory } from 'history';
 
 import * as Pages from './pages';
-import { ApplicationContainer, SidenavContainer } from './containers';
 import { Sidenav as SidenavComp, Header as HeaderComp, MobileOverlay as MobileOverlayComp} from './components';
+import { ApplicationContainer, SidenavContainer, RoutingContainer } from './containers';
 
+const history = createBrowserHistory();
 
 const Sidenav = SidenavContainer(SidenavComp);
 const MobileOverlay = SidenavContainer(MobileOverlayComp);
 const Header = SidenavContainer(ApplicationContainer(HeaderComp));
+const Router = RoutingContainer(ControlledBrowserRouter);
 
 
 function AppComponent({ hasPlaylist=false }: { hasPlaylist: boolean }) {
@@ -18,7 +22,7 @@ function AppComponent({ hasPlaylist=false }: { hasPlaylist: boolean }) {
         : 'application-wrapper';
 
     return (
-        <Router>
+        <Router history={history}>
             <div className="application">
                 <Sidenav />
 

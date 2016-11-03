@@ -9,3 +9,4 @@ export * from './season-list-container';
 export * from './series-individual-container';
 export * from './series-list-container';
 export * from './sidenav-container';
+export * from './routing-container';

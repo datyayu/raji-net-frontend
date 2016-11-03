@@ -5,3 +5,4 @@ export * from './series';
 export * from './season';
 export * from './link';
 export * from './track';
+export * from './location';

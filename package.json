@@ -16,10 +16,12 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "history": "^4.4.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "next",
+    "react-router-addons-controlled": "^0.0.1",
     "redux": "^3.6.0",
     "redux-saga": "^0.12.1"
   },

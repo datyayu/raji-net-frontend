@@ -1,10 +1,13 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
+
 export class ApplicactionSelectors {
-    static pageHasPlaylist(): boolean {
-        return false;
+    static pageHasPlaylist(state: ApplicationState): boolean {
+        return state.routing.hasPlaylist;
     }
 
-    static getPageTitle(): string {
-        return 'series list';
+    static getPageTitle(state: ApplicationState): string {
+        return state.routing.pageTitle;
     }
 }
