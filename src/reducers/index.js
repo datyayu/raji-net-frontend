@@ -5,6 +5,7 @@ import type { RoutingState } from './routing-reducer';
 import type { SeriesListState } from './series-list-reducer';
 import type { SeriesState } from './series-reducer';
 import type { SeasonsState } from './seasons-reducer';
+import type { ReleaseState } from './release-reducer';
 
 import { combineReducers } from 'redux';
 
@@ -13,6 +14,7 @@ import { routingReducer } from './routing-reducer';
 import { seriesListReducer } from './series-list-reducer';
 import { seriesReducer } from './series-reducer';
 import { seasonsReducer } from './seasons-reducer';
+import { releaseReducer } from './release-reducer';
 
 
 // Export application global state
@@ -22,6 +24,7 @@ export type ApplicationState =
     , seriesList: SeriesListState
     , series: SeriesState
     , seasons: SeasonsState
+    , release: ReleaseState
     }
 ;
 
@@ -33,5 +36,6 @@ export const applicationReducer: Reducer<ApplicationState> =
         , seriesList: seriesListReducer 
         , series: seriesReducer
         , seasons: seasonsReducer
+        , release: releaseReducer
         }
     );

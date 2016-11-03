@@ -8,11 +8,14 @@ import type { AlbumModel } from '../../models';
 
 
 type ReleaseProps = {
-    release: AlbumModel;
+    release: ?AlbumModel;
 }
 
 
 export function Release({ release }: ReleaseProps) {
+    if (!release)
+        return null;
+
     return (
         <div className="series-album">
             <ReleaseCover image={release.image} alt={release.name} />

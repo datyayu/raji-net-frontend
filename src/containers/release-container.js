@@ -1,21 +1,43 @@
 // @flow
-import React, { Component } from 'react';
+import type { ApplicationState } from '../reducers';
 
-import { ReleaseSelectors } from '../selectors';
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { ReleaseSelectors, RoutingSelectors } from '../selectors';
+import { ReleaseActions } from '../actions';
+
 
 
 export function ReleaseContainer(WrappedComponent: ReactClass<any>) {
-    class ReleaseWrappedComponent extends Component {
-        render() {
-            const release = ReleaseSelectors.getRelease();
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { release: ReleaseSelectors.getRelease(state)
+            , releaseId: RoutingSelectors.getIdFromUrl(state)
+            , isFeching: ReleaseSelectors.isFetching(state)
+            }
+        );
+    }
 
+    function mapActionsToProps(dispatch) {
+        return bindActionCreators(
+            { getRelease: ReleaseActions.getRelease
+            }
+        , dispatch);
+    }
+
+    class ReleaseContainerComponent extends Component {
+        componentWillMount() {
+            this.props.getRelease(this.props.releaseId);
+        }
+
+        render() {
             return (
-                <WrappedComponent {...this.props}
-                    release={release}
-                />
+                <WrappedComponent {...this.props} />
             );
         }
     }
 
-    return ReleaseWrappedComponent;
-}
+    return connect(mapStateToProps, mapActionsToProps)(ReleaseContainerComponent);
+};

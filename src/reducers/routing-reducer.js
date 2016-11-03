@@ -33,7 +33,7 @@ export type RoutingState =
 ;
 
 const initialState: RoutingState =
-    { hasPlaylist: false
+    { hasPlaylist: pagesWithPlaylist.some(page => history.location.pathname.startsWith(page))
     , pageTitle: pageTitles[history.location.pathname] || 'raji'
     , location: history.location
     , action: history.action
@@ -57,6 +57,7 @@ export function routingReducer(state: RoutingState = initialState, action: Actio
             );
 
         case Actions.SeriesActions.SET_SERIES:
+        case Actions.ReleaseActions.SET_RELEASE:
             return (
                 { ...state
                 , pageTitle: action.payload.name

@@ -4,3 +4,4 @@ export * from './routing-actions';
 export * from './series-list-actions';
 export * from './series-actions';
 export * from './seasons-actions';
+export * from './release-actions';
