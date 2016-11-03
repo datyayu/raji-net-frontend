@@ -31,7 +31,7 @@ function mockApiCall() {
 
 function* fetchSeriesList(action) {
    try {
-      const seriesList = yield call(mockApiCall, 0);
+      const seriesList = yield call(mockApiCall);
       yield put(SeriesListActions.setSeriesList(seriesList));
    } catch (error) {
       yield put(SeriesListActions.failedToGetSeriesList(error));

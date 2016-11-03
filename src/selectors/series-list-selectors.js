@@ -8,7 +8,7 @@ export class SeriesListSelectors {
         return state.seriesList.seriesList;
     }
 
-    static isFeching(state: ApplicationState): boolean {
+    static isFetching(state: ApplicationState): boolean {
         return state.seriesList.isFetching;
     }
 }

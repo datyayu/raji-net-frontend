@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { SeriesReleaseList } from './series-release-list';
-import type { SeriesModel, AlbumModel } from '../../models';
+import type { SeriesModel } from '../../models';
 
 
 type SeriesProps = {

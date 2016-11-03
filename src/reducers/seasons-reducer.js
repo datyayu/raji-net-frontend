@@ -1,46 +1,47 @@
 // @flow
 import type { Action } from 'redux';
-import type { SeriesModel } from '../models';
+import type { SeasonModel } from '../models';
 
-import { SeriesListActions } from '../actions';
+import { SeasonsActions } from '../actions';
 
 
-export type SeriesListState = 
-    { seriesList: SeriesModel[]
+export type SeasonsState =
+    { seasons: ?SeasonModel[]
     , isFetching: boolean
     , error: ?string
     }
 ;
 
-const initialState: SeriesListState = 
-    { seriesList: []
+const initialState: SeasonsState =
+    { seasons: []
     , isFetching: false
     , error: null
     }
 ;
 
-export function seriesListReducer(state: SeriesListState = initialState, action: Action): SeriesListState {
+
+export function seasonsReducer(state: SeasonsState = initialState, action: Action): SeasonsState {
     switch(action.type) {
-        case SeriesListActions.GET_SERIES_LIST:
+        case SeasonsActions.GET_SEASONS:
             return (
                 { ...state
-                , seriesList: []
+                , seasons: []
                 , isFetching: true
                 , error: null
                 }
             );
 
 
-        case SeriesListActions.SET_SERIES_LIST:
+        case SeasonsActions.SET_SEASONS:
             return (
                 { ...state
-                , seriesList: action.payload
+                , seasons: action.payload
                 , isFetching: false
                 }
             );
 
 
-        case SeriesListActions.FAILED_TO_GET_SERIES_LIST:
+        case SeasonsActions.FAILED_TO_GET_SEASONS:
             return (
                 { ...state
                 , isFetching: false
