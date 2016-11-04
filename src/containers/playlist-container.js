@@ -20,11 +20,11 @@ export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass
     function mapStateToProps(state: ApplicationState) {
         return (
             { showPlaylistOnMobile: PlaylistSelectors.showMobilePlaylist(state)
+            , playlist: PlaylistSelectors.getCurrentPlaylist(state)
 
             , prevTrack: PlaylistSelectors.getPrevTrack(state)
             , currentTrack: PlaylistSelectors.getCurrentTrack(state)
             , nextTrack: PlaylistSelectors.getNextTrack(state)
-            , playlist: PlaylistSelectors.getCurrentPlaylist(state)
             }
         );
     }
@@ -35,6 +35,7 @@ export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass
             , hideSearch: SearchActions.hideMobileSearch
             , showPlaylist: PlaylistActions.showPlaylistOnMobile
             , hidePlaylist: PlaylistActions.closePlaylistOnMobile
+            , playSong: PlaylistActions.playSongFromPlaylist
             }
         , dispatch);
     }

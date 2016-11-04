@@ -1,5 +1,6 @@
 // @flow
 import type { Action } from 'redux';
+import type { TrackModel } from '../models';
 
 
 export class PlaylistActions {
@@ -11,5 +12,17 @@ export class PlaylistActions {
     static CLOSE_PLAYLIST_ON_MOBILE = '[Playlist] CLOSE_PLAYLIST_ON_MOBILE'; 
     static closePlaylistOnMobile(): Action {
         return { type: PlaylistActions.CLOSE_PLAYLIST_ON_MOBILE };
+    }
+
+    static PLAY_SONG_FROM_PLAYLIST = '[Playlist] PLAY_SONG_FROM_PLAYLIST';
+    static playSongFromPlaylist(tracks: TrackModel[], index: number): Action {
+        return (
+            { type: PlaylistActions.PLAY_SONG_FROM_PLAYLIST
+            , payload:
+                { tracks: tracks
+                , songIndex: index
+                }
+            }
+        );
     }
 }

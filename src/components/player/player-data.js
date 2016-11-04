@@ -8,12 +8,15 @@ import { PlayerInfo } from './player-info';
 
 
 type PlayerDataProps = {
-    track: TrackModel;
+    track: ?TrackModel;
 }
 
 
 export function PlayerData({ track }: PlayerDataProps) {
-    return (track &&
+    if (!track)
+        return null;
+
+    return (
         <div className="player-data">
             <PlayerCover album={track.album} />
             <PlayerInfo track={track} />

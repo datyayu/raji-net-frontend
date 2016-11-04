@@ -8,10 +8,15 @@ import type { TrackModel } from '../../models';
 type PlaylistTrackListProps = {
     tracks: TrackModel[];
     currentSongId: number;
+    onItemClick: (trackList: TrackModel[], trackIndex: number) => any;
 }
 
 
-export function PlaylistTrackList({ tracks=[], currentSongId=0 }: PlaylistTrackListProps) {
+export function PlaylistTrackList({ 
+    tracks=[], 
+    currentSongId=0,
+    onItemClick=()=>{},
+}: PlaylistTrackListProps) {
     return (
         <ul className="playlist-song-list">
         { tracks.map((track, idx) => (
@@ -19,6 +24,7 @@ export function PlaylistTrackList({ tracks=[], currentSongId=0 }: PlaylistTrackL
                 key={idx} 
                 track={track} 
                 isPlaying={track.id === currentSongId}
+                onClick={onItemClick.bind(null, tracks, idx)}
             />
         ))}
         </ul>

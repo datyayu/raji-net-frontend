@@ -6,16 +6,20 @@ import type { TrackModel } from '../../models';
 
 
 type PlayerNavigationProps = {
-    prevTrack: TrackModel;
-    nextTrack: TrackModel;
+    prevTrack: ?TrackModel;
+    nextTrack: ?TrackModel;
 }
 
 
 export function PlayerNavigation({ prevTrack, nextTrack }: PlayerNavigationProps) {
     return (
         <div className="player-navigation">
-            <PlayerNavigationItem track={prevTrack} isPrev />
-            <PlayerNavigationItem track={nextTrack} isNext />
+            { prevTrack && 
+                <PlayerNavigationItem track={prevTrack} isPrev />
+            }
+            { nextTrack &&
+                <PlayerNavigationItem track={nextTrack} isNext />
+            }
         </div>
     );
 };

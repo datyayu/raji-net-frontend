@@ -10,9 +10,9 @@ import type { TrackModel } from '../../models';
 
 
 type PlayerProps = {
-    prevTrack: TrackModel;
-    currentTrack: TrackModel;
-    nextTrack: TrackModel;
+    prevTrack: ?TrackModel;
+    currentTrack: ?TrackModel;
+    nextTrack: ?TrackModel;
     
     isPlaying: boolean;
     isRandom: boolean;
