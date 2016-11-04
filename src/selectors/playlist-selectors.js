@@ -19,6 +19,7 @@ export class PlaylistSelectors {
                 , singleType: "OP single"
                 , plays: 32
                 , length: 2
+                , tracks: []
                 }
            }
         );
@@ -38,6 +39,7 @@ export class PlaylistSelectors {
                 , singleType: "OP single"
                 , plays: 32
                 , length: 2
+                , tracks: []
                 }
            }
         );
@@ -62,6 +64,7 @@ export class PlaylistSelectors {
                 , singleType: "OP single"
                 , plays: 32
                 , length: 2
+                , tracks: []
                 }
             }
         );
@@ -78,6 +81,8 @@ export class PlaylistSelectors {
                 , top: [1, 2, 3]
                 , artists: ['Iguchi Yuka']
                 , year: 2015
+                , plays: 323
+                , tracks: []
                 , album: 
                     { id: 1
                     , name: 'Hafa Adai'
@@ -88,8 +93,6 @@ export class PlaylistSelectors {
                     , plays: 32
                     , length: 2
                     }
-                , plays: 323
-                , tracks: []
                 }
             ]
         );

@@ -1,20 +1,20 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
-import { ReleaseActions } from '../actions';
+import { PlaylistListActions } from '../actions';
 import sampleAlbum from '../assets/images/sample-album.jpg';
 
 
-const mockRelease =
+const mockPlaylist: PlaylistModel =
     { id: 1
-    , name: 'hello world'
+    , name: 'Gochiusa soundtrack'
     , image: sampleAlbum
-    , artists: ['Iguchi Yuka']
-    , singleType: 'OP Single'
-    , length: 12
-    , plays: 323
+    , author: '@datyayu'
+    , length: 24
+    , plays: 2456
+    , top: [1,2,3]
     , year: 2015
-    , tracks: 
+    , tracks:
         [
             { id: 1
             , name: 'puengue'
@@ -62,21 +62,32 @@ const mockRelease =
     }
 ;
 
+
+
 function mockApiCall() {
-    return Promise.resolve(mockRelease);
+    return Promise.resolve([
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+        mockPlaylist,
+    ]);
 }
 
 
-function* fetchRelease(action) {
+function* fetchPlaylistList(action) {
    try {
-      const release = yield call(mockApiCall, action.payload);
-      yield put(ReleaseActions.setRelease(release));
+      const playlistList = yield call(mockApiCall);
+      yield put(PlaylistListActions.setPlaylistList(playlistList));
    } catch (error) {
-      yield put(ReleaseActions.failedToGetRelease(error));
+      yield put(PlaylistListActions.failedToGetPlaylistList(error));
    }
 }
 
 
-export default function* releaseSaga() {
-  yield* takeLatest(ReleaseActions.GET_RELEASE, fetchRelease);
+export default function* playlistListSaga() {
+  yield* takeLatest(PlaylistListActions.GET_PLAYLIST_LIST, fetchPlaylistList);
 }
