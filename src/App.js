@@ -4,7 +4,7 @@ import { ControlledBrowserRouter} from 'react-router-addons-controlled';
 import { createBrowserHistory } from 'history';
 
 import { Sidenav as SidenavComp, Header as HeaderComp, MobileOverlay as MobileOverlayComp} from './components';
-import { ApplicationContainer, SidenavContainer, RoutingContainer } from './containers';
+import { ApplicationContainer, SidenavContainer, RoutingContainer, SearchContainer } from './containers';
 import { AppContent } from './app-content';
 
 
@@ -12,7 +12,7 @@ const history = createBrowserHistory();
 
 const Sidenav = SidenavContainer(SidenavComp);
 const MobileOverlay = SidenavContainer(MobileOverlayComp);
-const Header = SidenavContainer(ApplicationContainer(HeaderComp));
+const Header = SearchContainer(SidenavContainer(ApplicationContainer(HeaderComp)));
 const Router = RoutingContainer(ControlledBrowserRouter);
 
 

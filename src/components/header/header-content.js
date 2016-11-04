@@ -9,6 +9,7 @@ type HeaderContentProps = {|
     hasPlaylist?: boolean;
     hasSearch?: boolean;
     onNavIconClick?: (ev: Event) => any;
+    onSearchIconClick?: (ev: Event) => any;
 |}
 
 
@@ -17,6 +18,7 @@ export function HeaderContent({
     hasPlaylist=false, 
     hasSearch=false,
     onNavIconClick=()=>{},
+    onSearchIconClick=()=>{},
 }: HeaderContentProps) {
     return (
         <div className="header-content">
@@ -29,7 +31,7 @@ export function HeaderContent({
             }
 
             { hasSearch &&
-                <Icon type="search" className="header-icon" />
+                <Icon type="search" className="header-icon" onClick={onSearchIconClick} />
             }
         </div>
     );

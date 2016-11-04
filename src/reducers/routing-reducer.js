@@ -15,6 +15,12 @@ const pagesWithPlaylist: string[] =
     ]
 ;
 
+const pagesWithSearch: string[] = 
+    [ '/playlists'
+    , '/series'
+    ]
+;
+
 const pageTitles =
     { '/': 'raji'
     , '/player': 'now playing'
@@ -26,6 +32,7 @@ const pageTitles =
 
 export type RoutingState =
     { hasPlaylist: boolean
+    , hasSearch: boolean
     , pageTitle: string
     , action: string
     , location: LocationModel
@@ -33,10 +40,11 @@ export type RoutingState =
 ;
 
 const initialState: RoutingState =
-    { hasPlaylist: pagesWithPlaylist.some(page => history.location.pathname.startsWith(page))
+    { hasPlaylist: pagesWithPlaylist.some(page => history.location.pathname.toLowerCase().startsWith(page))
+    , hasSearch: pagesWithSearch.some(page => page === history.location.pathname.toLowerCase())
     , pageTitle: pageTitles[history.location.pathname] || 'raji'
-    , location: history.location
     , action: history.action
+    , location: history.location
     }
 ;
 
@@ -45,16 +53,19 @@ export function routingReducer(state: RoutingState = initialState, action: Actio
     switch (action.type) {
         case Actions.RoutingActions.NAVIGATE:
             const location: LocationModel = action.payload.location;
-            const pageTitle: string = pageTitles[location.pathname] || state.pageTitle;
+            const currentPath: string = location.pathname.toLowerCase();
+            const pageTitle: string = pageTitles[currentPath] || state.pageTitle;
 
             return (
                 { ...state
-                , action: action.payload.action
+                , hasPlaylist: pagesWithPlaylist.some(page => currentPath.startsWith(page))
+                , hasSearch: pagesWithSearch.some(page => page === currentPath)
+                , pageTitle: pageTitle    
                 , location: location
-                , hasPlaylist: pagesWithPlaylist.some(page => location.pathname.startsWith(page))
-                , pageTitle: pageTitle
+                , action: action.payload.action
                 }
             );
+
 
         case Actions.SeriesActions.SET_SERIES:
         case Actions.ReleaseActions.SET_RELEASE:

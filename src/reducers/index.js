@@ -6,6 +6,7 @@ import type { SeriesListState } from './series-list-reducer';
 import type { SeriesState } from './series-reducer';
 import type { SeasonsState } from './seasons-reducer';
 import type { ReleaseState } from './release-reducer';
+import type { SearchState } from './search-reducer';
 import type { PlaylistListState } from './playlist-list-reducer';
 
 import { combineReducers } from 'redux';
@@ -16,6 +17,7 @@ import { seriesListReducer } from './series-list-reducer';
 import { seriesReducer } from './series-reducer';
 import { seasonsReducer } from './seasons-reducer';
 import { releaseReducer } from './release-reducer';
+import { searchReducer } from './search-reducer';
 import { playlistListReducer } from './playlist-list-reducer';
 
 
@@ -28,6 +30,7 @@ export type ApplicationState =
     , seasons: SeasonsState
     , release: ReleaseState
     , playlistList: PlaylistListState
+    , search: SearchState
     }
 ;
 
@@ -41,5 +44,6 @@ export const applicationReducer: Reducer<ApplicationState> =
         , seasons: seasonsReducer
         , release: releaseReducer
         , playlistList: playlistListReducer
+        , search: searchReducer
         }
     );

@@ -2,7 +2,7 @@
 import type { Action } from 'redux';
 import type { LinkModel } from '../models';
 
-import { SidenavActions } from '../actions';
+import { SidenavActions, RoutingActions } from '../actions';
 
 
 export type SidenavState = 
@@ -28,11 +28,29 @@ const initialState: SidenavState =
 export function sidenavReducer(state: SidenavState = initialState, action: Action): SidenavState {
     switch(action.type) {
         case SidenavActions.OPEN_SIDENAV:
-            return {...state, isOpen: true };
+            return (
+                {...state
+                , isOpen: true
+                }
+            );
 
 
         case SidenavActions.CLOSE_SIDENAV:
-            return { ...state, isOpen: false };
+            return (
+                {...state
+                , isOpen: false
+                }
+            );
+
+        case RoutingActions.NAVIGATE:
+            const currentPath: string =  action.payload.location.pathname;
+            const matchedPage: ?LinkModel = state.links.find(link => link.href === currentPath);
+
+            return (
+                {...state
+                , activeLink: matchedPage && matchedPage.href
+                }
+            );
 
 
         default:

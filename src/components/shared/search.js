@@ -5,14 +5,14 @@ import { Icon } from './icon';
 
 
 type SearchProps = {
-    value: string;
-    onChange: (ev: Event) => any;
+    searchValue: string;
+    onSearchChange: (ev: Event) => any;
 }
 
 
 export function Search({
-    value='',
-    onChange=()=>{} 
+    searchValue='',
+    onSearchChange=()=>{} 
 }: SearchProps) {
     return (
         <div className="search">
@@ -25,8 +25,8 @@ export function Search({
                     type="text" 
                     className="search-input" 
                     placeholder="Search" 
-                    value={value}
-                    onChange={onChange}
+                    value={searchValue}
+                    onChange={onSearchChange}
                 />
             </div>
         </div>

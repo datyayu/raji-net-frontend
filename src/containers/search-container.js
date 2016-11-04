@@ -1,21 +1,27 @@
 // @flow
-import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { SearchSelectors } from '../selectors';
+import { SearchActions } from '../actions';
+
+import type { ApplicationState } from '../reducers';
 
 
 export function SearchContainer(WrappedComponent: ReactClass<any>) {
-    class SearchWrappedComponent extends Component {
-        render() {
-            const searchValue = SearchSelectors.getSearchValue();
-            
-            return (
-                <WrappedComponent {...this.props}
-                    value={searchValue}
-                />
-            );
-        }
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { searchValue: SearchSelectors.getSearchValue(state)
+            }
+        );
     }
 
-    return SearchWrappedComponent;
+    function mapActionsToProps(dispatch) {
+        return bindActionCreators(
+            { onSearchChange: SearchActions.setSearchValue
+            }
+        , dispatch);
+    }
+
+    return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
 };

@@ -4,11 +4,22 @@ import React from 'react';
 import { Icon } from '../shared';
 
 
-export function HeaderSearch() {
+type HeaderSearchProps = {
+    value: string;
+    onChange: (ev: Event) => any;    
+    onClose: (ev: Event) => any;    
+};
+
+
+export function HeaderSearch({
+    onClose=()=>{},
+    onChange=()=>{},
+    value='',
+}: HeaderSearchProps) {
     return (
         <div className="header-search">
-            <Icon type="close" className="header-icon" />
-            <input className="header-search-input" type="text" />
+            <Icon type="times" className="header-icon" onClick={onClose} />
+            <input className="header-search-input" type="text" onChange={onChange} value={value} />
         </div>
     );
 };
