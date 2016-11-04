@@ -5,7 +5,7 @@ import { ReleaseActions } from '../actions';
 import sampleAlbum from '../assets/images/sample-album.jpg';
 
 
-const mockRelease = 
+const mockRelease =
     { id: 1
     , name: 'hello world'
     , image: sampleAlbum
