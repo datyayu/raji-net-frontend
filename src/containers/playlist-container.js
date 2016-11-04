@@ -1,27 +1,44 @@
 // @flow
-import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { PlaylistSelectors } from '../selectors';
+import { SearchActions, PlaylistActions } from '../actions';
+
+import type { ApplicationState } from '../reducers';
 
 
-export function PlaylistContainer(WrappedComponent: ReactClass<any>) {
-    class PlaylistWrappedComponent extends Component {
-        render() {
-            const currentPlaylist = PlaylistSelectors.getCurrentPlaylist();
-            const prevTrack       = PlaylistSelectors.getPrevTrack();
-            const currentTrack    = PlaylistSelectors.getCurrentTrack();
-            const nextTrack       = PlaylistSelectors.getNextTrack();
-            
-            return (
-                <WrappedComponent {...this.props}
-                    prevTrack={prevTrack} 
-                    currentTrack={currentTrack}
-                    nextTrack={nextTrack} 
-                    playlist={currentPlaylist}
-                />
-            );
-        }
+
+type PlaylistContainerProps = {
+    hasPlaylist: boolean;
+    hasSearch: boolean;
+    title: string;
+}
+
+
+export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass<PlaylistContainerProps> {
+    function mapStateToProps(state: ApplicationState) {
+        return (
+            { showPlaylistOnMobile: PlaylistSelectors.showMobilePlaylist(state)
+
+            , prevTrack: PlaylistSelectors.getPrevTrack(state)
+            , currentTrack: PlaylistSelectors.getCurrentTrack(state)
+            , nextTrack: PlaylistSelectors.getNextTrack(state)
+            , playlist: PlaylistSelectors.getCurrentPlaylist(state)
+            }
+        );
     }
 
-    return PlaylistWrappedComponent;
+    function mapActionsToProps(dispatch) {
+        return bindActionCreators(
+            { showSearch: SearchActions.showMobileSearch
+            , hideSearch: SearchActions.hideMobileSearch
+            , showPlaylist: PlaylistActions.showPlaylistOnMobile
+            , hidePlaylist: PlaylistActions.closePlaylistOnMobile
+            }
+        , dispatch);
+    }
+
+
+    return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
 };

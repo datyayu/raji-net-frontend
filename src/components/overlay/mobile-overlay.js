@@ -3,15 +3,17 @@ import React from 'react';
 
 type MobileOverlayProps = {|
     isActive: boolean;
+    showPlaylistOnMobile: boolean;
     closeSidenav?: (ev: Event) => any;
 |} 
 
 
 export function MobileOverlay({ 
-    isActive = false, 
+    isActive = false,
+    showPlaylistOnMobile=false,
     closeSidenav=()=>{},
 }: MobileOverlayProps) {
-    const styleClasses = isActive 
+    const styleClasses = (isActive || showPlaylistOnMobile)
         ? "application-overlay is-active"
         : 'application-overlay';
 

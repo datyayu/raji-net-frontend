@@ -5,6 +5,13 @@ import type { TrackModel, PlaylistModel } from '../models';
 
 
 export class PlaylistSelectors {
+
+    static showMobilePlaylist(state: ApplicationState): boolean {
+        return state.playlist.showPlaylist;
+    }
+
+
+
     static getPrevTrack(): TrackModel {
         return (
             { id: 1

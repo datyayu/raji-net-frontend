@@ -10,6 +10,7 @@ type HeaderContentProps = {|
     hasSearch?: boolean;
     onNavIconClick?: (ev: Event) => any;
     onSearchIconClick?: (ev: Event) => any;
+    onPlaylistIconClick?: (ev: Event) => any;
 |}
 
 
@@ -18,6 +19,7 @@ export function HeaderContent({
     hasPlaylist=false, 
     hasSearch=false,
     onNavIconClick=()=>{},
+    onPlaylistIconClick=()=>{},
     onSearchIconClick=()=>{},
 }: HeaderContentProps) {
     return (
@@ -27,7 +29,7 @@ export function HeaderContent({
             <h1 className="header-title"> {title} </h1>
 
             { hasPlaylist &&
-                <Icon type="angle-left" className="header-icon" />
+                <Icon type="angle-left" className="header-icon" onClick={onPlaylistIconClick} />
             }
 
             { hasSearch &&

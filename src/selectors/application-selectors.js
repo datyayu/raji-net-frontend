@@ -17,7 +17,6 @@ export class ApplicationSelectors {
         return state.search.showOnMobile;
     }
 
-
     static getPageTitle(state: ApplicationState): string {
         return state.routing.pageTitle;
     }

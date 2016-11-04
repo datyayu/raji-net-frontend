@@ -49,6 +49,7 @@ export function sidenavReducer(state: SidenavState = initialState, action: Actio
             return (
                 {...state
                 , activeLink: matchedPage && matchedPage.href
+                , isOpen: false
                 }
             );
 

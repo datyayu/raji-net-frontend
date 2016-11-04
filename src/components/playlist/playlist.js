@@ -6,19 +6,23 @@ import type { TrackModel, PlaylistModel } from '../../models';
 
 
 type PlaylistProps = {
-    showOnMobile: boolean;
+    showPlaylistOnMobile: boolean;
     currentTrack: TrackModel;
     playlist: PlaylistModel;
 }
 
 
-export function Playlist({ showOnMobile = false, playlist, currentTrack }: PlaylistProps) {
+export function Playlist({ 
+    showPlaylistOnMobile = false, 
+    playlist, 
+    currentTrack 
+}: PlaylistProps) {
     const currentSongId = currentTrack.id;
-    const mobileClasses = showOnMobile ? 'isActive' : ''; 
+    const mobileClasses = showPlaylistOnMobile ? 'is-active' : ''; 
 
     return (
         <div className={`playlist ${mobileClasses}`}>
-            <h2 className="playlist-header"> current playlist </h2>
+            <h2 className="playlist-header"> playlist </h2>
             <PlaylistTrackList tracks={playlist.tracks} currentSongId={currentSongId} />
         </div>
     );

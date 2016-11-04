@@ -14,6 +14,7 @@ type HeaderProps = {|
     openSidenav: (ev: Event) => any;
     showSearch: (ev: Event) => any;
     hideSearch: (ev: Event) => any;
+    showPlaylist: (ev: Event) => any;
     onSearchChange: (ev: Event) => any;
 |}
 
@@ -27,6 +28,7 @@ export function Header({
     openSidenav=()=>{},
     showSearch=()=>{},
     hideSearch=()=>{},
+    showPlaylist=()=>{},
     onSearchChange=()=>{},
 }: HeaderProps) {
     const searchClasses = showSearchOnMobile ? 'has-search' : '';
@@ -38,12 +40,15 @@ export function Header({
                 hasPlaylist={hasPlaylist} 
                 hasSearch={hasSearch}
                 onSearchIconClick={showSearch}
-                onNavIconClick={openSidenav} />
+                onNavIconClick={openSidenav} 
+                onPlaylistIconClick={showPlaylist}
+            />
 
             <HeaderSearch show={showSearch}
                           onClose={hideSearch}
                           onChange={onSearchChange} 
-                          value={searchValue} />
+                          value={searchValue} 
+            />
         </div>
     );
 };
