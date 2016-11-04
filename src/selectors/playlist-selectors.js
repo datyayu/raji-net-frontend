@@ -2,6 +2,7 @@
 import sampleAlbum from '../assets/images/sample-album.jpg';
 
 import type { TrackModel, PlaylistModel } from '../models';
+import type { ApplicationState } from '../reducers';
 
 
 export class PlaylistSelectors {

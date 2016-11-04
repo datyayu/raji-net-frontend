@@ -17,7 +17,7 @@ const mockRelease =
     , tracks: 
         [
             { id: 1
-            , name: 'puengue'
+            , name: 'puengue #1'
             , artists: ['Iguchi Yuka']
             , album: 
                 { id: 1
@@ -31,7 +31,7 @@ const mockRelease =
                 }
             }
         ,   { id: 2
-            , name: 'Rainbow Girl'
+            , name: 'Rainbow Girl #2'
             , artists: ['Iguchi Yuka']
             , album: 
                 { id: 1
@@ -45,7 +45,7 @@ const mockRelease =
                 }
             }
         ,   { id: 3
-            , name: 'Sketch Switch'
+            , name: 'Sketch Switch #3'
             , artists: ['Asumi Kana', 'Mizuhashi Kaori', 'Yuuko Goto', 'Ryoko Shintani']
             , album: 
                 { id: 1

@@ -7,7 +7,7 @@ import { ReleaseContainer, PlaylistContainer } from '../containers';
 
 
 const Release = ReleaseContainer(ReleaseComponent);
-const Playlist = PlaylistContainer(PlaylistComponent);
+const Playlist = PlaylistContainer(ReleaseContainer(PlaylistComponent));
 
 
 export function ReleasePage() {
