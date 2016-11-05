@@ -13,12 +13,9 @@ type PlayerDataProps = {
 
 
 export function PlayerData({ track }: PlayerDataProps) {
-    if (!track)
-        return null;
-
     return (
         <div className="player-data">
-            <PlayerCover album={track.album} />
+            <PlayerCover album={track && track.album} />
             <PlayerInfo track={track} />
         </div>
     );

@@ -5,11 +5,18 @@ import type { TrackModel } from '../../models';
 
 
 type PlayerInfoProps = {
-    track: TrackModel;
+    track: ?TrackModel;
 }
 
 
 export function PlayerInfo({ track }: PlayerInfoProps) {
+    if (!track) 
+        return (
+            <div className="player-info">
+                <span className="player-info-text"> No playlist selected </span>
+            </div>
+        );
+
     return (
         <div className="player-info">
             <span className="player-info-title"> {track.name} </span>
