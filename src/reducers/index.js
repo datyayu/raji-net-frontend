@@ -9,6 +9,7 @@ import type { ReleaseState } from './release-reducer';
 import type { SearchState } from './search-reducer';
 import type { PlaylistListState } from './playlist-list-reducer';
 import type { PlaylistState } from './playlist-reducer';
+import type { PlayerState } from './player-reducer';
 
 import { combineReducers } from 'redux';
 
@@ -21,6 +22,7 @@ import { releaseReducer } from './release-reducer';
 import { searchReducer } from './search-reducer';
 import { playlistListReducer } from './playlist-list-reducer';
 import { playlistReducer } from './playlist-reducer';
+import { playerReducer } from './player-reducer';
 
 
 // Export application global state
@@ -34,6 +36,7 @@ export type ApplicationState =
     , playlistList: PlaylistListState
     , search: SearchState
     , playlist: PlaylistState
+    , player: PlayerState
     }
 ;
 
@@ -49,5 +52,6 @@ export const applicationReducer: Reducer<ApplicationState> =
         , playlistList: playlistListReducer
         , search: searchReducer
         , playlist: playlistReducer
+        , player: playerReducer
         }
     );

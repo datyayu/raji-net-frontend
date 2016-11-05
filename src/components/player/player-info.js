@@ -13,8 +13,8 @@ export function PlayerInfo({ track }: PlayerInfoProps) {
     return (
         <div className="player-info">
             <span className="player-info-title"> {track.name} </span>
-            <a className="player-info-text" href="#"> {track.artists.join(', ')} </a>
-            <a className="player-info-text" href="#"> {track.album.name} </a>
+            <span className="player-info-text"> {track.artists.join(', ')} </span>
+            <span className="player-info-text"> {track.album.name} </span>
         </div>
     );
 };

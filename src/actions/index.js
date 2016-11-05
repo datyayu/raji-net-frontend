@@ -8,3 +8,4 @@ export * from './seasons-actions';
 export * from './release-actions';
 export * from './playlist-list-actions';
 export * from './playlist-actions';
+export * from './player-actions';

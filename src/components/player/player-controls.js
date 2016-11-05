@@ -8,6 +8,12 @@ type PlayerControlsProps = {
     isPlaying: boolean;
     isRandom: boolean;
     isMuted: boolean;
+
+    onPlayClick: Function;
+    onPauseClick: Function;
+    onNextClick: Function;
+    onPrevClick: Function;
+    onRandomClick: Function;
 }
 
 
@@ -15,6 +21,12 @@ export function PlayerControls({
     isPlaying=false,
     isRandom=false,
     isMuted=false,
+
+    onPlayClick=()=>{},
+    onPauseClick=()=>{},
+    onNextClick=()=>{},
+    onPrevClick=()=>{},
+    onRandomClick=()=>{},
 }: PlayerControlsProps) {
     const randomClass = isRandom ? 'is-active' : '';
     const playingIcon = isPlaying ? 'pause' : 'play';
@@ -22,10 +34,13 @@ export function PlayerControls({
 
     return (
         <div className="player-controls">
-            <Icon type="random" className={`player-controls-icon ${randomClass}`} />
-            <Icon type="backward" className="player-controls-icon" />
-            <Icon type={playingIcon} className="player-controls-icon" />
-            <Icon type="forward" className="player-controls-icon" />
+            <Icon type="random" className={`player-controls-icon ${randomClass}`}  onClick={onRandomClick} />
+            <Icon type="backward" className="player-controls-icon" onClick={onPrevClick} />
+            { isPlaying
+                ? <Icon type="pause" className="player-controls-icon" onClick={onPauseClick} />
+                : <Icon type="play" className="player-controls-icon" onClick={onPlayClick} />
+            }
+            <Icon type="forward" className="player-controls-icon" onClick={onNextClick} />
             <Icon type={volumeIcon} className="player-controls-icon" />
         </div>
     );

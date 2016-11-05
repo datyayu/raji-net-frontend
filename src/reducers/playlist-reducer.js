@@ -2,7 +2,7 @@
 import type { Action } from 'redux';
 import type { TrackModel } from '../models';
 
-import { PlaylistActions, RoutingActions, SidenavActions } from '../actions';
+import { PlaylistActions, RoutingActions, SidenavActions, PlayerActions } from '../actions';
 
 
 export type PlaylistState = 
@@ -46,7 +46,30 @@ export function playlistReducer(state: PlaylistState = initialState, action: Act
                 , currentSongIndex: action.payload.songIndex
                 }
             );
-            
+
+
+        case PlayerActions.PLAY_NEXT:
+            const nextIndex = state.currentSongIndex + 1;
+            const canPlayNext = nextIndex < state.currentPlaylist.length;
+
+            return (
+                { ...state
+                , currentSongIndex: canPlayNext ? nextIndex : 0
+                }
+            );
+
+
+        case PlayerActions.PLAY_PREV:
+            const prevIndex = state.currentSongIndex - 1;
+            const canPlayPrev = prevIndex >= 0;
+            const lastTrackIndex = state.currentPlaylist.length - 1;
+
+            return (
+                { ...state
+                , currentSongIndex: canPlayPrev ? prevIndex : lastTrackIndex
+                }
+            );
+
 
         default:
             return state;

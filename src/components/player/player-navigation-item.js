@@ -9,19 +9,21 @@ type PlayerNavigationItemProps = {
     track: TrackModel;
     isPrev?: boolean;
     isNext?: boolean;
+    onClick?: (ev: Event) => any
 }
 
 
 export function PlayerNavigationItem({ 
     track,
     isPrev=false,
-    isNext=false
+    isNext=false,
+    onClick=()=>{}
 }: PlayerNavigationItemProps) {
     const title = track.name;
     const artists = track.artists.join(', ');
 
     return (
-        <div className="player-navigation-item">
+        <div className="player-navigation-item" onClick={onClick}>
             { isPrev &&
                 <Icon type="angle-left" className="player-navigation-icon" />
             }

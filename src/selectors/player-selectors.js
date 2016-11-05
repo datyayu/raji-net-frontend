@@ -1,34 +1,43 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+import { msToTimeString } from '../utils';
+
+
 export class PlayerSelectors {
-    static isPlaying(): boolean {
-        return true;
+    static isPlaying(state: ApplicationState): boolean {
+        return state.player.isPlaying;
     }
 
-    static isMuted(): boolean {
-        return true;
+    static isMuted(state: ApplicationState): boolean {
+        return state.player.volumeLevel === 0;
     }
 
-    static isRandom(): boolean {
-        return true;
+    static isRandom(state: ApplicationState): boolean {
+        return state.player.isRandom;
     }
 
-    static isVolumeControlOpen(): boolean {
-        return true;
+    static isVolumeControlOpen(state: ApplicationState): boolean {
+        return state.player.showVolumeControls;
     }
 
-    static getVolumeLevel(): number {
-        return 40;
+    static getVolumeLevel(state: ApplicationState): number {
+        return state.player.volumeLevel;
     }
 
-    static getCurrentPlayingTime(): string {
-        return '1:02';
+    static getCurrentPlayingTime(state: ApplicationState): string {
+        const currentTime = state.player.progress;
+        return msToTimeString(currentTime);
     }
 
-    static getTotalPlayingTime(): string {
-        return '3:02';
+    static getTotalPlayingTime(state: ApplicationState): string {
+        const totalTime = state.player.totalTime;
+        return msToTimeString(totalTime);
     }
 
-    static getCurrentPlayingProgress(): number {
-        return 60;
+    static getCurrentPlayingProgress(state: ApplicationState): number {
+        const totalTime = state.player.totalTime;
+        const currentTime = state.player.progress;
+
+        return (currentTime/totalTime)*100;
     }
 }

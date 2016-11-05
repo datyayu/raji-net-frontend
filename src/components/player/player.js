@@ -9,19 +9,28 @@ import { PlayerControls } from './player-controls';
 import type { TrackModel } from '../../models';
 
 
-type PlayerProps = {
-    prevTrack: ?TrackModel;
-    currentTrack: ?TrackModel;
-    nextTrack: ?TrackModel;
-    
-    isPlaying: boolean;
-    isRandom: boolean;
-    isMuted: boolean;
+type PlayerProps = 
+    { prevTrack: ?TrackModel
+    , currentTrack: ?TrackModel
+    , nextTrack: ?TrackModel
 
-    volume: number;
-    currentPlayingProgress: number;
-    currentPlayingTime: string;
-    totalPlayingTime: string;
+    , isPlaying: boolean
+    , isRandom: boolean
+    , isMuted: boolean
+    , volume: number
+    , currentPlayingProgress: number
+    , currentPlayingTime: string
+    , totalPlayingTime: string
+
+    , onPlay: (ev: Event)=> any
+    , onPause: (ev: Event)=> any
+    , onPlayNext: (ev: Event) => any
+    , onPlayPrev: (ev: Event) => any
+    , onToggleRandom: (ev: Event) => any
+    , onSeek: (ev: Event) => any
+    , onShowVolumeControl: (ev: Event) => any
+    , onHideVolumeControl: (ev: Event) => any
+    , onSetVolume: (ev: Event) => any
 }
 
 
@@ -36,12 +45,23 @@ export function Player({
     currentPlayingTime='0:00',
     currentPlayingProgress=0,
     totalPlayingTime='Loading...',
+    onSeek=()=>{},
+    onPlay=()=>{},
+    onPause=()=>{},
+    onPlayNext=()=>{},
+    onPlayPrev=()=>{},
+    onToggleRandom=()=>{},
+    onShowVolumeControl=()=>{},
+    onHideVolumeControl=()=>{},
+    onSetVolume=()=>{},
 }: PlayerProps) {
     return (
         <div className="player">
             <PlayerNavigation 
-                prevTrack={prevTrack} 
+                prevTrack={prevTrack}
                 nextTrack={nextTrack} 
+                onNextClick={onPlayNext}
+                onPrevClick={onPlayPrev}
             />
             <PlayerData 
                 track={currentTrack} 
@@ -50,12 +70,18 @@ export function Player({
                 currentTime={currentPlayingTime} 
                 progress={currentPlayingProgress}
                 totalTime={totalPlayingTime}
+                onClick={onSeek}
             />
             <PlayerControls 
                 isRandom={isRandom} 
                 isPlaying={isPlaying}
                 isMuted={isMuted} 
-                volume={volume} 
+                volume={volume}
+                onPlayClick={onPlay}
+                onPauseClick={onPause}
+                onNextClick={onPlayNext}
+                onPrevClick={onPlayPrev}
+                onRandomClick={onToggleRandom}
             />
         </div>
     );
