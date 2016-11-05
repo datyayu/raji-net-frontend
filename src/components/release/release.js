@@ -1,20 +1,26 @@
 // @flow
+import type { AlbumModel } from '../../models';
+
 import React from 'react';
 
 import { ReleaseCover } from './release-cover';
 import { ReleaseInfo } from './release-info';
 
-import type { AlbumModel } from '../../models';
+import { Preloader } from '../shared';
 
 
 type ReleaseProps = {
     release: ?AlbumModel;
+    isFetching: boolean;
 }
 
 
-export function Release({ release }: ReleaseProps) {
+export function Release({ release, isFetching=false }: ReleaseProps) {
+    if (isFetching)
+        return ( <Preloader /> );
+
     if (!release)
-        return null;
+        return ( null );
 
     return (
         <div className="series-album">

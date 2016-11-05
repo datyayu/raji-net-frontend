@@ -14,7 +14,7 @@ export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
     function mapStateToProps(state: ApplicationState) {
         return (
             { seriesList: SeriesListSelectors.getSeriesList(state)
-            , isFeching: SeriesListSelectors.isFetching(state)
+            , isFetching: SeriesListSelectors.isFetching(state)
             }
         );
     }

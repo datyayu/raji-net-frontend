@@ -20,4 +20,14 @@ export class ApplicationSelectors {
     static getPageTitle(state: ApplicationState): string {
         return state.routing.pageTitle;
     }
+
+    static isFetching(state: ApplicationState): boolean {
+        return (
+            state.playlistList.isFetching ||
+            state.release.isFetching ||
+            state.seasons.isFetching ||
+            state.series.isFetching ||
+            state.seriesList.isFetching
+        );
+    }
 }

@@ -14,7 +14,7 @@ export function PlaylistListContainer(WrappedComponent: ReactClass<any>) {
     function mapStateToProps(state: ApplicationState) {
         return (
             { playlistList: PlaylistListSelectors.getPlaylistList(state)
-            , isFeching: PlaylistListSelectors.isFetching(state)
+            , isFetching: PlaylistListSelectors.isFetching(state)
             }
         );
     }

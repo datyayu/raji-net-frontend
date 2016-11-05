@@ -10,6 +10,7 @@ type HeaderProps = {|
     hasPlaylist: boolean;
     hasSearch: boolean;
     showSearchOnMobile: boolean;
+    isFetching: boolean;
     searchValue: string;
     openSidenav: (ev: Event) => any;
     showSearch: (ev: Event) => any;
@@ -25,6 +26,7 @@ export function Header({
     hasSearch=false,
     searchValue='',
     showSearchOnMobile=false,
+    isFetching=false,
     openSidenav=()=>{},
     showSearch=()=>{},
     hideSearch=()=>{},
@@ -32,11 +34,12 @@ export function Header({
     onSearchChange=()=>{},
 }: HeaderProps) {
     const searchClasses = showSearchOnMobile ? 'has-search' : '';
+    const pageTitle = isFetching ? 'Loading...' : title;
 
     return (
         <div className={`header ${searchClasses}`}>
             <HeaderContent 
-                title={title} 
+                title={pageTitle} 
                 hasPlaylist={hasPlaylist} 
                 hasSearch={hasSearch}
                 onSearchIconClick={showSearch}

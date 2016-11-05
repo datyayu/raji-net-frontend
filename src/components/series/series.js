@@ -1,16 +1,23 @@
 // @flow
+import type { SeriesModel } from '../../models';
+
 import React from 'react';
 
 import { SeriesReleaseList } from './series-release-list';
-import type { SeriesModel } from '../../models';
+import { Preloader } from '../shared';
 
 
 type SeriesProps = {
     series: SeriesModel;
+    isFetching: boolean;
 }
 
 
-export function Series({ series }: SeriesProps) {
+export function Series({ series, isFetching=false }: SeriesProps) {
+    if (isFetching)
+        return ( <Preloader /> );
+
+
     if (!series)
         return null;
 

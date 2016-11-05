@@ -29,7 +29,6 @@ export function PlayerControls({
     onRandomClick=()=>{},
 }: PlayerControlsProps) {
     const randomClass = isRandom ? 'is-active' : '';
-    const playingIcon = isPlaying ? 'pause' : 'play';
     const volumeIcon = isMuted ? 'volume-off' : 'volume-up'; 
 
     return (

@@ -43,7 +43,7 @@ export class PlayerSeekBar extends Component {
 
 
     render() {
-        const { currentTime='0:00', totalTime='Loading...', progress=0, onClick=()=>{} } = this.props;
+        const { currentTime='0:00', totalTime='Loading...', progress=0 } = this.props;
 
         return (
             <div className="player-seek-bar">

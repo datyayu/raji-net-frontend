@@ -9,20 +9,14 @@ import type { ApplicationState } from '../reducers';
 
 
 
-type ApplicationContainerProps = {
-    hasPlaylist: boolean;
-    hasSearch: boolean;
-    title: string;
-}
-
-
-export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactClass<ApplicationContainerProps> {
+export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { hasPlaylist: ApplicationSelectors.pageHasPlaylist(state)
             , hasSearch: ApplicationSelectors.pageHasSearch(state)
             , showSearchOnMobile: ApplicationSelectors.showMobileSearch(state)
             , title: ApplicationSelectors.getPageTitle(state)
+            , isFetching: ApplicationSelectors.isFetching(state)
             }
         );
     }

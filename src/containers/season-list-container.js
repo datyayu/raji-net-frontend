@@ -14,7 +14,7 @@ export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
     function mapStateToProps(state: ApplicationState) {
         return (
             { seasonList: SeasonListSelectors.getSeasons(state)
-            , isFeching: SeasonListSelectors.isFetching(state)
+            , isFetching: SeasonListSelectors.isFetching(state)
             }
         );
     }
