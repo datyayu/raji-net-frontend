@@ -15,4 +15,8 @@ export class ReleaseSelectors {
     static isFetching(state: ApplicationState): boolean {
         return state.release.isFetching;
     }
+
+    static getError(state: ApplicationState): ?string {
+        return state.release.error;
+    }
 }

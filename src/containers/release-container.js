@@ -17,6 +17,7 @@ export function ReleaseContainer(WrappedComponent: ReactClass<any>) {
             , playlist: ReleaseSelectors.getReleaseTracks(state)
             , releaseId: RoutingSelectors.getIdFromUrl(state)
             , isFetching: ReleaseSelectors.isFetching(state)
+            , error: ReleaseSelectors.getError(state)
             }
         );
     }

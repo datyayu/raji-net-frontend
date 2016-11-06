@@ -16,6 +16,7 @@ export function SeriesIndividualContainer(WrappedComponent: ReactClass<any>) {
             { series: SeriesIndividualSelectors.getSeries(state)
             , seriesId: RoutingSelectors.getIdFromUrl(state)
             , isFetching: SeriesIndividualSelectors.isFetching(state)
+            , error: SeriesIndividualSelectors.getError(state)
             }
         );
     }

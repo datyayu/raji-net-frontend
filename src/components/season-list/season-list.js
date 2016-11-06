@@ -3,19 +3,22 @@ import React from 'react';
 
 import { SeasonListItem } from './season-list-item';
 import type { SeasonModel } from '../../models';
-import { Preloader } from '../shared';
+import { Preloader, ErrorMessage } from '../shared';
 
 
 type SeasonListProps = {
     seasonList: SeasonModel[];
     isFetching: boolean;
+    error: ?string;
 }
 
 
-export function SeasonList({ seasonList=[], isFetching=false }: SeasonListProps) {
+export function SeasonList({ seasonList=[], isFetching=false, error }: SeasonListProps) {
     if (isFetching)
         return ( <Preloader /> );
 
+    if (error)
+        return <ErrorMessage text={error} />;
 
     return (
         <div className="season-list">

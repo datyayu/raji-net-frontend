@@ -6,18 +6,22 @@ import React from 'react';
 import { ReleaseCover } from './release-cover';
 import { ReleaseInfo } from './release-info';
 
-import { Preloader } from '../shared';
+import { Preloader, ErrorMessage } from '../shared';
 
 
 type ReleaseProps = {
     release: ?AlbumModel;
     isFetching: boolean;
+    error: ?string;
 }
 
 
-export function Release({ release, isFetching=false }: ReleaseProps) {
+export function Release({ release, isFetching=false, error }: ReleaseProps) {
     if (isFetching)
         return ( <Preloader /> );
+
+    if (error)
+        return <ErrorMessage text={error} />;
 
     if (!release)
         return ( null );

@@ -11,4 +11,8 @@ export class PlaylistListSelectors {
     static isFetching(state: ApplicationState): boolean {
         return state.playlistList.isFetching;
     }
+
+    static getError(state: ApplicationState): ?string {
+        return state.playlistList.error;
+    }
 }

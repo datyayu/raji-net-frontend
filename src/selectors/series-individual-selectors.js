@@ -11,4 +11,8 @@ export class SeriesIndividualSelectors {
     static isFetching(state: ApplicationState): boolean {
         return state.series.isFetching;
     }
+
+    static getError(state: ApplicationState): ?string {
+        return state.series.error;
+    }
 }

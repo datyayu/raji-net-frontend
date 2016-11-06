@@ -15,6 +15,7 @@ export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
         return (
             { seriesList: SeriesListSelectors.getSeriesList(state)
             , isFetching: SeriesListSelectors.isFetching(state)
+            , error: SeriesListSelectors.getError(state)
             }
         );
     }

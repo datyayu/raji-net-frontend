@@ -18,7 +18,7 @@ export class SeriesListActions {
         );
     }
 
-    static FAILED_TO_GET_SERIES_LIST = '[Series list] FAILED_TO_GET_SERIES_LIST';
+    static FAILED_TO_GET_SERIES_LIST = '[Series List] FAILED_TO_GET_SERIES_LIST';
     static failedToGetSeriesList(error: Error): Action {
         return (
             { type: SeriesListActions.FAILED_TO_GET_SERIES_LIST

@@ -48,7 +48,6 @@ export function playlistListReducer(state: PlaylistListState = initialState, act
                 }
             );
 
-
         default:
             return state;
     }

@@ -15,6 +15,7 @@ export function PlaylistListContainer(WrappedComponent: ReactClass<any>) {
         return (
             { playlistList: PlaylistListSelectors.getPlaylistList(state)
             , isFetching: PlaylistListSelectors.isFetching(state)
+            , error: PlaylistListSelectors.getError(state)
             }
         );
     }

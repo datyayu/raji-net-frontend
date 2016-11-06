@@ -11,4 +11,8 @@ export class SeasonListSelectors {
     static isFetching(state: ApplicationState): boolean {
         return state.seasons.isFetching;
     }
+
+    static getError(state: ApplicationState): ?string {
+        return state.seasons.error;
+    }
 }

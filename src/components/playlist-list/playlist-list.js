@@ -4,18 +4,22 @@ import type { PlaylistModel } from '../../models';
 import React from 'react';
 
 import { PlaylistListItem } from './playlist-list-item';
-import { Preloader } from '../shared';
+import { Preloader, ErrorMessage } from '../shared';
 
 
 type PlaylistListProps = {
     playlistList: PlaylistModel[];
-    isFetching: boolean
+    isFetching: boolean;
+    error: ?string;
 }
 
 
-export function PlaylistList({ playlistList=[], isFetching=false }: PlaylistListProps) {
+export function PlaylistList({ playlistList=[], isFetching=false, error }: PlaylistListProps) {
     if (isFetching)
         return ( <Preloader /> );
+
+    if (error)
+        return <ErrorMessage text={error} />;
 
     return (
         <ul className="playlist-list">

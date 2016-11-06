@@ -15,6 +15,7 @@ export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
         return (
             { seasonList: SeasonListSelectors.getSeasons(state)
             , isFetching: SeasonListSelectors.isFetching(state)
+            , error: SeasonListSelectors.getError(state)
             }
         );
     }

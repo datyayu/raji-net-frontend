@@ -54,7 +54,7 @@ export function routingReducer(state: RoutingState = initialState, action: Actio
         case Actions.RoutingActions.NAVIGATE:
             const location: LocationModel = action.payload.location;
             const currentPath: string = location.pathname.toLowerCase();
-            const pageTitle: string = pageTitles[currentPath] || state.pageTitle;
+            const pageTitle: string = pageTitles[currentPath];
 
             return (
                 { ...state
