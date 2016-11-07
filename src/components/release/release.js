@@ -1,24 +1,30 @@
 // @flow
-import type { AlbumModel } from '../../models';
+import type { ReleaseType } from '../../types';
 
 import React from 'react';
 
+import { Preloader, ErrorMessage } from '../shared';
 import { ReleaseCover } from './release-cover';
 import { ReleaseInfo } from './release-info';
 
-import { Preloader, ErrorMessage } from '../shared';
+
+type ReleaseProps =
+    { release: ?ReleaseType
+    , isFetching: boolean
+    , error: ?string
+    }
+;
 
 
-type ReleaseProps = {
-    release: ?AlbumModel;
-    isFetching: boolean;
-    error: ?string;
-}
-
-
-export function Release({ release, isFetching=false, error }: ReleaseProps) {
+export function Release(
+    { release
+    , isFetching=false
+    , error
+    }
+    : ReleaseProps
+) {
     if (isFetching)
-        return ( <Preloader /> );
+        return <Preloader />;
 
     if (error)
         return <ErrorMessage text={error} />;
@@ -32,4 +38,4 @@ export function Release({ release, isFetching=false, error }: ReleaseProps) {
             <ReleaseInfo release={release} alt={release.name} />
         </div>
     );
-};
+}

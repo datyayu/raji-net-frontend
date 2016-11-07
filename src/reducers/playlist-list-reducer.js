@@ -1,23 +1,24 @@
 // @flow
 import type { Action } from 'redux';
-import type { PlaylistModel } from '../models';
+import type { PlaylistType } from '../types';
 
 import { PlaylistListActions } from '../actions';
 
 
-export type PlaylistListState = 
-    { playlistList: PlaylistModel[]
+export type PlaylistListState =
+    { playlistList: PlaylistType[]
     , isFetching: boolean
     , error: ?string
     }
 ;
 
-const initialState: PlaylistListState = 
+const initialState: PlaylistListState =
     { playlistList: []
     , isFetching: false
     , error: null
     }
 ;
+
 
 export function playlistListReducer(state: PlaylistListState = initialState, action: Action): PlaylistListState {
     switch(action.type) {
@@ -47,6 +48,7 @@ export function playlistListReducer(state: PlaylistListState = initialState, act
                 , error: action.payload
                 }
             );
+
 
         default:
             return state;

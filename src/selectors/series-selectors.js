@@ -1,10 +1,10 @@
 // @flow
-import type { SeriesModel } from '../models';
 import type { ApplicationState } from '../reducers';
+import type { SeriesType } from '../types';
 
 
-export class SeriesIndividualSelectors {
-    static getSeries(state: ApplicationState): ?SeriesModel {
+export class SeriesSelectors {
+    static getSeries(state: ApplicationState): ?SeriesType {
         return state.series.series;
     }
 

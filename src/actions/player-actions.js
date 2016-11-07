@@ -3,35 +3,50 @@ import type { Action } from 'redux';
 
 
 export class PlayerActions {
-    static PLAY = '[Player] PLAY'; 
+    static PLAY = '[Player] PLAY';
     static  play(): Action {
-        return { type: PlayerActions.PLAY };
+        return (
+            { type: PlayerActions.PLAY
+            }
+        );
     }
 
-    static PAUSE = '[Player] PAUSE'; 
+    static PAUSE = '[Player] PAUSE';
     static pause(): Action {
-        return { type: PlayerActions.PAUSE };
+        return (
+            { type: PlayerActions.PAUSE
+            }
+        );
     }
 
     static PLAY_NEXT = '[Player] PLAY_NEXT';
     static playNext(): Action {
-        return { type: PlayerActions.PLAY_NEXT };
-    }    
-    
+        return (
+            { type: PlayerActions.PLAY_NEXT
+            }
+        );
+    }
+
     static PLAY_PREV = '[Player] PLAY_PREV';
     static playPrev(): Action {
-        return { type: PlayerActions.PLAY_PREV };
+        return (
+            { type: PlayerActions.PLAY_PREV
+            }
+        );
     }
 
     static TOGGLE_RANDOM = '[Player] TOGGLE_RANDOM';
     static toggleRandom(): Action {
-        return { type: PlayerActions.TOGGLE_RANDOM };
+        return (
+            { type: PlayerActions.TOGGLE_RANDOM
+            }
+        );
     }
 
     static SET_TOTAL_TIME = '[Player] SET_TOTAL_TIME';
     static setTotalTime(time: number): Action {
         return (
-            { type: PlayerActions.SET_TOTAL_TIME 
+            { type: PlayerActions.SET_TOTAL_TIME
             , payload: time
             }
         );
@@ -48,12 +63,18 @@ export class PlayerActions {
 
     static SHOW_VOLUME_CONTROL = '[Player] SHOW_VOLUME_CONTROL';
     static showVolumeControl(): Action {
-        return { type: PlayerActions.SHOW_VOLUME_CONTROL };
+        return (
+            { type: PlayerActions.SHOW_VOLUME_CONTROL
+            }
+        );
     }
 
     static HIDE_VOLUME_CONTROL = '[Player] HIDE_VOLUME_CONTROL';
     static hideVolumeControl(): Action {
-        return { type: PlayerActions.HIDE_VOLUME_CONTROL };
+        return (
+            { type: PlayerActions.HIDE_VOLUME_CONTROL
+            }
+        );
     }
 
     static CHANGE_VOLUME = '[Player] CHANGE_VOLUME';

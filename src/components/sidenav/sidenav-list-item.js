@@ -2,25 +2,28 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import type { LinkModel } from '../../models';
+import type { LinkType } from '../../types';
 
 
-type SidenavListItemProps = {
-    link: LinkModel;
-    isActive?: boolean;
-}
+type SidenavListItemProps =
+    { link: LinkType
+    , isActive?: boolean
+    }
+;
 
 
-export function SidenavListItem({
-    link, 
-    isActive = false,
-}: SidenavListItemProps) {
+export function SidenavListItem(
+    { link
+    , isActive=false
+    }
+    : SidenavListItemProps
+) {
     const activeClasses: string = isActive ? 'is-active' : '';
- 
+
     return (
         <li className="sidenav-list-item">
             <Link className={`sidenav-list-link ${activeClasses}`} to={link.href}>
-                <span className="sidenav-list-text"> 
+                <span className="sidenav-list-text">
                     {link.text}
                 </span>
             </Link>

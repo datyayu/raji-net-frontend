@@ -1,3 +1,4 @@
+// @flow
 export * from './sidenav';
 export * from './sidenav-logo';
 export * from './sidenav-list';

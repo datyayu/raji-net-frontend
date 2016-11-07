@@ -5,15 +5,16 @@ import { RoutingActions, SearchActions } from '../actions';
 
 
 export type SearchState =
-    { searchValue: string 
+    { searchValue: string
     , showOnMobile: boolean
     }
-
+;
 
 const initialState: SearchState =
     { searchValue: ''
     , showOnMobile: false
     }
+;
 
 
 export function searchReducer(state: SearchState = initialState, action: Action): SearchState {
@@ -49,6 +50,7 @@ export function searchReducer(state: SearchState = initialState, action: Action)
                 , showOnMobile: false
                 }
             );
+
 
         default:
             return state;

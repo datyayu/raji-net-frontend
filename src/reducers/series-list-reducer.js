@@ -1,23 +1,24 @@
 // @flow
 import type { Action } from 'redux';
-import type { SeriesModel } from '../models';
+import type { SeriesType } from '../types';
 
 import { SeriesListActions } from '../actions';
 
 
-export type SeriesListState = 
-    { seriesList: SeriesModel[]
+export type SeriesListState =
+    { seriesList: SeriesType[]
     , isFetching: boolean
     , error: ?string
     }
 ;
 
-const initialState: SeriesListState = 
+const initialState: SeriesListState =
     { seriesList: []
     , isFetching: false
     , error: null
     }
 ;
+
 
 export function seriesListReducer(state: SeriesListState = initialState, action: Action): SeriesListState {
     switch(action.type) {

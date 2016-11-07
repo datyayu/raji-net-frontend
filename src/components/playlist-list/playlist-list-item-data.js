@@ -1,15 +1,20 @@
 // @flow
 import React from 'react';
 
-import type { PlaylistModel } from '../../models';
+import type { PlaylistType } from '../../types';
 
 
-type PlaylistListItemDataProps = {
-    playlist: PlaylistModel;
-}
+type PlaylistListItemDataProps =
+    { playlist: PlaylistType
+    }
+;
 
 
-export function PlaylistListItemData({ playlist }: PlaylistListItemDataProps) {
+export function PlaylistListItemData(
+    { playlist
+    }
+    : PlaylistListItemDataProps
+) {
     return (
         <div className="playlist-list-item-data">
             <img className="playlist-list-item-image" src={playlist.image} alt={playlist.name} />
@@ -22,4 +27,4 @@ export function PlaylistListItemData({ playlist }: PlaylistListItemDataProps) {
             </div>
         </div>
     );
-};
+}

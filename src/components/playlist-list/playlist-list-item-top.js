@@ -1,16 +1,22 @@
 // @flow
 import React from 'react';
 
-import type { TrackModel } from '../../models';
+import type { TrackType } from '../../types';
 
 
-type PlaylistListItemTopProps = {
-    tracks: TrackModel[];
-    top: number[];
-};
+type PlaylistListItemTopProps =
+    { tracks: TrackType[]
+    , top: number[]
+    }
+;
 
 
-export function PlaylistListItemTop({ tracks=[], top=[] }: PlaylistListItemTopProps) {
+export function PlaylistListItemTop(
+    { tracks=[]
+    , top=[]
+    }
+    : PlaylistListItemTopProps
+) {
     return (
         <div className="playlist-list-item-top">
             <h3 className="playlist-list-item-top-title"> Top 3 </h3>
@@ -21,9 +27,9 @@ export function PlaylistListItemTop({ tracks=[], top=[] }: PlaylistListItemTopPr
                     .map((track, idx) =>
                         track &&
                             <p key={idx} className="playlist-list-item-text"> {track.name} </p>
-                    ) 
+                    )
                 }
             </div>
         </div>
     );
-};
+}

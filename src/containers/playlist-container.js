@@ -1,27 +1,18 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { PlaylistSelectors } from '../selectors';
 import { SearchActions, PlaylistActions } from '../actions';
-
-import type { ApplicationState } from '../reducers';
-
+import { PlaylistSelectors } from '../selectors';
 
 
-type PlaylistContainerProps = {
-    hasPlaylist: boolean;
-    hasSearch: boolean;
-    title: string;
-}
-
-
-export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass<PlaylistContainerProps> {
+export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { showPlaylistOnMobile: PlaylistSelectors.showMobilePlaylist(state)
             , playlist: PlaylistSelectors.getCurrentPlaylist(state)
-
             , prevTrack: PlaylistSelectors.getPrevTrack(state)
             , currentTrack: PlaylistSelectors.getCurrentTrack(state)
             , nextTrack: PlaylistSelectors.getNextTrack(state)
@@ -42,4 +33,4 @@ export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass
 
 
     return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
-};
+}

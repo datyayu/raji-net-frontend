@@ -1,12 +1,12 @@
 // @flow
 import React from 'react';
 
+import { SeriesContainer } from '../containers';
 import { Series as SeriesComponent } from '../components';
-import { SeriesIndividualContainer } from '../containers';
 
 
+const Series = SeriesContainer(SeriesComponent);
 
-const Series = SeriesIndividualContainer(SeriesComponent);
 
 export function SeriesIndividualPage() {
     return (

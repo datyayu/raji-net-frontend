@@ -1,16 +1,22 @@
 // @flow
+import type { ReleaseType } from '../../types';
+
 import React from 'react';
 
 import { SeriesReleaseItem } from './series-release-item';
-import type { AlbumModel } from '../../models';
 
 
-type SeriesReleaseListProps = {
-    releaseList: AlbumModel[];
-}
+type SeriesReleaseListProps =
+    { releaseList: ReleaseType[]
+    }
+;
 
 
-export function SeriesReleaseList({ releaseList=[] }: SeriesReleaseListProps) {
+export function SeriesReleaseList(
+    { releaseList=[]
+    }
+    : SeriesReleaseListProps
+) {
     return (
         <div className="series-releases">
             <h4 className="series-releases-title"> Releases </h4>
@@ -22,4 +28,4 @@ export function SeriesReleaseList({ releaseList=[] }: SeriesReleaseListProps) {
             </ul>
         </div>
     );
-};
+}

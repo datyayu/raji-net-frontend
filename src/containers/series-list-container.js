@@ -5,12 +5,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SeriesListSelectors } from '../selectors';
 import { SeriesListActions } from '../actions';
+import { SeriesListSelectors } from '../selectors';
 
 
-
-export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
+export function SeriesListContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { seriesList: SeriesListSelectors.getSeriesList(state)
@@ -27,6 +26,7 @@ export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
+
     class SeriesListContainerComponent extends Component {
         componentWillMount() {
             this.props.getSeriesList();
@@ -39,5 +39,6 @@ export function SeriesListContainer(WrappedComponent: ReactClass<any>) {
         }
     }
 
+
     return connect(mapStateToProps, mapActionsToProps)(SeriesListContainerComponent);
-};
+}

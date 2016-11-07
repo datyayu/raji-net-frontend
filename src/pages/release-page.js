@@ -1,9 +1,8 @@
 // @flow
 import React from 'react';
 
-import { Release as ReleaseComponent, Playlist as PlaylistComponent } from '../components';
 import { ReleaseContainer, PlaylistContainer } from '../containers';
-
+import { Release as ReleaseComponent, Playlist as PlaylistComponent } from '../components';
 
 
 const Release = ReleaseContainer(ReleaseComponent, true);

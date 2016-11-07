@@ -1,16 +1,21 @@
 // @flow
+import type { TrackType } from '../../types';
+
 import React from 'react';
 
-import type { TrackModel } from '../../models';
+
+type PlayerInfoProps =
+    { track: ?TrackType;
+    }
+;
 
 
-type PlayerInfoProps = {
-    track: ?TrackModel;
-}
-
-
-export function PlayerInfo({ track }: PlayerInfoProps) {
-    if (!track) 
+export function PlayerInfo(
+    { track
+    }
+    : PlayerInfoProps
+) {
+    if (!track)
         return (
             <div className="player-info">
                 <span className="player-info-text"> No playlist selected </span>
@@ -24,4 +29,4 @@ export function PlayerInfo({ track }: PlayerInfoProps) {
             <span className="player-info-text"> {track.album.name} </span>
         </div>
     );
-};
+}

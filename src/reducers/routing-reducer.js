@@ -1,21 +1,23 @@
 // @flow
 import type { Action } from 'redux';
-import type { LocationModel } from '../models';
+import type { LocationType } from '../types';
+
+import { createBrowserHistory } from 'history';
 
 import * as Actions from '../actions';
-import { createBrowserHistory } from 'history';
 
 
 const history =
     createBrowserHistory();
 
-const pagesWithPlaylist: string[] = 
+
+const pagesWithPlaylist: string[] =
     [ '/player'
     , '/releases'
     ]
 ;
 
-const pagesWithSearch: string[] = 
+const pagesWithSearch: string[] =
     [ '/playlists'
     , '/series'
     ]
@@ -30,12 +32,13 @@ const pageTitles =
     }
 ;
 
+
 export type RoutingState =
     { hasPlaylist: boolean
     , hasSearch: boolean
     , pageTitle: string
     , action: string
-    , location: LocationModel
+    , location: LocationType
     }
 ;
 
@@ -48,19 +51,19 @@ const initialState: RoutingState =
     }
 ;
 
- 
+
 export function routingReducer(state: RoutingState = initialState, action: Action): RoutingState {
     switch (action.type) {
         case Actions.RoutingActions.NAVIGATE:
-            const location: LocationModel = action.payload.location;
-            const currentPath: string = location.pathname.toLowerCase();
-            const pageTitle: string = pageTitles[currentPath];
+            const location = action.payload.location;
+            const currentPath = location.pathname.toLowerCase();
+            const pageTitle = pageTitles[currentPath];
 
             return (
                 { ...state
                 , hasPlaylist: pagesWithPlaylist.some(page => currentPath.startsWith(page))
                 , hasSearch: pagesWithSearch.some(page => page === currentPath)
-                , pageTitle: pageTitle    
+                , pageTitle: pageTitle
                 , location: location
                 , action: action.payload.action
                 }

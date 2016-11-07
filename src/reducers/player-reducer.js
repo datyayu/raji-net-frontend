@@ -4,7 +4,7 @@ import type { Action } from 'redux';
 import { PlayerActions } from '../actions';
 
 
-export type PlayerState = 
+export type PlayerState =
     { isPlaying: boolean
     , isRandom: boolean
     , progress: number
@@ -50,7 +50,7 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
                 }
             );
 
-        
+
         case PlayerActions.SET_TOTAL_TIME:
             return (
                 { ...state

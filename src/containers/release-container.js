@@ -5,17 +5,16 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { ReleaseSelectors, RoutingSelectors } from '../selectors';
 import { ReleaseActions } from '../actions';
-
+import { ReleaseSelectors, RoutingSelectors } from '../selectors';
 
 
 export function ReleaseContainer(
-    WrappedComponent: ReactClass<any>, 
+    WrappedComponent: ReactClass<any>,
     // Due to this container being shared between release and playlist,
     // <willMount> is required to avoid calling <getRelease()> twice
-    willMount: boolean = false, 
-) {
+    willMount: boolean = false,
+): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { release: ReleaseSelectors.getRelease(state)
@@ -34,6 +33,7 @@ export function ReleaseContainer(
         , dispatch);
     }
 
+
     class ReleaseContainerComponent extends Component {
         componentWillMount() {
             if (willMount) {
@@ -48,5 +48,6 @@ export function ReleaseContainer(
         }
     }
 
+
     return connect(mapStateToProps, mapActionsToProps)(ReleaseContainerComponent);
-};
+}

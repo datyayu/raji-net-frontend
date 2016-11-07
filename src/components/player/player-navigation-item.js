@@ -1,24 +1,28 @@
 // @flow
+import type { TrackType } from '../../types';
+
 import React from 'react';
 
 import { Icon } from '../shared';
-import type { TrackModel } from '../../models';
 
 
-type PlayerNavigationItemProps = {
-    track: TrackModel;
-    isPrev?: boolean;
-    isNext?: boolean;
-    onClick?: (ev: Event) => any
-}
+type PlayerNavigationItemProps =
+    { track: TrackType
+    , isPrev?: boolean
+    , isNext?: boolean
+    , onClick?: Function
+    }
+;
 
 
-export function PlayerNavigationItem({ 
-    track,
-    isPrev=false,
-    isNext=false,
-    onClick=()=>{}
-}: PlayerNavigationItemProps) {
+export function PlayerNavigationItem(
+    { track
+    , isPrev=false
+    , isNext=false
+    , onClick=()=>{}
+    }
+    : PlayerNavigationItemProps
+) {
     const title = track.name;
     const artists = track.artists.join(', ');
 
@@ -38,4 +42,4 @@ export function PlayerNavigationItem({
             }
         </div>
     );
-};
+}

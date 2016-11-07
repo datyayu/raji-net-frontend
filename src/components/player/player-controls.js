@@ -4,32 +4,33 @@ import React from 'react';
 import { Icon } from '../shared';
 
 
-type PlayerControlsProps = {
-    isPlaying: boolean;
-    isRandom: boolean;
-    isMuted: boolean;
+type PlayerControlsProps =
+    { isPlaying: boolean
+    , isRandom: boolean
+    , isMuted: boolean
+    , onPlayClick: Function
+    , onPauseClick: Function
+    , onNextClick: Function
+    , onPrevClick: Function
+    , onRandomClick: Function
+    }
+;
 
-    onPlayClick: Function;
-    onPauseClick: Function;
-    onNextClick: Function;
-    onPrevClick: Function;
-    onRandomClick: Function;
-}
 
-
-export function PlayerControls({
-    isPlaying=false,
-    isRandom=false,
-    isMuted=false,
-
-    onPlayClick=()=>{},
-    onPauseClick=()=>{},
-    onNextClick=()=>{},
-    onPrevClick=()=>{},
-    onRandomClick=()=>{},
-}: PlayerControlsProps) {
+export function PlayerControls(
+    { isPlaying=false
+    , isRandom=false
+    , isMuted=false
+    , onPlayClick=()=>{}
+    , onPauseClick=()=>{}
+    , onNextClick=()=>{}
+    , onPrevClick=()=>{}
+    , onRandomClick=()=>{}
+    }
+    : PlayerControlsProps
+) {
     const randomClass = isRandom ? 'is-active' : '';
-    const volumeIcon = isMuted ? 'volume-off' : 'volume-up'; 
+    const volumeIcon = isMuted ? 'volume-off' : 'volume-up';
 
     return (
         <div className="player-controls">
@@ -43,4 +44,4 @@ export function PlayerControls({
             <Icon type={volumeIcon} className="player-controls-icon" />
         </div>
     );
-};
+}

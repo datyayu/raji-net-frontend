@@ -5,12 +5,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { PlaylistListSelectors } from '../selectors';
 import { PlaylistListActions } from '../actions';
+import { PlaylistListSelectors } from '../selectors';
 
 
-
-export function PlaylistListContainer(WrappedComponent: ReactClass<any>) {
+export function PlaylistListContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { playlistList: PlaylistListSelectors.getPlaylistList(state)
@@ -27,6 +26,7 @@ export function PlaylistListContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
+
     class PlaylistListContainerComponent extends Component {
         componentWillMount() {
             this.props.getPlaylistList();
@@ -39,5 +39,6 @@ export function PlaylistListContainer(WrappedComponent: ReactClass<any>) {
         }
     }
 
+
     return connect(mapStateToProps, mapActionsToProps)(PlaylistListContainerComponent);
-};
+}

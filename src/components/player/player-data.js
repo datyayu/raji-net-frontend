@@ -1,22 +1,28 @@
 // @flow
-import React from 'react';
+import type { TrackType } from '../../types';
 
-import type { TrackModel } from '../../models';
+import React from 'react';
 
 import { PlayerCover } from './player-cover';
 import { PlayerInfo } from './player-info';
 
 
-type PlayerDataProps = {
-    track: ?TrackModel;
-}
+type PlayerDataProps =
+    { track: ?TrackType;
+    }
+;
 
 
-export function PlayerData({ track }: PlayerDataProps) {
+export function PlayerData(
+    { track
+    }
+    : PlayerDataProps
+) {
     return (
         <div className="player-data">
             <PlayerCover album={track && track.album} />
             <PlayerInfo track={track} />
         </div>
     );
-};
+}
+

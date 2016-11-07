@@ -1,5 +1,5 @@
 // @flow
-import type { SeriesModel } from '../../models';
+import type { SeriesType } from '../../types';
 
 import React from 'react';
 
@@ -7,16 +7,23 @@ import { SeriesReleaseList } from './series-release-list';
 import { Preloader, ErrorMessage } from '../shared';
 
 
-type SeriesProps = {
-    series: SeriesModel;
-    isFetching: boolean;
-    error: ?string;
-}
+type SeriesProps =
+    { series: SeriesType
+    , isFetching: boolean
+    , error: ?string
+    }
+;
 
 
-export function Series({ series, isFetching=false, error }: SeriesProps) {
+export function Series(
+    { series
+    , isFetching=false
+    , error
+    }
+    : SeriesProps
+) {
     if (isFetching)
-        return ( <Preloader /> );
+        return <Preloader />;
 
     if (error)
         return <ErrorMessage text={error} />;
@@ -30,4 +37,4 @@ export function Series({ series, isFetching=false, error }: SeriesProps) {
             <SeriesReleaseList releaseList={series && series.albums} />
         </div>
     );
-};
+}

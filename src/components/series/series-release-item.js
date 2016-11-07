@@ -1,16 +1,21 @@
 // @flow
+import type { ReleaseType } from '../../types';
+
 import React from 'react';
 import { Link } from 'react-router';
 
-import type { AlbumModel } from '../../models';
+
+type SeriesReleaseItemProps =
+    { release: ReleaseType
+    }
+;
 
 
-type SeriesReleaseItemProps = {
-    release: AlbumModel;
-}
-
-
-export function SeriesReleaseItem({ release }: SeriesReleaseItemProps) {
+export function SeriesReleaseItem(
+    { release
+    }
+    : SeriesReleaseItemProps
+) {
     return (
         <li className="series-release-item">
             <Link className="series-release-item-link" to={`/releases/${release.id}`}>
@@ -19,4 +24,4 @@ export function SeriesReleaseItem({ release }: SeriesReleaseItemProps) {
             </Link>
         </li>
     );
-};
+}

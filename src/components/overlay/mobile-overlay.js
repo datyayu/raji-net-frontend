@@ -1,23 +1,25 @@
 // @flow
 import React from 'react';
 
-type MobileOverlayProps = {|
-    isActive: boolean;
-    showPlaylistOnMobile: boolean;
-    closeSidenav?: (ev: Event) => any;
-|} 
+
+type MobileOverlayProps =
+    { isActive: boolean
+    , showPlaylistOnMobile: boolean
+    , closeSidenav?: Function
+    }
+;
 
 
-export function MobileOverlay({ 
-    isActive = false,
-    showPlaylistOnMobile=false,
-    closeSidenav=()=>{},
-}: MobileOverlayProps) {
-    const styleClasses = (isActive || showPlaylistOnMobile)
-        ? 'mobile-overlay is-active'
-        : 'mobile-overlay';
+export function MobileOverlay(
+    { isActive = false
+    , showPlaylistOnMobile=false
+    , closeSidenav=()=>{}
+    }
+    : MobileOverlayProps
+) {
+    const activeClass = (isActive || showPlaylistOnMobile) ? 'is-active' : '';
 
     return (
-       <div className={styleClasses} onClick={closeSidenav} />
+       <div className={`mobile overlay ${activeClass}`} onClick={closeSidenav} />
     );
-};
+}

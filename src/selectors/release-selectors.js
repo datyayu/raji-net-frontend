@@ -1,14 +1,14 @@
 // @flow
-import type { AlbumModel, TrackModel } from '../models';
 import type { ApplicationState } from '../reducers';
+import type { ReleaseType, TrackType } from '../types';
 
 
 export class ReleaseSelectors {
-    static getRelease(state: ApplicationState): ?AlbumModel {
+    static getRelease(state: ApplicationState): ?ReleaseType {
         return state.release.release;
     }
 
-    static getReleaseTracks(state: ApplicationState): ?TrackModel[] {
+    static getReleaseTracks(state: ApplicationState): ?TrackType[] {
         return state.release.release ? state.release.release.tracks : [];
     }
 

@@ -1,14 +1,14 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SidenavSelectors } from '../selectors';
 import { SidenavActions } from '../actions';
+import { SidenavSelectors } from '../selectors';
 
-import type { ApplicationState } from '../reducers';
 
-
-export function SidenavContainer(WrappedComponent: ReactClass<any>) {
+export function SidenavContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { links: SidenavSelectors.getLinks(state)
@@ -25,5 +25,6 @@ export function SidenavContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
+
     return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
-};
+}

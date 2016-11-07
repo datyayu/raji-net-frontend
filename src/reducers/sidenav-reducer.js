@@ -1,21 +1,21 @@
 // @flow
 import type { Action } from 'redux';
-import type { LinkModel } from '../models';
+import type { LinkType } from '../types';
 
 import { SidenavActions, RoutingActions } from '../actions';
 
 
-export type SidenavState = 
+export type SidenavState =
     { isOpen: boolean
     , activeLink: ?string
-    , links: LinkModel[]
+    , links: LinkType[]
     }
+;
 
-
-const initialState: SidenavState = 
+const initialState: SidenavState =
     { isOpen: false
     , activeLink: null
-    , links:  
+    , links:
         [
             { text: 'now playing', href: '/player' },
             { text: 'series',      href: '/series' },
@@ -23,6 +23,7 @@ const initialState: SidenavState =
             { text: 'seasons',     href: '/seasons' },
         ]
     }
+;
 
 
 export function sidenavReducer(state: SidenavState = initialState, action: Action): SidenavState {
@@ -42,9 +43,10 @@ export function sidenavReducer(state: SidenavState = initialState, action: Actio
                 }
             );
 
+
         case RoutingActions.NAVIGATE:
-            const currentPath: string =  action.payload.location.pathname;
-            const matchedPage: ?LinkModel = state.links.find(link => link.href === currentPath);
+            const currentPath =  action.payload.location.pathname;
+            const matchedPage = state.links.find(link => link.href === currentPath);
 
             return (
                 {...state

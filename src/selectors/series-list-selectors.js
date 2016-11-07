@@ -1,10 +1,10 @@
 // @flow
-import type { SeriesModel } from '../models';
 import type { ApplicationState } from '../reducers';
+import type { SeriesType } from '../types';
 
 
 export class SeriesListSelectors {
-    static getSeriesList(state: ApplicationState): SeriesModel[] {
+    static getSeriesList(state: ApplicationState): SeriesType[] {
         return state.seriesList.seriesList;
     }
 

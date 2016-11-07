@@ -1,14 +1,14 @@
 // @flow
-import type { LocationModel } from '../models';
+import type { LocationType } from '../types';
 import type { Action } from 'redux';
 
 
 export class RoutingActions {
     static NAVIGATE = '[Routing] NAVIGATE';
-    static navigateTo(location: LocationModel, action: string): Action {
+    static navigateTo(location: LocationType, action: string): Action {
         return (
             { type: RoutingActions.NAVIGATE
-            , payload: 
+            , payload:
                 { location: location
                 , action: action
                 }

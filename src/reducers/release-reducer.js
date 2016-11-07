@@ -1,23 +1,24 @@
 // @flow
 import type { Action } from 'redux';
-import type { AlbumModel } from '../models';
+import type { ReleaseType } from '../types';
 
 import { ReleaseActions } from '../actions';
 
 
-export type ReleaseState = 
-    { release: ?AlbumModel
+export type ReleaseState =
+    { release: ?ReleaseType
     , isFetching: boolean
     , error: ?string
     }
 ;
 
-const initialState: ReleaseState = 
+const initialState: ReleaseState =
     { release: null
     , isFetching: false
     , error: null
     }
 ;
+
 
 export function releaseReducer(state: ReleaseState = initialState, action: Action): ReleaseState {
     switch(action.type) {

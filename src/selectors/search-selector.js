@@ -1,4 +1,5 @@
-import { ApplicationState } from '../reducers'
+// @flow
+import type { ApplicationState } from '../reducers';
 
 
 export class SearchSelectors {

@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 
 import { App } from './app';
 import { store } from './store';
-import './index.css';
 
+import './index.css';
 
 
 ReactDOM.render(

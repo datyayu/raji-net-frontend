@@ -1,5 +1,6 @@
 // @flow
 import type { ApplicationState } from '../reducers';
+
 import { msToTimeString } from '../utils';
 
 
@@ -26,11 +27,13 @@ export class PlayerSelectors {
 
     static getCurrentPlayingTime(state: ApplicationState): string {
         const currentTime = state.player.progress;
+
         return msToTimeString(currentTime);
     }
 
     static getTotalPlayingTime(state: ApplicationState): string {
         const totalTime = state.player.totalTime;
+
         return msToTimeString(totalTime);
     }
 
@@ -38,6 +41,6 @@ export class PlayerSelectors {
         const totalTime = state.player.totalTime;
         const currentTime = state.player.progress;
 
-        return (currentTime/totalTime)*100;
+        return (currentTime/totalTime) * 100;
     }
 }

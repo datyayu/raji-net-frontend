@@ -1,6 +1,6 @@
 // @flow
 import type { Action } from 'redux';
-import type { PlaylistModel } from '../models';
+import type { PlaylistType } from '../types';
 
 
 export class PlaylistListActions {
@@ -13,7 +13,7 @@ export class PlaylistListActions {
     }
 
     static SET_PLAYLIST_LIST = '[Playlist List] SET_PLAYLIST_LIST';
-    static setPlaylistList(playlistList: PlaylistModel[]): Action {
+    static setPlaylistList(playlistList: PlaylistType[]): Action {
         return (
             { type: PlaylistListActions.SET_PLAYLIST_LIST
             , payload: playlistList

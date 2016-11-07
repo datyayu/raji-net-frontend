@@ -4,9 +4,8 @@ import type { ApplicationState } from '../reducers';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { PlayerSelectors } from '../selectors';
 import { PlayerActions } from '../actions';
-
+import { PlayerSelectors } from '../selectors';
 
 
 export function PlayerContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
@@ -40,4 +39,4 @@ export function PlayerContainer(WrappedComponent: ReactClass<any>): ReactClass<a
 
 
     return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
-};
+}

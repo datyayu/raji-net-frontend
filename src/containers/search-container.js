@@ -1,14 +1,14 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SearchSelectors } from '../selectors';
 import { SearchActions } from '../actions';
+import { SearchSelectors } from '../selectors';
 
-import type { ApplicationState } from '../reducers';
 
-
-export function SearchContainer(WrappedComponent: ReactClass<any>) {
+export function SearchContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
             { searchValue: SearchSelectors.getSearchValue(state)
@@ -23,5 +23,6 @@ export function SearchContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
+
     return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
-};
+}

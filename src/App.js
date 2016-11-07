@@ -4,7 +4,14 @@ import { ControlledBrowserRouter} from 'react-router-addons-controlled';
 import { createBrowserHistory } from 'history';
 
 import { Sidenav as SidenavComp, Header as HeaderComp, MobileOverlay as MobileOverlayComp} from './components';
-import { ApplicationContainer, SidenavContainer, RoutingContainer, SearchContainer, PlaylistContainer } from './containers';
+import {
+    ApplicationContainer,
+    SidenavContainer,
+    RoutingContainer,
+    SearchContainer,
+    PlaylistContainer
+} from './containers';
+
 import { AppContent } from './app-content';
 
 
@@ -17,16 +24,14 @@ const Router = RoutingContainer(ControlledBrowserRouter);
 
 
 function AppComponent({ hasPlaylist=false }: { hasPlaylist: boolean }) {
-    const wrapperStyleClasses: string = hasPlaylist
-        ? 'application-wrapper has-playlist'
-        : 'application-wrapper';
+    const activeClass = hasPlaylist ? 'has-playlist' : '';
 
     return (
         <Router history={history}>
             <div className="application">
                 <Sidenav />
 
-                <div className={wrapperStyleClasses}>
+                <div className={`application-wrapper ${activeClass}`}>
                     <Header />
                     <MobileOverlay />
                     <AppContent />

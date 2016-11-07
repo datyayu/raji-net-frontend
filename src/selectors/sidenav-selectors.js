@@ -1,6 +1,6 @@
 // @flow
-import type { LinkModel } from '../models';
 import type { ApplicationState } from '../reducers';
+import type { LinkType } from '../types';
 
 
 export class SidenavSelectors {
@@ -8,7 +8,7 @@ export class SidenavSelectors {
         return state.sidenav.isOpen;
     }
 
-    static getLinks(state: ApplicationState): LinkModel[] {
+    static getLinks(state: ApplicationState): LinkType[] {
         return state.sidenav.links;
     }
 }

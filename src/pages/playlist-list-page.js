@@ -1,9 +1,8 @@
 // @flow
 import React from 'react';
 
-import { Search as SearchComponent, PlaylistList as PlaylistListComponent } from '../components';
 import { SearchContainer, PlaylistListContainer } from '../containers';
-
+import { Search as SearchComponent, PlaylistList as PlaylistListComponent } from '../components';
 
 
 const Search = SearchContainer(SearchComponent);

@@ -1,28 +1,31 @@
 // @flow
+import type { TrackType } from '../../types';
+
 import React from 'react';
 
 import { PlayerNavigationItem } from './player-navigation-item';
-import type { TrackModel } from '../../models';
 
 
-type PlayerNavigationProps = {
-    prevTrack: ?TrackModel;
-    nextTrack: ?TrackModel;
+type PlayerNavigationProps =
+    { prevTrack: ?TrackType
+    , nextTrack: ?TrackType
+    , onPrevClick: Function
+    , onNextClick: Function
+    }
+;
 
-    onPrevClick: (ev: Event) => any;
-    onNextClick: (ev: Event) => any;
-}
 
-
-export function PlayerNavigation({
-    prevTrack,
-    nextTrack,
-    onPrevClick=()=>{},
-    onNextClick=()=>{},
-}: PlayerNavigationProps) {
+export function PlayerNavigation(
+    { prevTrack
+    , nextTrack
+    , onPrevClick=()=>{}
+    , onNextClick=()=>{}
+    }
+    : PlayerNavigationProps
+) {
     return (
         <div className="player-navigation">
-            { prevTrack && 
+            { prevTrack &&
                 <PlayerNavigationItem track={prevTrack} isPrev onClick={onPrevClick} />
             }
             { nextTrack &&
@@ -30,4 +33,4 @@ export function PlayerNavigation({
             }
         </div>
     );
-};
+}

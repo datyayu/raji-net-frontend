@@ -1,5 +1,5 @@
 // @flow
-export type LocationModel = 
+export type LocationType =
     { hash: string
     , key: string
     , pathname: string

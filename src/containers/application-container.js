@@ -1,12 +1,11 @@
 // @flow
+import type { ApplicationState } from '../reducers';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { ApplicationSelectors } from '../selectors';
 import { SearchActions } from '../actions';
-
-import type { ApplicationState } from '../reducers';
-
+import { ApplicationSelectors } from '../selectors';
 
 
 export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
@@ -31,4 +30,4 @@ export function ApplicationContainer(WrappedComponent: ReactClass<any>): ReactCl
 
 
     return connect(mapStateToProps, mapActionsToProps)(WrappedComponent);
-};
+}

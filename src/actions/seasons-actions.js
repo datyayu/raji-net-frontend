@@ -1,6 +1,6 @@
 // @flow
 import type { Action } from 'redux';
-import type { SeasonModel } from '../models';
+import type { SeasonType } from '../types';
 
 
 export class SeasonsActions {
@@ -14,7 +14,7 @@ export class SeasonsActions {
     }
 
     static SET_SEASONS = '[Seasons] SET_SEASONS';
-    static setSeasons(seasons: SeasonModel[]): Action {
+    static setSeasons(seasons: SeasonType[]): Action {
         return (
             { type: SeasonsActions.SET_SEASONS
             , payload: seasons

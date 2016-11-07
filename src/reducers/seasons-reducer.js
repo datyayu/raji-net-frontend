@@ -1,12 +1,12 @@
 // @flow
 import type { Action } from 'redux';
-import type { SeasonModel } from '../models';
+import type { SeasonType } from '../types';
 
 import { SeasonsActions } from '../actions';
 
 
 export type SeasonsState =
-    { seasons: ?SeasonModel[]
+    { seasons: ?SeasonType[]
     , isFetching: boolean
     , error: ?string
     }

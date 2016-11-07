@@ -1,21 +1,29 @@
 // @flow
+import type { SeasonType } from '../../types';
+
 import React from 'react';
 
-import { SeasonListItem } from './season-list-item';
-import type { SeasonModel } from '../../models';
 import { Preloader, ErrorMessage } from '../shared';
+import { SeasonListItem } from './season-list-item';
 
 
-type SeasonListProps = {
-    seasonList: SeasonModel[];
-    isFetching: boolean;
-    error: ?string;
-}
+type SeasonListProps =
+    { seasonList: SeasonType[]
+    , isFetching: boolean
+    , error: ?string
+    }
+;
 
 
-export function SeasonList({ seasonList=[], isFetching=false, error }: SeasonListProps) {
+export function SeasonList(
+    { seasonList=[]
+    , isFetching=false
+    , error
+    }
+    : SeasonListProps
+) {
     if (isFetching)
-        return ( <Preloader /> );
+        return <Preloader />;
 
     if (error)
         return <ErrorMessage text={error} />;
@@ -27,4 +35,4 @@ export function SeasonList({ seasonList=[], isFetching=false, error }: SeasonLis
             )}
         </div>
     );
-};
+}

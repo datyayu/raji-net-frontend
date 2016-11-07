@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 
@@ -37,7 +38,7 @@ export function Preloader() {
                 stroke="#1d5173"
                 fill="none"
                 strokeWidth="3"
-                strokeLinecap="round" 
+                strokeLinecap="round"
                 className="preloader-circle preloader-circle-2"
             />
 
@@ -48,7 +49,7 @@ export function Preloader() {
                 stroke="#052f4c"
                 fill="none"
                 strokeWidth="3"
-                strokeLinecap="round" 
+                strokeLinecap="round"
                 className="preloader-circle preloader-circle-3"
             />
         </svg>

@@ -1,10 +1,10 @@
 // @flow
 import type { ApplicationState } from '../reducers';
-import type { SeasonModel } from '../models';
+import type { SeasonType } from '../types';
 
 
-export class SeasonListSelectors {
-    static getSeasons(state: ApplicationState): ?SeasonModel[] {
+export class SeasonsSelectors {
+    static getSeasons(state: ApplicationState): ?SeasonType[] {
         return state.seasons.seasons;
     }
 

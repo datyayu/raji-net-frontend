@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
 
-import { Search as SearchComponent, SeriesList as SeriesListComponent } from '../components';
 import { SearchContainer, SeriesListContainer } from '../containers';
-
+import { Search as SearchComponent, SeriesList as SeriesListComponent } from '../components';
 
 
 const Search = SearchContainer(SearchComponent);
 const SeriesList = SeriesListContainer(SeriesListComponent);
+
 
 export function SeriesListPage() {
     return (

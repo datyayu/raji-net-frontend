@@ -2,12 +2,12 @@
 import React from 'react';
 import { compose } from 'redux';
 
-import { Player as PlayerComponent, Playlist as PlaylistComponent } from '../components';
 import { PlayerContainer, PlaylistContainer } from '../containers';
+import { Player as PlayerComponent, Playlist as PlaylistComponent } from '../components';
 
 
 const CombinedContainer = compose(
-    PlayerContainer, 
+    PlayerContainer,
     PlaylistContainer,
 );
 

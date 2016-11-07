@@ -1,6 +1,6 @@
 // @flow
 import type { Action } from 'redux';
-import type { AlbumModel } from '../models';
+import type { ReleaseType } from '../types';
 
 
 export class ReleaseActions {
@@ -14,7 +14,7 @@ export class ReleaseActions {
     }
 
     static SET_RELEASE = '[Release] SET_RELEASE';
-    static setRelease(release: AlbumModel): Action {
+    static setRelease(release: ReleaseType): Action {
         return (
             { type: ReleaseActions.SET_RELEASE
             , payload: release

@@ -12,7 +12,7 @@ export function AppContent() {
             <Match exactly pattern="/player" component={Pages.PlayerPage} />
             <Match exactly pattern="/series" component={Pages.SeriesListPage} />
             <Match exactly pattern="/playlists" component={Pages.PlaylistListPage} />
-            <Match exactly pattern="/seasons" component={Pages.SeasonListPage} />
+            <Match exactly pattern="/seasons" component={Pages.SeasonsPage} />
             <Match pattern="/series/:series_id" component={Pages.SeriesIndividualPage} />
             <Match pattern="/releases/:release_id" component={Pages.ReleasePage} />
         </div>

@@ -1,10 +1,10 @@
 // @flow
-import type { PlaylistModel } from '../models';
 import type { ApplicationState } from '../reducers';
+import type { PlaylistType } from '../types';
 
 
 export class PlaylistListSelectors {
-    static getPlaylistList(state: ApplicationState): ?PlaylistModel[] {
+    static getPlaylistList(state: ApplicationState): ?PlaylistType[] {
         return state.playlistList.playlistList;
     }
 

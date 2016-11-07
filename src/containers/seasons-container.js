@@ -5,17 +5,16 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SeasonListSelectors } from '../selectors';
 import { SeasonsActions } from '../actions';
+import { SeasonsSelectors } from '../selectors';
 
 
-
-export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
+export function SeasonsContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
-            { seasonList: SeasonListSelectors.getSeasons(state)
-            , isFetching: SeasonListSelectors.isFetching(state)
-            , error: SeasonListSelectors.getError(state)
+            { seasonList: SeasonsSelectors.getSeasons(state)
+            , isFetching: SeasonsSelectors.isFetching(state)
+            , error: SeasonsSelectors.getError(state)
             }
         );
     }
@@ -27,7 +26,8 @@ export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
-    class SeasonListContainerComponent extends Component {
+
+    class SeasonsContainerComponent extends Component {
         componentWillMount() {
             this.props.getSeasons();
         }
@@ -39,5 +39,6 @@ export function SeasonListContainer(WrappedComponent: ReactClass<any>) {
         }
     }
 
-    return connect(mapStateToProps, mapActionsToProps)(SeasonListContainerComponent);
-};
+
+    return connect(mapStateToProps, mapActionsToProps)(SeasonsContainerComponent);
+}

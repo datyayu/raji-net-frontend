@@ -1,13 +1,13 @@
 // @flow
 import type { Action } from 'redux';
-import type { TrackModel } from '../models';
+import type { TrackType } from '../types';
 
 import { PlaylistActions, RoutingActions, SidenavActions, PlayerActions } from '../actions';
 
 
-export type PlaylistState = 
+export type PlaylistState =
     { showPlaylist: boolean
-    , currentPlaylist: TrackModel[]
+    , currentPlaylist: TrackType[]
     , currentSongIndex: number
     }
 ;
@@ -18,6 +18,7 @@ const initialState: PlaylistState =
     , currentSongIndex: 0
     }
 ;
+
 
 export function playlistReducer(state: PlaylistState = initialState, action: Action): PlaylistState {
     switch(action.type) {

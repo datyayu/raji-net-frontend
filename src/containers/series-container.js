@@ -5,18 +5,17 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SeriesIndividualSelectors, RoutingSelectors } from '../selectors';
 import { SeriesActions } from '../actions';
+import { SeriesSelectors, RoutingSelectors } from '../selectors';
 
 
-
-export function SeriesIndividualContainer(WrappedComponent: ReactClass<any>) {
+export function SeriesContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
     function mapStateToProps(state: ApplicationState) {
         return (
-            { series: SeriesIndividualSelectors.getSeries(state)
-            , seriesId: RoutingSelectors.getIdFromUrl(state)
-            , isFetching: SeriesIndividualSelectors.isFetching(state)
-            , error: SeriesIndividualSelectors.getError(state)
+            { seriesId: RoutingSelectors.getIdFromUrl(state)
+            , series: SeriesSelectors.getSeries(state)
+            , isFetching: SeriesSelectors.isFetching(state)
+            , error: SeriesSelectors.getError(state)
             }
         );
     }
@@ -28,7 +27,8 @@ export function SeriesIndividualContainer(WrappedComponent: ReactClass<any>) {
         , dispatch);
     }
 
-    class SeriesIndividualContainerComponent extends Component {
+
+    class SeriesContainerComponent extends Component {
         componentWillMount() {
             this.props.getSeries(this.props.seriesId);
         }
@@ -40,5 +40,6 @@ export function SeriesIndividualContainer(WrappedComponent: ReactClass<any>) {
         }
     }
 
-    return connect(mapStateToProps, mapActionsToProps)(SeriesIndividualContainerComponent);
-};
+
+    return connect(mapStateToProps, mapActionsToProps)(SeriesContainerComponent);
+}

@@ -1,6 +1,6 @@
 // @flow
-import type { SeriesModel } from '../models';
 import type { Action } from 'redux';
+import type { SeriesType } from '../types';
 
 
 export class SeriesListActions {
@@ -10,7 +10,7 @@ export class SeriesListActions {
     }
 
     static SET_SERIES_LIST = '[Series List] SET_SERIES_LIST';
-    static setSeriesList(seriesList: SeriesModel[]): Action {
+    static setSeriesList(seriesList: SeriesType[]): Action {
         return (
             { type: SeriesListActions.SET_SERIES_LIST
             , payload: seriesList

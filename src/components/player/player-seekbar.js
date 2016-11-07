@@ -2,19 +2,19 @@
 import React, { Component } from 'react';
 
 
-type PlayerSeekBarProps = {
-    currentTime: string;
-    totalTime: string;
-    progress: number;
-    onClick: Function;
-}
+type PlayerSeekBarProps =
+    { currentTime: string
+    , totalTime: string
+    , progress: number
+    , onClick: Function
+    }
+;
 
 
 export class PlayerSeekBar extends Component {
     seekContainer: ?HTMLElement;
-    refHandler: (ref: HTMLElement) => void;
-    mapEventToOnClickAction: (event: any) => void;
-
+    refHandler: Function;
+    mapEventToOnClickAction: Function;
 
     constructor(props: PlayerSeekBarProps) {
         super(props);
@@ -37,6 +37,7 @@ export class PlayerSeekBar extends Component {
         this.props.onClick(seekPercentage);
     }
 
+
     refHandler(ref: HTMLElement) {
         this.seekContainer = ref;
     }
@@ -48,8 +49,9 @@ export class PlayerSeekBar extends Component {
         return (
             <div className="player-seekbar">
                 <div className="player-seekbar-total-bar"
-                     ref={this.refHandler} 
-                     onClick={this.mapEventToOnClickAction}>
+                     ref={this.refHandler}
+                     onClick={this.mapEventToOnClickAction}
+                >
                     <div className="player-seekbar-current-bar" style={{width: `${progress}%`}} />
                 </div>
 
@@ -61,4 +63,3 @@ export class PlayerSeekBar extends Component {
         );
     }
 }
-
