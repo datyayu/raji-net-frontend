@@ -1,0 +1,11 @@
+.playlist-list {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+.playlist-list-container {
+    @include at-desktop {
+        margin-top: 1em;
+    }
+}

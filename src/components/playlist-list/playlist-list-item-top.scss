@@ -1,0 +1,23 @@
+.playlist-list-item-top {
+    display: none;
+    width: 50%;
+
+    @include at-hd-desktop {
+        display: block;
+    }
+}
+
+
+.playlist-list-item-top-title {
+    border-bottom: 1px solid $color--clear-text;
+    box-sizing: border-box;
+    color: $color--clear-text;
+    margin: 0 10%;
+    padding: .25em;
+    text-align: center;
+}
+
+
+.playlist-list-item-top-list {
+    text-align: center;
+}

@@ -1,0 +1,48 @@
+.series-release-item {
+    max-width: 50%;
+    width: 50%;
+
+    @include at-tablet {
+        max-width: (100%/3);
+        width: (100%/3);
+    }
+
+    @include at-desktop {
+        &:hover {
+            box-shadow: 0 0 3px 2px rgba($color--brand-primary, .8);
+            z-index: 1;
+        }
+    }
+}
+
+
+.series-release-item-link {
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+
+.series-release-cover {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.series-release-type {
+    background: rgba($color--brand-primary, .8);
+    bottom: 0;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 400;
+    left: 0;
+    margin: 0;
+    padding: .5em 1em;
+    position: absolute;
+    text-align: center;
+ 
+    @include ellipsis-overflow(100%);
+}

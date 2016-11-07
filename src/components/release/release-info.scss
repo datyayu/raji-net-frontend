@@ -1,0 +1,47 @@
+.release-info {
+    color: $color--normal-text;
+    text-align: center;
+}
+
+
+.release-info-text {
+    font-size: 1.25em;
+    font-weight: 400;
+    margin: .5em 0;
+
+    @include ellipsis-overflow(100%);
+    
+    @include at-tablet {
+        font-size: 2.5em;
+    }
+
+    @include at-tablet {
+        font-size: 2em;
+    }
+
+    @include at-phone-landscape {
+        font-size: 1.5em;
+    }
+}
+
+
+.release-info-title {
+    color: $color--dark-text;
+    font-size: 2em;
+    font-weight: 600;
+    margin: .5em 0;
+
+    @include ellipsis-overflow(100%);
+
+    @include at-tablet {
+        font-size: 3em;
+    }
+
+    @include at-tablet {
+        font-size: 2.5em;
+    }
+
+    @include at-phone-landscape {
+        font-size: 1.8em;
+    }
+}

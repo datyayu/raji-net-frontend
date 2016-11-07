@@ -1,0 +1,50 @@
+.player-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    margin: 1em 0;
+
+    +at-tablet {
+        font-size: 2em;
+    }
+
+    +at-desktop {
+        font-size: 1.3em;
+    }
+
+    +at-hd-desktop {
+        font-size: 1.4em;
+    }
+
+    +at-phone-landscape {
+        font-size: 1em;
+    }
+
+    +at-tablet-landscape {
+        font-size: 1.25em;
+    }
+}
+
+
+.player-info-title {
+    color: $color--dark-text;
+    font-size: 2.3em;
+    text-align: center;
+
+    @include ellipsis-overflow(100%);
+}
+
+
+.player-info-text {
+    color: $color--light-text;
+    font-size: 1.25em;
+    margin-top: .5em;
+    text-align: center;
+
+    @include ellipsis-overflow(100%);
+
+    &:hover {
+        color: $color--dark-text;
+    }
+}

@@ -1,0 +1,57 @@
+.playlist-track {
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    color: $color--clear-text;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1em;
+    max-width: 100%;
+    overflow: hidden;
+    padding: .25em .5em;
+    width: 100%;
+
+    &:hover, &:focus, &.is-active {
+        background: $color--sidenav-bg-highlighted;
+        color: white;
+    }
+
+    @include at-tablet() {
+        font-size: 1.5em;
+    }
+
+    @include at-desktop {
+        font-size: 1em;
+    }
+}
+
+
+.playlist-track-cover {
+    height: 50px;
+    width: 50px;
+}
+
+
+.playlist-track-info {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1em;
+}
+
+
+.playlist-track-info-text {
+    @include ellipsis-overflow(38vw);
+
+    @include at-desktop {
+        @include ellipsis-overflow(200px);
+    }
+}
+        
+
+.playlist-track-icons {
+    align-items: center;
+    display: flex;
+    font-size: .8em;
+}

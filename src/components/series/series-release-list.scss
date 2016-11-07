@@ -1,0 +1,36 @@
+.series-releases {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-height: calc(100vh - 12.5em);
+    width: 90%;
+
+    @include at-hd-desktop {
+        padding: 0;
+        padding-left: 4em;
+    }
+}
+
+
+.series-releases-title {
+    border-bottom: 1px solid $color--divider;
+    box-sizing: border-box;
+    color: $color--normal-text;
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: .5em;
+    padding: .5em 0;
+    text-align: center; 
+}
+
+
+.series-releases-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    @include at-desktop {
+        overflow-y: auto;
+        max-height: calc(100vh - 12.5em - 1em - .5em)'' // container size - title - title padding - title margin
+    }
+}

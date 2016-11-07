@@ -16,11 +16,11 @@ export function Sidenav({
     links = [], 
     isActive = false,
 }: SidenavProps) {
-    const styleClasses: string = `navbar ${isActive ? 'is-active' : ''}`
+    const activeClases: string = isActive ? 'is-active' : ''
   
     return (
-        <div className={styleClasses}>
-            <nav className="navbar-nav">
+        <div className={`sidenav ${activeClases}`}>
+            <nav className="sidenav-nav">
                 <SidenavLogo />
                 <SidenavList links={links} />
             </nav>

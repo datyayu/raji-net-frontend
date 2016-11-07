@@ -25,8 +25,8 @@ export function Series({ series, isFetching=false, error }: SeriesProps) {
         return null;
 
     return (
-        <div className="series-individual">
-            <img className="series-individual-image" src={series.image} alt={series.name} />
+        <div className="series">
+            <img className="series-image" src={series.image} alt={series.name} />
             <SeriesReleaseList releaseList={series && series.albums} />
         </div>
     );

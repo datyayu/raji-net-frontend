@@ -1,0 +1,9 @@
+.sidenav-list {
+    display: flex;
+    flex-direction: column;
+
+    @include at-desktop {
+        height: calc(100vh - 300px - 4em);
+        justify-content: center;
+    }
+}

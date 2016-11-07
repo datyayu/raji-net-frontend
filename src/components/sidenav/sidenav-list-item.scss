@@ -1,0 +1,42 @@
+.sidenav-list-item {
+    border-bottom: 1px solid white;
+    text-align: center;
+
+    @include at-desktop {
+        border-bottom: none;
+        text-align: right;
+    }
+}
+
+
+.sidenav-list-link {
+    color: white;
+    display: block;
+    padding: 1.5em 0;
+
+    &:active,
+    &:hover,
+    &.is-active {
+        background: $color--sidenav-bg-highlighted;
+    }
+
+    @include at-desktop {
+        font-size: 1.5em;
+        padding: .5em 0;
+        transition: font-size .1s ease-in-out;
+
+        &:active,
+        &:hover,
+        &.is-active {
+            background: none;
+            font-size: 1.8em;
+        }
+    }
+}
+
+
+.sidenav-list-text:after {
+    @include at-desktop {
+        content: " ―";
+    }
+}

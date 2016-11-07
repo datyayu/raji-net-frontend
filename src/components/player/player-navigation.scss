@@ -1,0 +1,9 @@
+.player-navigation {
+    color: $color--normal-text;
+    display: none;
+    justify-content: space-between;
+
+    @include at-desktop {
+        display: flex;
+    }
+}

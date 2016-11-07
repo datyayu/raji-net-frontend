@@ -1,0 +1,56 @@
+.release-cover {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+    @include at-tablet {
+        width: 60%
+    }
+
+    @include at-phone-landscape {
+        height: 200px;
+        margin: 0;
+        width: 200px;
+    }
+}
+
+
+.release-cover-image {
+    height: 100%;
+    width: 100%;
+}
+
+
+.release-cover-icons {
+    background: rgba($color--brand-primary, .7);
+    bottom: .2em;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    padding: .5em;
+    position: absolute;
+    width: 100%;
+
+    @include at-phone-landscape {
+        bottom: 0em  
+    }
+}
+
+
+.release-cover-icon {
+    font-size: 2em;
+    
+    @include at-tablet {
+        font-size: 3.5em
+    }
+    
+    @include at-desktop {
+        font-size: 2.5em
+    }
+
+    @include at-phone-landscape {
+        font-size: 2em;
+    }
+}

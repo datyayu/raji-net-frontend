@@ -14,8 +14,8 @@ export function MobileOverlay({
     closeSidenav=()=>{},
 }: MobileOverlayProps) {
     const styleClasses = (isActive || showPlaylistOnMobile)
-        ? "application-overlay is-active"
-        : 'application-overlay';
+        ? 'mobile-overlay is-active'
+        : 'mobile-overlay';
 
     return (
        <div className={styleClasses} onClick={closeSidenav} />

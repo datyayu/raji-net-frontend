@@ -1,0 +1,39 @@
+.playlist-list-item-data {
+    align-items: center;
+    color: white;
+    display: flex;
+    width: 100%;
+
+    @include at-hd-desktop {
+        width: 50%;
+    }
+}
+
+
+.playlist-list-item-info {
+    font-size: 1em;
+    width: calc(100% - 100px - 1em); // 75px image + .5em margin * 2 sides
+}
+
+
+.playlist-list-item-title {
+    box-sizing: border-box;
+    margin: 0 .25em;
+
+    @include ellipsis-overflow(calc(100% - .5em));
+}
+
+
+.playlist-list-item-text {
+    box-sizing: border-box;
+    color: $color--clear-text;
+    margin: .25em .5em;
+
+    @include ellipsis-overflow(calc(100%- 1em));
+}
+
+
+.playlist-list-item-image {
+    height: 100px;
+    width: 100px;
+}

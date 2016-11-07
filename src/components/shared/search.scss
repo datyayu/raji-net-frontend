@@ -1,0 +1,33 @@
+.search {
+    display: none;
+    text-align: center;
+    width: 100%;
+
+    @include at-desktop {
+        display: block;
+    }
+}
+
+
+.search-input {
+    font-size: .9em;
+    margin: -.5em auto 1em auto;
+    padding: .5em 1em .5em 2em;
+    width: 100%;
+}
+
+
+.search-input-wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 40%;
+}
+
+
+.search-input-icon {
+    color: $color--normal-text;
+    font-size: 1.1em;
+    left: 7px;
+    position: absolute;
+    top: 3px;
+}

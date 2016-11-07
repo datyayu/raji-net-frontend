@@ -18,7 +18,7 @@ export function PlaylistTrackList({
     onItemClick=()=>{},
 }: PlaylistTrackListProps) {
     return (
-        <ul className="playlist-song-list">
+        <ul className="playlist-track-list">
         { tracks.map((track, idx) => (
             <PlaylistTrackItem 
                 key={idx} 

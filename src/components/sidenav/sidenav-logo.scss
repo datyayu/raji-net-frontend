@@ -1,0 +1,49 @@
+.sidenav-logo {
+    border-bottom: 1px solid white;
+    color: white;
+    display: block;
+    padding: .25em 0;
+
+    &:active,
+    &:hover,
+    &.is-active {
+        background: $color--sidenav-bg-highlighted;
+    }
+
+    @include at-desktop {
+        border-bottom: none;
+        padding: 0;
+        margin: 1em 0;
+
+        &:active,
+        &:hover,
+        &.is-active {
+            background: none;
+        }
+    }
+}
+
+
+.sidenav-logo-text {
+    font-size: 2em;
+    font-weight: lighter;
+    margin: 0;
+    padding: .25em 0;
+    text-align: center;
+
+    @include at-desktop {
+        display: none;
+    }
+}
+
+
+.sidenav-logo-image {
+    display: none;
+    margin: 0 auto;
+    width: 100px;
+
+    @include at-desktop {
+        display: block;
+        width: 150px;
+    }
+}

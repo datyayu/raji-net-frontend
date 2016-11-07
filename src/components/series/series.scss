@@ -1,0 +1,25 @@
+.series {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    max-height: calc(100vh - 8em);
+    width: 100%;
+
+    @include at-hd-desktop {
+        padding: 0em 2em;
+    }
+}
+
+.series-image {
+    display: none;
+    height: 30%;
+    max-height: 30%;
+    max-width: 30%;
+    min-height: 30%;
+    min-width: 30%;
+    width: 30%;
+
+    @include at-hd-desktop() {
+        display: flex;
+    }
+}

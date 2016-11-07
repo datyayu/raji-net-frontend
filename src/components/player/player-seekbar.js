@@ -46,16 +46,16 @@ export class PlayerSeekBar extends Component {
         const { currentTime='0:00', totalTime='Loading...', progress=0 } = this.props;
 
         return (
-            <div className="player-seek-bar">
-                <div className="player-seek-bar-total-bar"
+            <div className="player-seekbar">
+                <div className="player-seekbar-total-bar"
                      ref={this.refHandler} 
                      onClick={this.mapEventToOnClickAction}>
-                    <div className="player-seek-bar-current-bar" style={{width: `${progress}%`}} />
+                    <div className="player-seekbar-current-bar" style={{width: `${progress}%`}} />
                 </div>
 
-                <div className="player-seek-bar-time">
-                    <div className="player-seek-bar-time-text"> {currentTime} </div>
-                    <div className="player-seek-bar-time-text"> {totalTime} </div>
+                <div className="player-seekbar-time">
+                    <div className="player-seekbar-time-text"> {currentTime} </div>
+                    <div className="player-seekbar-time-text"> {totalTime} </div>
                 </div>
             </div>
         );

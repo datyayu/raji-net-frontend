@@ -1,0 +1,48 @@
+.player-seekbar {
+    width: 100%;
+    
+    @include at-desktop {
+        padding-top: .5em;
+    }
+}
+
+
+.player-seekbar-total-bar {
+    background: $color--seekbar-total;
+    border-radius: 1px;
+    cursor: pointer;
+    height: 1.5em;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+
+    @include at-desktop {
+        margin-top: 1em
+    }
+
+    @include at-phone-landscape {
+        height: 1em;
+    }
+    
+    @include at-tablet-landscape {
+        height: 1em
+    }
+}
+
+
+.player-seekbar-current-bar {
+    background: $color--seekbar-progress;
+    height: 100%;
+    position: relative;
+}
+
+
+.player-seekbar-time {
+    display: flex;
+    justify-content: space-between;
+    color: $color--normal-text;
+
+    @include at-desktop {
+        padding-top: .5em;
+    }
+}

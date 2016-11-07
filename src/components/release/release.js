@@ -27,7 +27,7 @@ export function Release({ release, isFetching=false, error }: ReleaseProps) {
         return ( null );
 
     return (
-        <div className="series-album">
+        <div className="release">
             <ReleaseCover image={release.image} alt={release.name} />
             <ReleaseInfo release={release} alt={release.name} />
         </div>

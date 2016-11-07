@@ -21,16 +21,16 @@ export function PlaylistTrackItem({
     const activeClass: string = isPlaying ? 'is-active' : '';
 
     return (
-        <li className={`playlist-song ${activeClass}`} onClick={onClick}>
-            <img className="playlist-song-cover" src={track.album.image} alt={track.album.name} />
+        <li className={`playlist-track ${activeClass}`} onClick={onClick}>
+            <img className="playlist-track-cover" src={track.album.image} alt={track.album.name} />
         
-            <div className="playlist-song-info">
-                <span className="playlist-song-info-text">{track.name}</span>
-                <span className="playlist-song-info-text">{track.artists.join(',')}</span>
+            <div className="playlist-track-info">
+                <span className="playlist-track-info-text">{track.name}</span>
+                <span className="playlist-track-info-text">{track.artists.join(',')}</span>
             </div>
 
-            <div className="playlist-song-icons">
-                <Icon type={iconType} className="playlist-song-icon" />
+            <div className="playlist-track-icons">
+                <Icon type={iconType} className="playlist-track-icon" />
             </div>
         </li>
     );

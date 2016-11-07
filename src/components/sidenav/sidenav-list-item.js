@@ -15,12 +15,12 @@ export function SidenavListItem({
     link, 
     isActive = false,
 }: SidenavListItemProps) {
-    const styleClasses: string = `navbar-list-link ${isActive ? 'is-active' : ''}`;
+    const activeClasses: string = isActive ? 'is-active' : '';
  
     return (
-        <li className="navbar-list-item">
-            <Link className={styleClasses} to={link.href}>
-                <span className="navbar-list-text"> 
+        <li className="sidenav-list-item">
+            <Link className={`sidenav-list-link ${activeClasses}`} to={link.href}>
+                <span className="sidenav-list-text"> 
                     {link.text}
                 </span>
             </Link>

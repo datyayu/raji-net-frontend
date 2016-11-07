@@ -1,0 +1,20 @@
+.player-data {
+    @include at-desktop {
+        margin: 2em 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    @include at-phone-landscape {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    @include at-tablet-landscape {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+}

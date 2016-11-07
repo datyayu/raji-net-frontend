@@ -14,7 +14,7 @@ export function SidenavList({
     links = [],
 }: SidenavListProps) {
     return (
-        <ul className="navbar-list">
+        <ul className="sidenav-list">
         {
             links.map((link, idx) => 
                 <SidenavListItem key={idx} link={link} />

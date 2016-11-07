@@ -1,0 +1,46 @@
+.header.has-search {
+    & .header-content {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+}
+
+
+.header-content {
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: space-between;
+    left: 0;
+    opacity: 1;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    transition: opacity 300ms ease-in-out;
+    width: 100%;
+    will-change: transform, opacity;
+
+    @include at-desktop {
+        border-bottom: 1px solid $color--divider;
+        margin: 0 5%;
+        width: 90%;
+    }
+}
+
+
+.header-title {
+    margin: 0;
+    text-align: center;
+    @include ellipsis-overflow(70vw);
+
+    @include at-tablet {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @include at-desktop {
+        padding: .25em 0;
+        color: $color--normal-text;
+    }
+}

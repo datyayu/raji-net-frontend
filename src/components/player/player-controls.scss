@@ -1,0 +1,28 @@
+.player-controls {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+
+.player-controls-icon {
+    cursor: pointer;
+    color: $color--normal-text;
+    font-size: 2.5em;
+
+    &:hover {
+        color: $color--dark-text;
+    }
+
+    &.is-active {
+        color: $color--active-icon;
+    }
+
+    @include at-tablet {
+        font-size: 3em;
+    }
+
+    @include at-phone-landscape {
+        font-size: 2em;
+    }
+}
