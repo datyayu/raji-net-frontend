@@ -7,7 +7,8 @@
     will-change: transform;
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.2) translateZ(0);
+        backface-visibility: hidden;
     }
 
     &:nth-child(2) {

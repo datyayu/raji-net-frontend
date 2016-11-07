@@ -5,6 +5,7 @@
     width: 90%;
 
     @include at-hd-desktop {
+        margin-top: -3em;
         padding: 0;
         padding-left: 4em;
     }

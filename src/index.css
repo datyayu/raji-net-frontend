@@ -261,7 +261,9 @@
     margin: 2em 0;
     display: flex;
     justify-content: space-around;
-    align-items: center; } }
+    align-items: center;
+    width: 100%;
+    max-width: 100%; } }
 
 @media screen and (orientation: landscape) and (max-width: 640px) {
   .player-data {
@@ -280,17 +282,25 @@
   display: flex;
   flex-direction: column;
   font-size: 1em;
-  margin: 1em 0; }
-  .player-info + at-tablet {
-    font-size: 2em; }
-  .player-info + at-desktop {
-    font-size: 1.3em; }
-  .player-info + at-hd-desktop {
-    font-size: 1.4em; }
-  .player-info + at-phone-landscape {
-    font-size: 1em; }
-  .player-info + at-tablet-landscape {
-    font-size: 1.25em; }
+  margin: 1em 0;
+  padding: 0 1em;
+  box-sizing: border-box; }
+  @media screen and (min-width: 480px) {
+    .player-info {
+      font-size: 2em; } }
+  @media screen and (min-width: 780px) {
+    .player-info {
+      font-size: 1em;
+      width: calc(100vw - 200px - 250px - 20%); } }
+  @media screen and (min-width: 1025px) {
+    .player-info {
+      width: calc(100vw - 200px - 300px - 250px - 40%); } }
+  @media screen and (orientation: landscape) and (max-width: 640px) {
+    .player-info {
+      font-size: 1em; } }
+  @media screen and (orientation: landscape) and (max-width: 780px) {
+    .player-info {
+      font-size: 1.25em; } }
 
 .player-info-title {
   color: #323232;
@@ -330,7 +340,8 @@
   transition: transform 100ms ease-in-out, padding 100ms ease-in-out;
   will-change: transform; }
   .player-navigation-item:hover {
-    transform: scale(1.2); }
+    transform: scale(1.2) translateZ(0);
+    backface-visibility: hidden; }
   .player-navigation-item:nth-child(2) {
     text-align: right; }
 
@@ -415,7 +426,7 @@
   color: white;
   font-size: 2em;
   margin: 0;
-  padding: .4em 0;
+  padding: .75em 0;
   text-align: center; }
 
 .playlist-track {
@@ -667,16 +678,17 @@
   width: 100%; }
   @media screen and (min-width: 1025px) {
     .series {
+      min-height: 25em;
       padding: 0em 2em; } }
 
 .series-image {
   display: none;
-  height: 30%;
-  max-height: 30%;
-  max-width: 30%;
-  min-height: 30%;
-  min-width: 30%;
-  width: 30%; }
+  height: 25%;
+  max-height: 25%;
+  max-width: 25%;
+  min-height: 25%;
+  min-width: 25%;
+  width: 25%; }
   @media screen and (min-width: 1025px) {
     .series-image {
       display: flex; } }
@@ -691,7 +703,7 @@
   @media screen and (min-width: 780px) {
     .series-release-item:hover {
       box-shadow: 0 0 3px 2px rgba(52, 152, 219, 0.8);
-      z-index: 1; } }
+      z-index: 2; } }
 
 .series-release-item-link {
   display: block;
@@ -729,6 +741,7 @@
   width: 90%; }
   @media screen and (min-width: 1025px) {
     .series-releases {
+      margin-top: -3em;
       padding: 0;
       padding-left: 4em; } }
 

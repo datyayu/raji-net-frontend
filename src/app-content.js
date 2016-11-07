@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Match } from 'react-router';
+import { Match, Redirect } from 'react-router';
 
 import * as Pages from './pages';
 
@@ -8,7 +8,7 @@ import * as Pages from './pages';
 export function AppContent() {
     return (
         <div className="application-content">
-            <Match exactly pattern="/" component={Pages.PlayerPage} />
+            <Match exactly pattern="/" component={() => <Redirect to="/player" /> } />
             <Match exactly pattern="/player" component={Pages.PlayerPage} />
             <Match exactly pattern="/series" component={Pages.SeriesListPage} />
             <Match exactly pattern="/playlists" component={Pages.PlaylistListPage} />
