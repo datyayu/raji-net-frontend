@@ -10,6 +10,6 @@ type ErrorMessageProps =
 
 export function ErrorMessage({ text='Error at fetching. Try again later.' }: ErrorMessageProps) {
     return (
-        <h2> {text} </h2>
+        <h3 className="error-message"> {text} </h3>
     );
 }

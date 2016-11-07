@@ -5,6 +5,14 @@
 .fa {
   font-size: 2em; }
 
+.error-message {
+  background: rgba(255, 0, 0, 0.5);
+  color: white;
+  font-weight: normal;
+  margin: 0;
+  padding: 1em;
+  text-align: center; }
+
 .preloader {
   margin: 1em auto;
   width: 100%; }
