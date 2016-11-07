@@ -2,21 +2,72 @@
 /* Theme */
 /* Text */
 /* Elements */
-body {
-  font-family: HelveticaNeue-Light, Helvetica, "Open Sans", Arial, sans-serif;
-  margin: 0;
-  padding: 0; }
-
-a {
-  text-decoration: none; }
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
 .fa {
   font-size: 2em; }
+
+.preloader {
+  margin: 1em auto;
+  width: 100%; }
+
+.preloader-circle {
+  opacity: 0; }
+
+.preloader-circle-1 {
+  animation: 3s circleAnimation infinite;
+  will-change: transform opacity; }
+
+.preloader-circle-2 {
+  animation: 3s circleAnimation infinite;
+  animation-delay: 1s;
+  will-change: transform opacity; }
+
+.preloader-circle-3 {
+  animation: 3s circleAnimation infinite;
+  animation-delay: 2s;
+  will-change: transform opacity; }
+
+@keyframes circleAnimation {
+  0% {
+    opacity: 1;
+    transform: translate(25px, 25px) scale(0) translate(-25px, -25px);
+    transform-origin: 25px 25px; }
+  20% {
+    opacity: 1; }
+  40% {
+    opacity: .75; }
+  60% {
+    opacity: .3; }
+  80% {
+    opacity: .2; }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 50px) scale(1) translate(-50px, -50px); } }
+
+.search {
+  display: none;
+  text-align: center;
+  width: 100%; }
+  @media screen and (min-width: 780px) {
+    .search {
+      display: block; } }
+
+.search-input {
+  font-size: .9em;
+  margin: -.5em auto 1em auto;
+  padding: .5em 1em .5em 2em;
+  width: 100%; }
+
+.search-input-wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 40%; }
+
+.search-input-icon {
+  color: #4f4e4e;
+  font-size: 1.1em;
+  left: 7px;
+  position: absolute;
+  top: 3px; }
 
 .header {
   background: #212121;
@@ -760,32 +811,6 @@ ul {
     .series-list-info-title {
       font-size: .9em; } }
 
-.search {
-  display: none;
-  text-align: center;
-  width: 100%; }
-  @media screen and (min-width: 780px) {
-    .search {
-      display: block; } }
-
-.search-input {
-  font-size: .9em;
-  margin: -.5em auto 1em auto;
-  padding: .5em 1em .5em 2em;
-  width: 100%; }
-
-.search-input-wrapper {
-  margin: 0 auto;
-  position: relative;
-  width: 40%; }
-
-.search-input-icon {
-  color: #4f4e4e;
-  font-size: 1.1em;
-  left: 7px;
-  position: absolute;
-  top: 3px; }
-
 .sidenav {
   background: #212121;
   height: 100vh;
@@ -902,3 +927,16 @@ ul {
   @media screen and (min-width: 780px) {
     .application-content {
       width: 85%; } }
+
+body {
+  font-family: HelveticaNeue-Light, Helvetica, "Open Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }

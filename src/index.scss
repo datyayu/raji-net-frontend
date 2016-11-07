@@ -1,6 +1,12 @@
 @import "configs/index";
 @import "utils/index";
 
+@import "components/index";
+@import "app";
+@import "app-content";
+
+
+
 // Base styles
 body {
     font-family: HelveticaNeue-Light, Helvetica, "Open Sans", Arial, sans-serif;
@@ -17,13 +23,3 @@ ul {
     margin: 0;
     padding: 0;
 }
-
-.fa {
-    font-size: 2em;
-}
-
-
-@import "components/index";
-@import "app";
-@import "app-content";
-

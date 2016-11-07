@@ -1,0 +1,60 @@
+$animation-time: 3s;
+
+
+.preloader {
+    margin: 1em auto;
+    width: 100%;
+}
+
+.preloader-circle {
+    opacity: 0;
+}
+
+
+.preloader-circle-1 {
+    animation: $animation-time circleAnimation infinite;
+    will-change: transform opacity;
+}
+
+.preloader-circle-2 {
+    animation: $animation-time circleAnimation infinite;
+    animation-delay: $animation-time * (1/ 3);
+    will-change: transform opacity;
+}
+.preloader-circle-3 {
+    animation: $animation-time circleAnimation infinite;
+    animation-delay: $animation-time * (2/ 3);
+    will-change: transform opacity;
+}
+
+
+@keyframes circleAnimation {
+    0% { 
+        opacity: 1;
+        transform: translate(25px, 25px) scale(0) translate(-25px, -25px);
+        transform-origin: 25px 25px;
+    }
+    
+    20% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: .75;
+    }
+
+    60% {
+        opacity: .3;
+    }
+
+    80% {
+        opacity: .2;
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translate(50px, 50px)
+                   scale(1) 
+                   translate(-50px, -50px);
+    }
+}
