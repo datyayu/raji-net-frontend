@@ -10,7 +10,12 @@ import { ReleaseActions } from '../actions';
 
 
 
-export function ReleaseContainer(WrappedComponent: ReactClass<any>) {
+export function ReleaseContainer(
+    WrappedComponent: ReactClass<any>, 
+    // Due to this container being shared between release and playlist,
+    // <willMount> is required to avoid calling <getRelease()> twice
+    willMount: boolean = false, 
+) {
     function mapStateToProps(state: ApplicationState) {
         return (
             { release: ReleaseSelectors.getRelease(state)
@@ -31,7 +36,9 @@ export function ReleaseContainer(WrappedComponent: ReactClass<any>) {
 
     class ReleaseContainerComponent extends Component {
         componentWillMount() {
-            this.props.getRelease(this.props.releaseId);
+            if (willMount) {
+                this.props.getRelease(this.props.releaseId);
+            }
         }
 
         render() {

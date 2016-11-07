@@ -6,7 +6,7 @@ import { ReleaseContainer, PlaylistContainer } from '../containers';
 
 
 
-const Release = ReleaseContainer(ReleaseComponent);
+const Release = ReleaseContainer(ReleaseComponent, true);
 const Playlist = PlaylistContainer(ReleaseContainer(PlaylistComponent));
 
 
