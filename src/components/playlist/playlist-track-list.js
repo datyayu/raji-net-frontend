@@ -8,16 +8,24 @@ import { PlaylistTrackItem } from './playlist-track-item';
 
 type PlaylistTrackListProps =
     { tracks: TrackType[]
+    , isPlaying: boolean
     , currentSongId: number
-    , onItemClick: Function
+    , currentLoadingSongId: number
+    , onItemPlay: Function
+    , onItemPlayFromStart: Function
+    , onItemPause: Function
     }
 ;
 
 
 export function PlaylistTrackList(
     { tracks=[]
+    , isPlaying=false
     , currentSongId=0
-    , onItemClick=()=>{}
+    , onItemPlay=()=>{}
+    , onItemPlayFromStart=()=>{}
+    , onItemPause=()=>{}
+    , currentLoadingSongId=0
     }
     : PlaylistTrackListProps
 ) {
@@ -27,8 +35,12 @@ export function PlaylistTrackList(
             <PlaylistTrackItem
                 key={idx}
                 track={track}
-                isPlaying={track.id === currentSongId}
-                onClick={onItemClick.bind(null, tracks, idx)}
+                isLoading={track.id === currentLoadingSongId}
+                isActive={track.id === currentSongId}
+                isPlaying={track.id === currentSongId && isPlaying}
+                onItemPlay={onItemPlay}
+                onItemPlayFromStart={onItemPlayFromStart.bind(null, tracks, idx)}
+                onItemPause={onItemPause}
             />
         ))}
         </ul>

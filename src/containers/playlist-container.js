@@ -4,8 +4,8 @@ import type { ApplicationState } from '../reducers';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { SearchActions, PlaylistActions } from '../actions';
-import { PlaylistSelectors } from '../selectors';
+import { SearchActions, PlaylistActions, PlayerActions } from '../actions';
+import { PlaylistSelectors, PlayerSelectors } from '../selectors';
 
 
 export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass<any> {
@@ -15,7 +15,9 @@ export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass
             , playlist: PlaylistSelectors.getCurrentPlaylist(state)
             , prevTrack: PlaylistSelectors.getPrevTrack(state)
             , currentTrack: PlaylistSelectors.getCurrentTrack(state)
+            , isPlaying: PlayerSelectors.isPlaying(state)
             , nextTrack: PlaylistSelectors.getNextTrack(state)
+            , currentLoadingSong: PlaylistSelectors.getLoadingSong(state)
             }
         );
     }
@@ -26,7 +28,9 @@ export function PlaylistContainer(WrappedComponent: ReactClass<any>): ReactClass
             , hideSearch: SearchActions.hideMobileSearch
             , showPlaylist: PlaylistActions.showPlaylistOnMobile
             , hidePlaylist: PlaylistActions.closePlaylistOnMobile
-            , playSong: PlaylistActions.playSongFromPlaylist
+            , playNewSong: PlaylistActions.playSongFromPlaylist
+            , playCurrentSong: PlayerActions.play
+            , pauseSong: PlayerActions.pause
             }
         , dispatch);
     }

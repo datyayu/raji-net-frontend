@@ -1,4 +1,5 @@
 **/.DS_Store
+public/audio
 bower_components
 node_modules
 .codekit-cache

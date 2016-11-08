@@ -13,6 +13,7 @@ type PlayerProps =
     { prevTrack: ?TrackType
     , currentTrack: ?TrackType
     , nextTrack: ?TrackType
+    , currentLoadingSong: TrackType
 
     , isPlaying: boolean
     , isRandom: boolean
@@ -38,6 +39,7 @@ type PlayerProps =
 export function Player(
     { prevTrack
     , currentTrack
+    , currentLoadingSong
     , nextTrack
     , isPlaying=false
     , isRandom=false
@@ -82,6 +84,7 @@ export function Player(
                 isRandom={isRandom}
                 isPlaying={isPlaying}
                 isMuted={isMuted}
+                isLoading={!!currentLoadingSong}
                 volume={volume}
                 onPlayClick={onPlay}
                 onPauseClick={onPause}

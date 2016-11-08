@@ -14,12 +14,13 @@ const mockRelease =
     , length: 12
     , plays: 323
     , year: 2015
-    , tracks: 
+    , tracks:
         [
             { id: 1
+            , url: '/audio/song-1.mp3'
             , name: 'puengue #1'
             , artists: ['Iguchi Yuka']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
@@ -31,9 +32,10 @@ const mockRelease =
                 }
             }
         ,   { id: 2
+            , url: '/audio/song-2.mp3'
             , name: 'Rainbow Girl #2'
             , artists: ['Iguchi Yuka']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
@@ -45,9 +47,10 @@ const mockRelease =
                 }
             }
         ,   { id: 3
+            , url: '/audio/song-3.mp3'
             , name: 'Sketch Switch #3'
             , artists: ['Asumi Kana', 'Mizuhashi Kaori', 'Yuuko Goto', 'Ryoko Shintani']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']

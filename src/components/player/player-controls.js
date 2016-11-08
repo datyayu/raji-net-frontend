@@ -8,6 +8,7 @@ type PlayerControlsProps =
     { isPlaying: boolean
     , isRandom: boolean
     , isMuted: boolean
+    , isLoading: boolean
     , onPlayClick: Function
     , onPauseClick: Function
     , onNextClick: Function
@@ -21,6 +22,7 @@ export function PlayerControls(
     { isPlaying=false
     , isRandom=false
     , isMuted=false
+    , isLoading=false
     , onPlayClick=()=>{}
     , onPauseClick=()=>{}
     , onNextClick=()=>{}
@@ -36,9 +38,14 @@ export function PlayerControls(
         <div className="player-controls">
             <Icon type="random" className={`player-controls-icon ${randomClass}`}  onClick={onRandomClick} />
             <Icon type="backward" className="player-controls-icon" onClick={onPrevClick} />
-            { isPlaying
-                ? <Icon type="pause" className="player-controls-icon" onClick={onPauseClick} />
-                : <Icon type="play" className="player-controls-icon" onClick={onPlayClick} />
+            { isLoading &&
+                <span className="player-controls-loading-message">Loading...</span>
+            }
+            { !isLoading &&
+                (isPlaying
+                    ? <Icon type="pause" className="player-controls-icon" onClick={onPauseClick} />
+                    : <Icon type="play" className="player-controls-icon" onClick={onPlayClick} />
+                )
             }
             <Icon type="forward" className="player-controls-icon" onClick={onNextClick} />
             <Icon type={volumeIcon} className="player-controls-icon" />

@@ -7,5 +7,6 @@ export type TrackType =
     , name: string
     , artists: string[]
     , album: ReleaseType
+    , url: string
     }
 ;

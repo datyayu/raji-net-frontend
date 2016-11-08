@@ -32,7 +32,6 @@ export class PlayerSeekBar extends Component {
         const totalWidth = this.seekContainer.clientWidth;
         const clickPosition = event.pageX - (event.target: HTMLElement).offsetLeft;
         const seekPercentage = (clickPosition / totalWidth) * 100;
-        console.log(totalWidth, clickPosition, seekPercentage);
 
         this.props.onClick(seekPercentage);
     }

@@ -9,13 +9,17 @@ export type PlaylistState =
     { showPlaylist: boolean
     , currentPlaylist: TrackType[]
     , currentSongIndex: number
+    , playingSongIndex: number
+    , loadingSong: number
     }
 ;
 
 const initialState: PlaylistState =
     { showPlaylist: false
     , currentPlaylist: []
-    , currentSongIndex: 0
+    , currentSongIndex: -1
+    , loadingSong: -1
+    , playingSongIndex: -1
     }
 ;
 
@@ -43,8 +47,25 @@ export function playlistReducer(state: PlaylistState = initialState, action: Act
         case PlaylistActions.PLAY_SONG_FROM_PLAYLIST:
             return (
                 { ...state
-                , currentPlaylist: action.payload.tracks
                 , currentSongIndex: action.payload.songIndex
+                , loadingSong: action.payload.songIndex
+                , currentPlaylist: action.payload.tracks
+                }
+            );
+
+        case PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS:
+            return (
+                { ...state
+                , loadingSong: -1
+                , playingSongIndex: state.currentSongIndex
+                }
+            );
+
+        case PlaylistActions.PLAY_SONG_FROM_PLAYLIST_FAILED:
+            return (
+                { ...state
+                , loadingSong: -1
+                , playingSongIndex: state.currentSongIndex
                 }
             );
 

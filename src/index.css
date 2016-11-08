@@ -225,6 +225,11 @@
     .player-controls-icon {
       font-size: 2em; } }
 
+.player-controls-loading-message {
+  color: #323232;
+  font-weight: 600;
+  padding: .5em 0; }
+
 .player-cover {
   margin: 0;
   padding: 0; }

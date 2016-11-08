@@ -4,12 +4,29 @@ import type { Action } from 'redux';
 
 export class PlayerActions {
     static PLAY = '[Player] PLAY';
-    static  play(): Action {
+    static play(): Action {
         return (
             { type: PlayerActions.PLAY
             }
         );
     }
+
+    static PLAY_SUCCESS = '[Player] PLAY_SUCCESS';
+    static playSuccess(): Action {
+        return (
+            { type: PlayerActions.PLAY_SUCCESS
+            }
+        );
+    }
+
+    static PLAY_FAILED = '[Player] PLAY_FAILED';
+    static playFailed(): Action {
+        return (
+            { type: PlayerActions.PLAY_FAILED
+            }
+        );
+    }
+
 
     static PAUSE = '[Player] PAUSE';
     static pause(): Action {
@@ -18,6 +35,23 @@ export class PlayerActions {
             }
         );
     }
+
+    static PAUSE_SUCCESS = '[Player] PAUSE_SUCCESS';
+    static pauseSuccess(): Action {
+        return (
+            { type: PlayerActions.PAUSE_SUCCESS
+            }
+        );
+    }
+
+    static PAUSE_FAILED = '[Player] PAUSE_FAILED';
+    static pauseFailed(): Action {
+        return (
+            { type: PlayerActions.PAUSE_FAILED
+            }
+        );
+    }
+
 
     static PLAY_NEXT = '[Player] PLAY_NEXT';
     static playNext(): Action {
@@ -52,6 +86,24 @@ export class PlayerActions {
         );
     }
 
+    static SEEK = '[Player] SEEK';
+    static seek(percentage: number): Action {
+        return (
+            { type: PlayerActions.SEEK
+            , payload: percentage
+            }
+        );
+    }
+
+    static FORCE_SEEK = '[Player] FORCE_SEEK';
+    static forceSeek(time: number): Action {
+        return (
+            { type: PlayerActions.FORCE_SEEK
+            , payload: time
+            }
+        );
+    }
+
     static SEEK_TO = '[Player] SEEK_TO';
     static seekTo(percentage: number): Action {
         return (
@@ -81,7 +133,7 @@ export class PlayerActions {
     static changeVolume(volumeLevel: number): Action {
         return (
             { type: PlayerActions.CHANGE_VOLUME
-            , payload: volumeLevel 
+            , payload: volumeLevel
             }
         );
     }

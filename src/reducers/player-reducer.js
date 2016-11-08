@@ -1,7 +1,7 @@
 // @flow
 import type { Action } from 'redux';
 
-import { PlayerActions } from '../actions';
+import { PlayerActions, PlaylistActions } from '../actions';
 
 
 export type PlayerState =
@@ -27,7 +27,7 @@ const initialState: PlayerState =
 
 export function playerReducer(state: PlayerState = initialState, action: Action): PlayerState {
     switch(action.type) {
-        case PlayerActions.PLAY:
+        case PlayerActions.PLAY_SUCCESS:
             return (
                 { ...state
                 , isPlaying: true
@@ -35,7 +35,7 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
             );
 
 
-        case PlayerActions.PAUSE:
+        case PlayerActions.PAUSE_SUCCESS:
             return (
                 { ...state
                 , isPlaying: false
@@ -55,6 +55,22 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
             return (
                 { ...state
                 , totalTime: action.payload
+                }
+            );
+
+
+        case PlayerActions.SEEK:
+            return (
+                { ...state
+                , progress: action.payload
+                }
+            );
+
+
+        case PlayerActions.FORCE_SEEK:
+            return (
+                { ...state
+                , progress: action.payload
                 }
             );
 
@@ -87,6 +103,24 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
             return (
                 { ...state
                 , volumeLevel: action.payload
+                }
+            );
+
+
+        case PlaylistActions.PLAY_SONG_FROM_PLAYLIST:
+            return (
+                { ...state
+                , isPlaying: false
+                }
+            )
+
+
+        case PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS:
+            return (
+                { ...state
+                , isPlaying: true
+                , totalTime: action.payload
+                , progress: 0
                 }
             );
 

@@ -18,8 +18,9 @@ const mockPlaylist: PlaylistModel =
         [
             { id: 1
             , name: 'puengue'
+            , url: '/audio/song-1.mp3'
             , artists: ['Iguchi Yuka']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
@@ -31,9 +32,10 @@ const mockPlaylist: PlaylistModel =
                 }
             }
         ,   { id: 2
+            , url: '/audio/song-2.mp3'
             , name: 'Rainbow Girl'
             , artists: ['Iguchi Yuka']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']
@@ -45,9 +47,10 @@ const mockPlaylist: PlaylistModel =
                 }
             }
         ,   { id: 3
+            , url: '/audio/song-3.mp3'
             , name: 'Sketch Switch'
             , artists: ['Asumi Kana', 'Mizuhashi Kaori', 'Yuuko Goto', 'Ryoko Shintani']
-            , album: 
+            , album:
                 { id: 1
                 , name: 'Hafa Adai'
                 , artists: ['Iguchi Yuka']

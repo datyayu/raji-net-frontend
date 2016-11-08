@@ -20,6 +20,6 @@ export function MobileOverlay(
     const activeClass = (isActive || showPlaylistOnMobile) ? 'is-active' : '';
 
     return (
-       <div className={`mobile overlay ${activeClass}`} onClick={closeSidenav} />
+       <div className={`mobile-overlay ${activeClass}`} onClick={closeSidenav} />
     );
 }
