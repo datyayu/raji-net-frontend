@@ -2,20 +2,39 @@
 import type { Action } from 'redux';
 import type { TrackType } from '../types';
 
-import { takeLatest } from 'redux-saga';
-import { call, put, select } from 'redux-saga/effects';
+import { takeLatest, eventChannel } from 'redux-saga';
+import { call, put, select, fork, take } from 'redux-saga/effects';
 
 import { PlaylistSelectors, PlayerSelectors } from '../selectors';
 import { PlaylistActions, PlayerActions } from '../actions';
 import { OngakuService } from '../utils';
 
-
+/**
+ * TYPES
+ */
 type ActionPayload =
     { tracks: TrackType[]
     , songIndex: number
     }
 ;
 
+
+/**
+ * Event channels
+ */
+function onSongEndedChannel(): Generator<any, any, any> {
+    return eventChannel(function(emitter) {
+        OngakuService.setOnEndCallback(() => {
+            emitter(1)
+        });
+        return () => {};
+    });
+}
+
+
+/**
+ * Helpers
+ */
 function playAudioViaOngaku(songToPlay: TrackType) {
     const fileUrl = songToPlay.url;
 
@@ -23,6 +42,9 @@ function playAudioViaOngaku(songToPlay: TrackType) {
 }
 
 
+/**
+ * Sagas handler
+ */
 function* playTrack(action: Action) {
     try {
         const { tracks, songIndex }: ActionPayload = action.payload;
@@ -42,7 +64,35 @@ function* playTrack(action: Action) {
     }
 }
 
+function* playNextOnSongEnded(action: Action): Generator<any, any, any> {
+    const songEndedChannel = yield call(onSongEndedChannel);
 
-export default function* playlistListSaga(): Generator<any, any, any> {
+    while (true) {
+        const _ = yield take(songEndedChannel);
+        yield put(PlayerActions.playNext());
+    }
+}
+
+
+/**
+ * Sagas
+ */
+
+function* playlistListSaga(): Generator<any, any, any> {
   yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST, playTrack);
+}
+
+function* playlistNextSongSaga(): Generator<any, any, any> {
+  yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST, playNextOnSongEnded);
+}
+
+/**
+ * Root saga
+ */
+export default function* playlistSagasRoot(): Generator<any, any, any> {
+    yield (
+        [ fork(playlistListSaga)
+        , fork(playlistNextSongSaga)
+        ]
+    );
 }
