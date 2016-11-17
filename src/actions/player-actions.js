@@ -20,9 +20,10 @@ export class PlayerActions {
     }
 
     static PLAY_FAILED = '[Player] PLAY_FAILED';
-    static playFailed(): Action {
+    static playFailed(error: Error): Action {
         return (
             { type: PlayerActions.PLAY_FAILED
+            , error: error
             }
         );
     }

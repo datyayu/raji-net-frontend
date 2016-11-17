@@ -1,9 +1,11 @@
 import type { Action } from 'redux';
+import type { TrackType } from '../types';
 
 import { takeLatest, eventChannel, END } from 'redux-saga';
-import { call, put, fork, take } from 'redux-saga/effects';
+import { call, put, fork, take, select } from 'redux-saga/effects';
 
 import { PlayerActions, PlaylistActions } from '../actions';
+import { PlaylistSelectors } from '../selectors';
 import { OngakuService } from '../utils';
 
 
@@ -23,6 +25,10 @@ function getTimeAtInterval(): Generator<any, any, any> {
 }
 
 
+/**
+ * Saga handlers
+ */
+
 function* autoSeek(action: Action): Generator<any, any, any> {
     const ongakuPlaybackInterval = yield call(getTimeAtInterval);
 
@@ -38,7 +44,7 @@ function* playTrack(action: Action): Generator<any, any, any> {
         yield OngakuService.play();
         yield put(PlayerActions.playSuccess());
     } catch (error) {
-        yield put(PlayerActions.playFailed());
+        yield put(PlayerActions.playFailed(error));
     }
 }
 
@@ -60,6 +66,21 @@ function* seekTrack(action: Action) {
     }
 }
 
+function* playCurrentSong(action: Action) {
+    try {
+        const currentPlayingSong: TrackType = yield select(PlaylistSelectors.getCurrentTrack);
+        debugger;
+        yield OngakuService.playAudio(currentPlayingSong.url);
+        yield put(PlayerActions.playSuccess());
+    } catch (error) {
+        yield put(PlayerActions.playFailed(error));
+    }
+}
+
+/**
+ * Sagas
+ */
+
 function* playFromPlaylistSaga(): Generator<any, any, any> {
   yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, playTrack);
 }
@@ -80,10 +101,21 @@ function* autoSeekSaga1(): Generator<any, any, any> {
   yield* takeLatest(PlayerActions.PLAY_SUCCESS, autoSeek);
 }
 
+function * playNextSaga(): Generator<any, any, any> {
+    yield* takeLatest(PlayerActions.PLAY_NEXT, playCurrentSong)
+}
+function * playPrevSaga(): Generator<any, any, any> {
+    yield* takeLatest(PlayerActions.PLAY_PREV, playCurrentSong)
+}
+
 function* autoSeekSaga2(): Generator<any, any, any> {
   yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, autoSeek);
 }
 
+
+/**
+ * ROOT SAGA
+ */
 export default function* playerSagasRoot(): Generator<any, any, any> {
     yield (
         [ fork(playFromPlaylistSaga)
@@ -92,6 +124,8 @@ export default function* playerSagasRoot(): Generator<any, any, any> {
         , fork(seekSaga)
         , fork(autoSeekSaga1)
         , fork(autoSeekSaga2)
+        , fork(playNextSaga)
+        , fork(playPrevSaga)
         ]
     );
 }
