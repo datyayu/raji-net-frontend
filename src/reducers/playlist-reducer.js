@@ -3,6 +3,7 @@ import type { Action } from 'redux';
 import type { TrackType } from '../types';
 
 import { PlaylistActions, RoutingActions, SidenavActions, PlayerActions } from '../actions';
+import { shuffleArray } from '../utils';
 
 
 export type PlaylistState =
@@ -11,6 +12,8 @@ export type PlaylistState =
     , currentSongIndex: number
     , playingSongIndex: number
     , loadingSong: number
+    , isRandom: boolean
+    , shuffledPlaylist: TrackType[]
     }
 ;
 
@@ -20,6 +23,8 @@ const initialState: PlaylistState =
     , currentSongIndex: -1
     , loadingSong: -1
     , playingSongIndex: -1
+    , isRandom: false
+    , shuffledPlaylist: []
     }
 ;
 
@@ -66,6 +71,27 @@ export function playlistReducer(state: PlaylistState = initialState, action: Act
                 { ...state
                 , loadingSong: -1
                 , playingSongIndex: state.currentSongIndex
+                }
+            );
+
+
+        case PlayerActions.TOGGLE_RANDOM:
+            const isRandom = !state.isRandom;
+            const shuffledPlaylist = shuffleArray(state.currentPlaylist);
+
+
+            const lastActivePlaylist = isRandom ? state.currentPlaylist : state.shuffledPlaylist;
+            const currentActivePlaylist = isRandom ? shuffledPlaylist : state.currentPlaylist;
+
+            const currentSongId = lastActivePlaylist[state.currentSongIndex].id;
+            console.log(lastActivePlaylist[state.currentSongIndex].name)
+            const newIndex = currentActivePlaylist.findIndex(track => track.id === currentSongId);
+
+            return (
+                { ...state
+                , isRandom: isRandom
+                , shuffledPlaylist: isRandom ? shuffledPlaylist : []
+                , currentSongIndex: newIndex
                 }
             );
 

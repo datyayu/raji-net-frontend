@@ -2,5 +2,8 @@
 import * as ongakuService from './ongaku-service';
 
 
-export const OngakuService = ongakuService;
 export * from './time-parser';
+export * from './array-utils';
+
+
+export const OngakuService = ongakuService;
