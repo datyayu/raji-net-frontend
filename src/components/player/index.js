@@ -5,3 +5,4 @@ export * from './player-data';
 export * from './player-info';
 export * from './player-navigation';
 export * from './player-navigation-item';
+export * from './player-volume-control';

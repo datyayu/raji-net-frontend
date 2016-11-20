@@ -7,6 +7,7 @@ import { PlayerNavigation } from './player-navigation';
 import { PlayerData } from './player-data';
 import { PlayerSeekBar } from './player-seekbar';
 import { PlayerControls } from './player-controls';
+import { PlayerVolumeControl } from './player-volume-control';
 
 
 type PlayerProps =
@@ -92,6 +93,8 @@ export function Player(
                 onPrevClick={onPlayPrev}
                 onRandomClick={onToggleRandom}
             />
+
+            <PlayerVolumeControl isShowing />
         </div>
     );
 }
