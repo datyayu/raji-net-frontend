@@ -84,7 +84,6 @@ export function playlistReducer(state: PlaylistState = initialState, action: Act
             const currentActivePlaylist = isRandom ? shuffledPlaylist : state.currentPlaylist;
 
             const currentSongId = lastActivePlaylist[state.currentSongIndex].id;
-            console.log(lastActivePlaylist[state.currentSongIndex].name)
             const newIndex = currentActivePlaylist.findIndex(track => track.id === currentSongId);
 
             return (

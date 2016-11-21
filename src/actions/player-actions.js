@@ -138,4 +138,22 @@ export class PlayerActions {
             }
         );
     }
+
+    static CHANGE_VOLUME_SUCCESS = '[Player] CHANGE_VOLUME_SUCCESS';
+    static changeVolumeSuccess(volumeLevel: number): Action {
+        return (
+            { type: PlayerActions.CHANGE_VOLUME_SUCCESS
+            , payload: volumeLevel
+            }
+        );
+    }
+
+    static CHANGE_VOLUME_FAILED = '[Player] CHANGE_VOLUME_FAILED';
+    static changeVolumeFailed(error: Error): Action {
+        return (
+            { type: PlayerActions.CHANGE_VOLUME_FAILED
+            , payload: error
+            }
+        );
+    }
 }

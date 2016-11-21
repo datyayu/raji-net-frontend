@@ -85,7 +85,7 @@ export class PlayerVolumeControl extends Component {
         return (
             <div className={`player-volume-control ${activeClass}`}>
                 <Icon
-                    type="volume-up"
+                    type="volume-down"
                     className="player-volume-control-icon"
                     onClick={onVolumeChange.bind(null, volumeStepDown)}
                 />
@@ -101,7 +101,7 @@ export class PlayerVolumeControl extends Component {
                 </div>
 
                 <Icon
-                    type="volume-down"
+                    type="volume-up"
                     className="player-volume-control-icon"
                     onClick={onVolumeChange.bind(null, volumeStepUp)}
                 />

@@ -69,11 +69,21 @@ function* seekTrack(action: Action) {
 function* playCurrentSong(action: Action) {
     try {
         const currentPlayingSong: TrackType = yield select(PlaylistSelectors.getCurrentTrack);
-        debugger;
+
         yield OngakuService.playAudio(currentPlayingSong.url);
         yield put(PlayerActions.playSuccess());
     } catch (error) {
         yield put(PlayerActions.playFailed(error));
+    }
+}
+
+function* changeVolume(action: Action) {
+    try {
+
+       const volume = yield OngakuService.setVolume(action.payload);
+        yield put(PlayerActions.changeVolumeSuccess(volume));
+    } catch (error) {
+        yield put(PlayerActions.changeVolumeFailed(error));
     }
 }
 
@@ -82,23 +92,23 @@ function* playCurrentSong(action: Action) {
  */
 
 function* playFromPlaylistSaga(): Generator<any, any, any> {
-  yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, playTrack);
+    yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, playTrack);
 }
 
 function* playSaga(): Generator<any, any, any> {
-  yield* takeLatest(PlayerActions.PLAY, playTrack);
+    yield* takeLatest(PlayerActions.PLAY, playTrack);
 }
 
 function* pauseSaga(): Generator<any, any, any> {
-  yield* takeLatest(PlayerActions.PAUSE, pauseTrack);
+    yield* takeLatest(PlayerActions.PAUSE, pauseTrack);
 }
 
 function* seekSaga(): Generator<any, any, any> {
-  yield* takeLatest(PlayerActions.SEEK_TO, seekTrack);
+    yield* takeLatest(PlayerActions.SEEK_TO, seekTrack);
 }
 
 function* autoSeekSaga1(): Generator<any, any, any> {
-  yield* takeLatest(PlayerActions.PLAY_SUCCESS, autoSeek);
+    yield* takeLatest(PlayerActions.PLAY_SUCCESS, autoSeek);
 }
 
 function * playNextSaga(): Generator<any, any, any> {
@@ -109,9 +119,12 @@ function * playPrevSaga(): Generator<any, any, any> {
 }
 
 function* autoSeekSaga2(): Generator<any, any, any> {
-  yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, autoSeek);
+    yield* takeLatest(PlaylistActions.PLAY_SONG_FROM_PLAYLIST_SUCCESS, autoSeek);
 }
 
+function* changeVolumeSaga(): Generator<any, any, any> {
+    yield* takeLatest(PlayerActions.CHANGE_VOLUME, changeVolume);
+}
 
 /**
  * ROOT SAGA
@@ -126,6 +139,7 @@ export default function* playerSagasRoot(): Generator<any, any, any> {
         , fork(autoSeekSaga2)
         , fork(playNextSaga)
         , fork(playPrevSaga)
+        , fork(changeVolumeSaga)
         ]
     );
 }

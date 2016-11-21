@@ -1,7 +1,7 @@
 // @flow
 import type { Action } from 'redux';
 
-import { PlayerActions, PlaylistActions } from '../actions';
+import { PlayerActions, PlaylistActions, RoutingActions } from '../actions';
 
 
 export type PlayerState =
@@ -99,7 +99,7 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
             );
 
 
-        case PlayerActions.CHANGE_VOLUME:
+        case PlayerActions.CHANGE_VOLUME_SUCCESS:
             return (
                 { ...state
                 , volumeLevel: action.payload
@@ -121,6 +121,14 @@ export function playerReducer(state: PlayerState = initialState, action: Action)
                 , isPlaying: true
                 , totalTime: action.payload
                 , progress: 0
+                }
+            );
+
+
+        case RoutingActions.NAVIGATE:
+            return (
+                { ...state
+                , showVolumeControls: false
                 }
             );
 

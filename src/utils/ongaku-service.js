@@ -64,14 +64,14 @@ export function seekPercentage(percentage: number): Promise<number> {
     });
 }
 
-export function setVolume(): Promise<number> {
+export function setVolume(volumeLevel: number): Promise<number> {
     return new Promise((resolve) => {
         ongaku._callbacks.onVolumeChange = function(newLevel) {
             ongaku._callbacks.onVolumeChange = undefined;
             resolve(newLevel);
         };
 
-        ongaku.pause();
+        ongaku.setVolume(volumeLevel);
     });
 }
 
