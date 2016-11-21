@@ -14,6 +14,7 @@ type PlayerControlsProps =
     , onNextClick: Function
     , onPrevClick: Function
     , onRandomClick: Function
+    , onVolumeClick: Function
     }
 ;
 
@@ -28,6 +29,7 @@ export function PlayerControls(
     , onNextClick=()=>{}
     , onPrevClick=()=>{}
     , onRandomClick=()=>{}
+    , onVolumeClick=()=>{}
     }
     : PlayerControlsProps
 ) {
@@ -48,7 +50,7 @@ export function PlayerControls(
                 )
             }
             <Icon type="forward" className="player-controls-icon" onClick={onNextClick} />
-            <Icon type={volumeIcon} className="player-controls-icon" />
+            <Icon type={volumeIcon} className="player-controls-icon" onClick={onVolumeClick} />
         </div>
     );
 }

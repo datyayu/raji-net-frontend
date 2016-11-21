@@ -18,6 +18,7 @@ export function PlayerContainer(WrappedComponent: ReactClass<any>): ReactClass<a
             , currentPlayingTime: PlayerSelectors.getCurrentPlayingTime(state)
             , currentPlayingProgress: PlayerSelectors.getCurrentPlayingProgress(state)
             , totalPlayingTime: PlayerSelectors.getTotalPlayingTime(state)
+            , isVolumeControlOpen: PlayerSelectors.isVolumeControlOpen(state)
             }
         );
     }

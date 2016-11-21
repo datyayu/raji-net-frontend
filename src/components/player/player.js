@@ -19,7 +19,8 @@ type PlayerProps =
     , isPlaying: boolean
     , isRandom: boolean
     , isMuted: boolean
-    , volume: number
+    , isVolumeControlOpen: boolean
+    , volumeLevel: number
     , currentPlayingProgress: number
     , currentPlayingTime: string
     , totalPlayingTime: string
@@ -45,7 +46,8 @@ export function Player(
     , isPlaying=false
     , isRandom=false
     , isMuted=false
-    , volume=100
+    , isVolumeControlOpen=false
+    , volumeLevel=100
     , currentPlayingTime='0:00'
     , currentPlayingProgress=0
     , totalPlayingTime='Loading...'
@@ -86,15 +88,21 @@ export function Player(
                 isPlaying={isPlaying}
                 isMuted={isMuted}
                 isLoading={!!currentLoadingSong}
-                volume={volume}
+                volume={volumeLevel}
                 onPlayClick={onPlay}
                 onPauseClick={onPause}
                 onNextClick={onPlayNext}
                 onPrevClick={onPlayPrev}
                 onRandomClick={onToggleRandom}
+                onVolumeClick={onShowVolumeControl}
             />
 
-            <PlayerVolumeControl isShowing />
+            <PlayerVolumeControl
+                isShowing={isVolumeControlOpen}
+                onHide={onHideVolumeControl}
+                volume={volumeLevel}
+                onVolumeChange={onSetVolume}
+            />
         </div>
     );
 }
