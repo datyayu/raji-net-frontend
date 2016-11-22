@@ -25,9 +25,8 @@ $ npm run watch
 Also, you should add 3 mp3 files to `public/audio` with the names `song-1.mp3`, `song-2.mp3`, `song-3.mp3` to try the playing capabilities. Not included due to being large size.
 
 ## TODOS:
-- [ ] Volume control
-- [ ] Refactor models/types
 - [ ] Real API into Sagas
+- [ ] Move `connect()` to components instead of using single top-level contatiners.
 - [ ] Request submission page
 - [ ] Landing page
 - [ ] All the backend :D
