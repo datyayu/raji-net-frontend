@@ -5,6 +5,11 @@
     }
 }
 
+.header-menu-icon {
+    @include at-desktop {
+        opacity: 0;
+    }
+}
 
 .header-content {
     align-items: center;

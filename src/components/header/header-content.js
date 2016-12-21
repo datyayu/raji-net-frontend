@@ -27,7 +27,7 @@ export function HeaderContent(
 ) {
     return (
         <div className="header-content">
-            <Icon type="bars" className="header-icon" onClick={onNavIconClick} />
+            <Icon type="bars" className="header-icon header-menu-icon" onClick={onNavIconClick} />
 
             <h1 className="header-title"> {title} </h1>
 
