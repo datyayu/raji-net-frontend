@@ -34,7 +34,7 @@ export function Series(
     return (
         <div className="series">
             <img className="series-image" src={series.image} alt={series.name} />
-            <SeriesReleaseList releaseList={series && series.albums} />
+            <SeriesReleaseList releaseList={series && series.releases} />
         </div>
     );
 }

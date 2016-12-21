@@ -3,43 +3,21 @@ import { call, put } from 'redux-saga/effects';
 
 import { SeriesActions } from '../actions';
 
-import seriesDefaultImage from '../assets/images/sample-series.jpg';
-import albumDefaultImage from '../assets/images/sample-album.jpg';
 
+function* apiCall(id) {
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    const options = { method: 'GET', headers };
 
-const mockRelease =
-    { id: 1
-    , name: 'hello world'
-    , image: albumDefaultImage
-    , artists: ['Iguchi Yuka']
-    , singleType: 'OP Single'
-    , length: 2
-    , plays: 33233
-    , year: 2015
-    }
-;
-
-const mockSeries =
-    { id: 3
-    , name: 'Dungeon de deai ni motomeru machigaiteru darou ka?'
-    , image: seriesDefaultImage
-    , albums:  
-        [ mockRelease
-        , mockRelease
-        , mockRelease
-        ]
-    }
-;
-
-
-function mockApiCall() {
-    return Promise.resolve(mockSeries);
+    const request = yield fetch(`/api/series/${id}`, options);
+    const seriesList = yield request.json();
+    return seriesList;
 }
 
 
 function* fetchSeries(action) {
    try {
-      const series = yield call(mockApiCall, action.payload);
+      const series = yield call(apiCall, action.payload);
       yield put(SeriesActions.setSeries(series));
    } catch (error) {
       yield put(SeriesActions.failedToGetSeries(error));

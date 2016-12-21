@@ -27,6 +27,9 @@
 
 .series-list-image {
     margin-bottom: -.2em;
+    min-width: 179px;
+    min-height: 258px;
+    background: $color--active-icon;
     width: 100%;
 }
 

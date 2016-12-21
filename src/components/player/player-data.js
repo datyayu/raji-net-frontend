@@ -20,7 +20,7 @@ export function PlayerData(
 ) {
     return (
         <div className="player-data">
-            <PlayerCover album={track && track.album} />
+            <PlayerCover album={track && track.release} />
             <PlayerInfo track={track} />
         </div>
     );

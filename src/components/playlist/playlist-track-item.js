@@ -2,7 +2,6 @@
 import type { TrackType } from '../../types';
 
 import React from 'react';
-
 import { Icon } from '../shared';
 
 
@@ -39,7 +38,7 @@ export function PlaylistTrackItem({
 
     return (
         <li className={`playlist-track ${activeClass}`} onClick={onClickCallback}>
-            <img className="playlist-track-cover" src={track.album.image} alt={track.album.name} />
+            <img className="playlist-track-cover" src={track.release.image} alt={track.release.name} />
 
             <div className="playlist-track-info">
                 <span className="playlist-track-info-text">{track.name}</span>

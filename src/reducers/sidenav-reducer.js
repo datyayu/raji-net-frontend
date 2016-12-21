@@ -19,8 +19,8 @@ const initialState: SidenavState =
         [
             { text: 'now playing', href: '/player' },
             { text: 'series',      href: '/series' },
-            { text: 'playlists',   href: '/playlists' },
-            { text: 'seasons',     href: '/seasons' },
+            // { text: 'playlists',   href: '/playlists' },
+            // { text: 'seasons',     href: '/seasons' },
         ]
     }
 ;

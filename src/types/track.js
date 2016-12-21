@@ -6,7 +6,7 @@ export type TrackType =
     { id: number
     , name: string
     , artists: string[]
-    , album: ReleaseType
+    , release: ReleaseType
     , url: string
     }
 ;

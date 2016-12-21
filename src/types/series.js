@@ -6,6 +6,6 @@ export type SeriesType =
     { id: number
     , name: string
     , image: string
-    , albums: ReleaseType[]
+    , releases: ReleaseType[]
     }
 ;

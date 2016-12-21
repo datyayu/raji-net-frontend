@@ -2,71 +2,12 @@ import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
 import { ReleaseActions } from '../actions';
-import sampleAlbum from '../assets/images/sample-album.jpg';
 
 
-const mockRelease =
-    { id: 1
-    , name: 'hello world'
-    , image: sampleAlbum
-    , artists: ['Iguchi Yuka']
-    , singleType: 'OP Single'
-    , length: 12
-    , plays: 323
-    , year: 2015
-    , tracks:
-        [
-            { id: 1
-            , url: '/audio/song-1.mp3'
-            , name: 'puengue #1'
-            , artists: ['Iguchi Yuka']
-            , album:
-                { id: 1
-                , name: 'Hafa Adai'
-                , artists: ['Iguchi Yuka']
-                , image: sampleAlbum
-                , year: 2015
-                , singleType: "OP single"
-                , plays: 32
-                , length: 2
-                }
-            }
-        ,   { id: 2
-            , url: '/audio/song-2.mp3'
-            , name: 'Rainbow Girl #2'
-            , artists: ['Iguchi Yuka']
-            , album:
-                { id: 1
-                , name: 'Hafa Adai'
-                , artists: ['Iguchi Yuka']
-                , image: sampleAlbum
-                , year: 2015
-                , singleType: "OP single"
-                , plays: 32
-                , length: 2
-                }
-            }
-        ,   { id: 3
-            , url: '/audio/song-3.mp3'
-            , name: 'Sketch Switch #3'
-            , artists: ['Asumi Kana', 'Mizuhashi Kaori', 'Yuuko Goto', 'Ryoko Shintani']
-            , album:
-                { id: 1
-                , name: 'Hafa Adai'
-                , artists: ['Iguchi Yuka']
-                , image: sampleAlbum
-                , year: 2015
-                , singleType: "OP single"
-                , plays: 32
-                , length: 2
-                }
-            }
-        ]
-    }
-;
-
-function mockApiCall() {
-    return Promise.resolve(mockRelease);
+function* mockApiCall(id) {
+    const request = yield fetch(`/api/releases/${id}`);
+    const release = yield request.json();
+    return release;
 }
 
 

@@ -26,7 +26,7 @@ export function PlayerInfo(
         <div className="player-info">
             <span className="player-info-title"> {track.name} </span>
             <span className="player-info-text"> {track.artists.join(', ')} </span>
-            <span className="player-info-text"> {track.album.name} </span>
+            <span className="player-info-text"> {track.release.name} </span>
         </div>
     );
 }
