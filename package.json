@@ -34,7 +34,7 @@
   "devDependencies": {
     "flow-bin": "^0.34.0",
     "node-sass": "^3.11.2",
-    "react-scripts": "0.7.0"
+    "react-scripts": "^0.8.4"
   },
   "proxy": "https://evening-beyond-82178.herokuapp.com"
 }
