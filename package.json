@@ -12,7 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "watch": "npm run watch-css & react-scripts start",
-    "build": "npm run build-css && react-scripts build",
+    "build": "react-scripts build",
     "build-css": "node-sass src/index.scss src/index.css",
     "watch-css": "node-sass src/index.scss src/index.css -w",
     "test": "react-scripts test --env=jsdom",
