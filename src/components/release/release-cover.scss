@@ -2,6 +2,7 @@
     margin: 0 auto;
     position: relative;
     width: 100%;
+    max-width: 400px;
 
     @include at-tablet {
         width: 60%
@@ -34,18 +35,18 @@
     width: 100%;
 
     @include at-phone-landscape {
-        bottom: 0em  
+        bottom: 0em
     }
 }
 
 
 .release-cover-icon {
     font-size: 2em;
-    
+
     @include at-tablet {
         font-size: 3.5em
     }
-    
+
     @include at-desktop {
         font-size: 2.5em
     }

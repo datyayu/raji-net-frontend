@@ -22,6 +22,11 @@
         margin: .20%;
         width: 19.60%;
     }
+
+    @include at-full-hd-desktop {
+        margin: .30%;
+        width: 16.0%;
+    }
 }
 
 

@@ -26,6 +26,10 @@
         transform: translateX(0);
         width: 350px;
     }
+
+    @include at-full-hd-desktop {
+        width: 500px;
+    }
 }
 
 

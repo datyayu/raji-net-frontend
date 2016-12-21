@@ -3,7 +3,7 @@
         @content;
     }
 }
-        
+
 @mixin at-tablet-landscape() {
     @media screen and (orientation: landscape) and (max-width: $media-query-desktop) {
         @content;
@@ -24,6 +24,12 @@
 
 @mixin at-hd-desktop() {
     @media screen and (min-width: $media-query-hd-desktop) {
+        @content;
+    }
+}
+
+@mixin at-full-hd-desktop() {
+    @media screen and (min-width: $media-query-full-hd-desktop) {
         @content;
     }
 }

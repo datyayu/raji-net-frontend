@@ -15,10 +15,15 @@
         margin-left: 200px;
     }
 
-    @include at-hd-desktop {
-        &.has-playlist {
+    &.has-playlist {
+        @include at-hd-desktop {
             margin: 0 350px 0 200px;
             width: calc(100% - 200px - 350px);
+        }
+
+        @include at-full-hd-desktop {
+            margin: 0 500px 0 200px;
+            width: calc(100% - 200px - 500px);
         }
     }
 }
