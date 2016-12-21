@@ -4,7 +4,7 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "license": "MIT",
   "private": true,
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "url": "git@github.com:datyayu/raji-net-frontend.git",
     "type": "git"
