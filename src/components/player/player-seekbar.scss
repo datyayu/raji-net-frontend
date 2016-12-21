@@ -1,6 +1,7 @@
 .player-seekbar {
     width: 100%;
-    
+    margin-top: 1em;
+
     @include at-desktop {
         padding-top: .5em;
     }
@@ -23,7 +24,7 @@
     @include at-phone-landscape {
         height: 1em;
     }
-    
+
     @include at-tablet-landscape {
         height: 1em
     }

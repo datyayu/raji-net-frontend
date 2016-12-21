@@ -3,7 +3,7 @@
 /* Text */
 /* Elements */
 .fa {
-  font-size: 2em; }
+  font-size: 3em; }
 
 .error-message {
   background: rgba(255, 0, 0, 0.5);
@@ -208,8 +208,7 @@
 .player-controls {
   display: flex;
   justify-content: space-around;
-  margin: 1em 0;
-  font-size: 2em; }
+  margin: 1em 0; }
 
 .player-controls-icon {
   cursor: pointer;
@@ -366,7 +365,8 @@
     font-weight: 600; }
 
 .player-seekbar {
-  width: 100%; }
+  width: 100%;
+  margin-top: 1em; }
   @media screen and (min-width: 780px) {
     .player-seekbar {
       padding-top: .5em; } }

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import { Icon } from '../shared';
+// import { Icon } from '../shared';
 
 
 type ReleaseCoverProps =
