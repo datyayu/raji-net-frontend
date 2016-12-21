@@ -2,6 +2,7 @@ import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
 import { SeriesListActions } from '../actions';
+import { SERIES_ENDPOINT } from '../configs';
 
 
 function* apiCall() {
@@ -9,7 +10,7 @@ function* apiCall() {
     headers.append('Accept', 'application/json');
     const options = { method: 'GET', headers };
 
-    const request = yield fetch('/api/series', options);
+    const request = yield fetch(SERIES_ENDPOINT, options);
     const seriesList = yield request.json();
     return seriesList;
 }
